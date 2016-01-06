@@ -38,8 +38,8 @@ ehthumbs.db
 #########################
 [Oo]bj
 [Oo]bj/*
-#[Bb]in
-#[Bb]in/*
+[Bb]in
+[Bb]in/*
 deploy
 deploy/*
 _ReSharper.*
