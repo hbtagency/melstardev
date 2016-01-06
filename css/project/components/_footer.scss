@@ -1,0 +1,89 @@
+$footer_bottom_font_size: 13px;
+
+.footer_title{
+	font-size: 20px;
+        font-weight: bold;
+	font-family: $font-fu-book;
+	margin-bottom: 10px;
+}
+
+.lets_connect{
+	margin-top: 50px;
+	text-align: center;
+	.social_links{
+		position: relative;
+		width: 400px;	
+		margin: 0 auto 50px auto;
+
+		span{
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+	}
+}
+
+.footer_wrapper{
+	background-color: $gray_background;
+	padding:50px 20px 70px 20px;
+
+	.address{
+		font-family: $font-fu-book;
+		margin-bottom: 10px;
+	}
+        .direction{
+            margin-top:30px;
+            font-size:18px;
+            font-weight: bold;
+
+        }
+    
+	#instafeed2{
+		a{
+                    &:hover{
+                        -webkit-opacity:0.7;
+                        -moz-opacity:0.7;
+                        -o-opacity:0.7;
+                        opacity: 0.7;
+                    }
+			img{
+				width: 21%;
+                                margin:2px;
+			}
+		}
+	}
+
+	.footer_links div{ 
+		margin-bottom: 5px;
+
+		a{
+			font-family: $font-fu-book;
+			color: black;
+		}
+	}
+}
+
+.copyright_area{
+    padding-top:10px;
+    padding-bottom:15px;
+    .footer_bottom{
+	font-size: $footer_bottom_font_size;	
+    }
+
+    .footer_bottom_links{
+	    display: inline-block;
+
+	    li{
+	        float: left;
+	        list-style: none;
+	        margin-left: 15px;
+
+	    	a{
+		        font-size: $footer_bottom_font_size;
+		        color: black;
+	            text-transform: uppercase;
+	    	}
+    	}  
+    }
+}
+
+@import "media_queries/__footer.scss";

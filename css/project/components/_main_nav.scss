@@ -1,0 +1,127 @@
+$ticket_container_width:177px;
+
+.main_nav{
+    height:95px;
+    background-color:$nav_blue_transparent;
+    text-transform:uppercase;
+    &.home_nav{
+        background-color:$nav_blue;
+    }
+    
+    &.stick{
+        position:fixed;
+        top:0;
+        display:block;
+        width:100%;
+        margin:0;
+        z-index: 99;
+        padding-right:15px;
+        margin-left:-30px;
+        border-left:30px solid #fff;
+        border-right:39px solid #fff;
+        background-color:$nav_blue_transparent;
+        .full-screen-container .mobile-menu button.navbar-toggle .icon-bar{
+            background-color:#fff;
+        }
+    }
+    
+    .full-screen-container{
+        padding-right:$ticket_container_width;
+        height:95px;
+        .left{
+            float:left;
+        }
+        .right{
+            float:right;
+        }
+        .logo{
+            position:absolute;
+            width:290px;
+            padding-top:23px;
+            a.logo_span{
+                width:290px;
+                height:52px;
+                display:block;
+                background:url('../../../img/logo.png') no-repeat;
+            }
+        }
+        nav.navbar{
+            margin-bottom:0px;
+            border:none;
+            ul
+                li.root{
+                    min-width:150px;
+                    a{
+                        height:94px;
+                        padding-top:40px;
+                        text-align: center;
+                        @include transition(all 0.4s ease);
+                        color:#fff;
+                        padding-bottom:0px;;
+                        &:hover{
+                            background-color:$head_blue;
+                        }
+                        &:visited{
+                            background-color:$head_blue;
+                        }
+                        &:active{
+                            background-color:$head_blue;
+                        }
+                        &:focus{
+                            background-color:$head_blue;
+                        }
+                        
+                        text-align:center;
+                        .arrow_down{
+                            background:url('../../../img/blue_arrow_down.png');
+                            background-size:cover;
+                            width:10px;
+                            height:5px;
+                            vertical-align: middle;
+                            margin-left:3px;
+                            margin-bottom: 2px;
+                        }
+                        span{
+                            display:inline-block;
+                        }
+                    }
+                    
+
+                    .dropdown-menu{
+                        background-color:rgba(0, 42, 95, 0.8);
+                        right:0;
+                        left:auto; 
+                                                z-index:101;
+
+                    }
+                    .level-2{
+                        padding:0;
+                        li{
+                            a{
+                                height:40px;
+                                padding-top:10px;
+                            }
+                        }
+                    }
+                }
+                
+                .dropdown:hover .dropdown-menu{
+                    display:block !important;
+                }
+            }
+        }
+        
+        .dropdown-menu li:hover{
+            background: black !important;
+        }
+        .dropdown-menu li a:hover{
+            background: black !important;
+        }
+        
+}
+
+
+@import "sub_components/__rotate_logo.scss";
+@import "sub_components/__tickets.scss";
+@import "sub_components/__box_container.scss"; 
+@import "media_queries/__main_nav.scss";

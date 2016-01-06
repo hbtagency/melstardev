@@ -1,0 +1,276 @@
+$book_button_height:35px;
+$booking_tab_height:65px;
+$booking_tab_padding:18px 15px 18px 30px;
+$green_font_size:20px;
+$green_font_family:futura_bold;
+
+.two_column{
+    .book-your-ticket{
+    .book-ticket-area{
+        background-color:$silver_gray;
+        position:relative;
+        top:0;
+        width:100%;
+        height:auto;
+        min-height:auto;
+        padding-bottom:0;
+        .accordion{
+            .accordion-heading{
+                background-color:$head_blue !important;
+                a.accordion-toggle{
+                    padding-top:23px !important;
+                    i.icon-list-alt{
+                        margin-top:8px !important;
+                    }
+                }
+            }
+            .accordion-group .accordion-inner {
+                .input-row{
+                    .ticket_type{
+                        margin-top:9px;
+                    }
+                    .ticket_price{
+                        margin-top:0px;
+                    }
+                    
+                }
+                .link_row{
+                    a{
+                        color:$head_blue;
+                    }
+                }
+            }
+            
+        }
+        .sit_bottom_container{
+            position:relative;
+            text-align: center;
+            .view-cart{
+                padding:15px;
+            }
+        }
+    }
+    }
+}
+
+.book-ticket-area{
+    position:absolute;
+    width:330px;
+    background-color:rgba(0,0,0,0.4);
+    min-height:414px;
+    display:block;
+    z-index:10;
+    right:0;
+    color:#fff;
+    top:95px;
+    padding-bottom:130px;
+    .accordion{
+        .accordion-group{
+            margin-bottom:5px;
+            .accordion-inner{
+                padding-bottom:15px;
+                .input-row{
+                    display:block;
+                    clear:both;
+                    text-align:left;
+                    &.white_row{
+                        padding:10px 15px;
+                        background-color:#fff;
+                        margin: 10px auto;
+                        color:#000;
+                        width:90%;
+                        .ticket_type{
+                            font-family: $green_font_family;
+                            margin-top:7px;
+                            width:130px;
+                            text-transform: uppercase;
+                        }
+                        .ticket_price{
+                            font-weight: bold;
+                        }
+
+                        .ticket_number{
+                            float:right;
+                            input[type=number]{
+                                width:50px;
+                                background-color:$silver_gray;
+                                border: 0;
+                                padding:5px;
+                            }
+                        }
+
+                    }
+                    &.link_row{
+                        padding-left:30px;
+                        margin-bottom:5px;
+                        a{
+                            color:#fff;
+                            text-decoration: underline;
+                            text-transform: none;
+                        }
+                    }
+                }
+            }
+            .accordion-heading{
+                height:$booking_tab_height;
+                font-size:20px;
+                text-align:left;
+                text-transform: uppercase;
+                padding:$booking_tab_padding;
+                background-color:rgba(0,0,0,0.4);
+                position:relative;
+
+                a.accordion-toggle{
+                    color:#fff;
+                    width:100%;
+                    display:block;
+                    position:absolute;
+                    left:0;
+                    top:0;
+                    height:$booking_tab_height;
+                    padding:$booking_tab_padding;
+                    @include transition(all 0.4s ease);
+                    &:hover{
+                        text-decoration: none;
+                        color:gray
+                    }
+                    &:active{
+                        text-decoration: none;
+                    }
+                    &:visited{
+                        text-decoration: none;
+                    }
+                    &:focus{
+                        text-decoration: none;
+                    }
+                    .icon-list-alt{
+                        background: url("../../../img/arrow_down_white.png") no-repeat;
+                        width:10px;
+                        height:6px;
+                        display:block;
+                        float:right;
+                        margin-top:12px;
+                    } 
+                }
+            }
+
+            .main_heading{
+                background-color:#000;
+                #close-ticket{
+                    margin:5px 0 0 0;
+                }
+            }
+        }
+    }
+    .sit_bottom_container{
+        position:absolute;
+        bottom:0;
+        width:100%;
+        .ticket_pricing_button_div{
+            height:$booking_tab_height;
+            text-align:left;
+            text-transform: uppercase;
+            padding:$booking_tab_padding;
+            text-align:center;
+            padding:5px 30px;
+            a.ticket_pricing_button{
+                font-size:20px;
+                color:#fff;
+                &.button{
+                    width:auto;
+                    font-size:14px;
+                    width:100%;
+                    display:inline-block;
+                }
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+        }
+        .view-cart{
+            height:$booking_tab_height;
+            padding:$booking_tab_padding;
+            padding-top:20px;
+            display:block;
+            width:100%;
+            background-color:$green;
+            color:#fff;
+            font-size:$green_font_size;
+            font-family: $green_font_family;
+            @include text_shadow(1px,1px,#888);
+            @include transition(all 0.4s ease);
+            text-transform:uppercase;
+            font-weight:bold;
+            .price{
+                font-size:23px;
+            }
+            &:hover{
+                color:$silver_gray;
+                text-decoration: none;
+            }
+            &:focus{
+                text-decoration: none;
+            }
+        }
+
+    }
+}
+
+
+.main_nav{
+    border:none;
+    padding:0;
+    .full-screen-container{
+        position:relative;
+
+        .buy_tickets{
+            width:$ticket_container_width;
+            margin-right:-201px;
+            background-color:$green;
+            height:95px;
+            text-align: center;
+            position:relative;
+            
+            .uppercase{
+                a{
+                    color:#fff;
+                    &:hover{
+                        text-decoration: none;
+                    }
+                }
+                display:block;
+                margin-top:36px;
+                font-size:$green_font_size;
+                font-weight:bold;
+                color:#fff;
+                font-family: $green_font_family;
+                @include text_shadow(1px,1px,#888);
+            }
+        }
+        .book-ticket-button{
+            background-color:$nav_blue;
+            width:$ticket_container_width;
+            height:$book_button_height;
+            right:0;
+            bottom:-$book_button_height;
+            position:absolute;
+            z-index:10;
+            color:#fff;
+            padding:8px 0 6px 10px;
+            text-align: left;
+            background-color:$nav_blue;
+            &:hover{
+                text-decoration: none;
+            }
+            #rotate{
+                width:15px;
+                height:15px;
+                float:right;
+                margin:2px 5px 0 0;
+                border:none;
+            }
+        }
+    }
+}
+
+@import "__rotate_element.scss";

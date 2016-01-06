@@ -1,0 +1,43 @@
+.top_nav{
+   background-color:#fff;
+   height:34px;
+   width:100%;
+   display: block; 
+   padding-top:5px;
+   .full-screen-container{
+       padding:0;
+       .inline-block{
+           height:34px;
+           float:right;
+       }
+       
+       .navbar{
+           margin-right:15px;
+           ul{
+               li{
+                   height:34px;
+                   padding:0;
+                   a{
+                       @include transition(all 0.4s ease);
+                       color:#000;
+                       padding:0;
+                       text-transform:uppercase;
+                       font-size:13px;
+                       &:hover{
+                           background-color: #fff;
+                           color:gainsboro;
+                       }
+                   }
+               }
+           }
+       }
+       .contact-us{
+           margin-right:30px;
+       }
+    }
+}
+
+@import 'sub_components/__language.scss';
+@import 'sub_components/__search.scss';
+@import 'media_queries/__top_nav.scss';
+

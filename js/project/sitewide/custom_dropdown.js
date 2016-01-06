@@ -1,0 +1,3 @@
+$( function() {
+    $( '#cd-dropdown' ).dropdown();
+});

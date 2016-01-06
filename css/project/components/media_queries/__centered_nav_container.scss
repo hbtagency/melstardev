@@ -1,0 +1,36 @@
+@media (max-width:$screen-xs-max){
+.centered_nav_area{
+        padding:30px 0 30px 0;
+        width:100%;
+        display: block;
+        text-align: left;
+
+        .centered_list_nav{
+            padding-left:0;
+            li{
+                text-transform: uppercase;
+                text-align: left;
+                padding:0 15px;
+                a{
+                    font-size:14px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:$screen-xxs-max){
+.centered_nav_area{
+        .centered_list_nav{
+            li{
+                padding:0 10px;
+                border-left:none;
+                a{
+                    font-size:12px;
+                }
+            }
+        }
+    }
+}
+
+//You will need to define list padding before you list scss file

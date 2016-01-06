@@ -1,0 +1,41 @@
+$rotation_time:19000ms;
+
+.rotating_logo_div{
+    width:265px !important;
+    .rotate_logo{
+        &:hover{
+            text-decoration: none;
+        }
+        .over{
+            transform: rotate( 360deg );            
+            transition: transform $rotation_time linear;
+            -webkit-transform: rotate( 360deg );     
+            -webkit-transition: transform $rotation_time linear;
+        }
+    img{
+        float:left;
+    }
+    .logo_text{
+        float:right;
+        padding-top:9px;
+        text-transform:uppercase;
+        .white{
+            color:#fff;
+            font-size:25px;
+            font-family:$font-fu-book !important;
+
+        }
+        .green{
+            color:#77bf4b;
+            font-size:25px;
+            font-family:$font-fu-book !important;
+        }
+    }
+    }
+}
+
+.main_nav .full-screen-container .logo.rotating_logo_div{
+    margin-left:30px !important;
+}
+
+

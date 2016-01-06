@@ -1,0 +1,18 @@
+$rotation_time:300ms;
+
+#rotate {
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+}
+
+.over {
+    transform: rotate( -180deg );            
+    transition: transform $rotation_time ease;
+}
+
+.out {
+    transform: rotate( -360deg );            
+    transition: transform $rotation_time ease;
+}
+​

@@ -1,0 +1,39 @@
+/* Global font, parammeters, css reset ...etc */
+@import 'components/_font.scss'; 
+@import 'components/_global.scss'; 
+
+/* Font global style for other pages eg: h1,h2.. p, ul... span , if "template_content" class is used on align with container, all global context settings will be applied. */ 
+@import 'components/_template_content_fonts.scss';
+
+/* Site-wide used sections */
+@import 'components/_top_nav.scss'; 
+@import 'components/_main_nav.scss'; 
+@import 'components/_mobile_menu.scss';
+@import 'components/_footer.scss';
+@import 'components/_subscribe.scss';
+@import 'components/_body_mask.scss';
+
+/* Home page */
+@import 'components/_feature_home.scss'; 
+@import 'components/_feature_home_info.scss';
+@import 'components/_whats_on.scss';
+@import 'components/_whats_new.scss';
+@import 'components/_instagram.scss';
+//@import 'components/_whats_new_safari_adaptable.scss';
+
+/* Basic Banner one with no bottom */
+/* Ticket, Function, News and events template all ultilizes it as basic banner layout */
+@import 'components/_other_page_head_banners.scss';
+
+/* Ticket page */
+@import 'components/_two_column_container.scss';
+@import 'components/sub_components/__striped_table.scss';
+
+/* Function page - a template has second sticky menu*/
+@import 'components/sub_components/__post_list_item.scss';
+@import 'components/_three_column_layout.scss';
+@import 'components/_two_column_posts_container.scss';
+@import 'components/_stick_to_bottom_menu.scss';
+
+/* News and events page */
+@import 'components/_centered_nav_container.scss';

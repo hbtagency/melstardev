@@ -1,0 +1,52 @@
+.mobile-menu-sidebar{
+    #close-mobile{
+        img{
+            margin-right: 10px;
+        }
+    }
+    position:fixed;
+    left:-$mobile-menu-width;
+    top:0;
+    background-color:#fff;
+    z-index: 100;
+    text-align:left;
+    width:$mobile-menu-width;
+    padding-top:20px;
+
+    font-family: $font-fu-book,$font-fu-l;
+    @include transition(all 1s ease);
+    &.move-left{left:0;}
+    .accordion{
+        .accordion-group{
+            padding-bottom:10px;
+            margin-left:30px;
+            .accordion-heading{
+                &.collapsed_item{
+                    background:url('../../../img/arrow_right.png') no-repeat;
+                    background-position: 95% 50%;
+                }
+                a{
+                    color:#000;
+                    text-transform: uppercase;
+                    font-size:14px;
+                }
+            }
+            .accordion-body{
+                ul{
+                    padding-left:15px;
+                    padding-top:10px;
+                    list-style:none;
+                    li{
+                        padding:3px 0;
+                        a{
+                            color:#000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@import "media_queries/__mobile_menu.scss";

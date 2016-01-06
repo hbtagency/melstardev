@@ -1,0 +1,43 @@
+.sticky_menu_2{
+    position: absolute;
+    height: 70px;
+    background-color: #304665;
+    width: 100%;
+    bottom:-70px;
+    padding-top:10px;
+    .menu--link-text{
+        color: white;
+    }
+    
+    .dropdown-toggle:hover{
+            background-color:#000;
+        }
+        
+    .nav_margin_right{
+        margin-right: 20px;
+        padding-right: 20px;
+        i.icon {
+            width:1px;
+            height:20px;
+            display:block;
+            position:absolute;
+            right:-20px;
+            top:15px;
+            background-color:#fff;
+        }
+        
+    }
+}
+
+.stickyMenu{
+    position: fixed !important;
+    display: block;
+    top: 95px;
+    margin-left: -30px;
+    border-right: 30px solid #fff;
+    border-left: 30px solid #fff;
+    z-index: 98;
+}
+
+
+

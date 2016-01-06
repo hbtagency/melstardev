@@ -1,0 +1,17 @@
+.centered_list_nav{
+    display:inline-block;
+    margin:auto;
+    padding-left:0;
+    li{
+        list-style: none;
+        display:inline-block;
+        float:left;
+        text-align: center;
+        border-left: 1px solid black;
+        padding:0 $list-padding;
+    }
+    li.first{
+            border-left: 0px solid black;
+    }
+}
+

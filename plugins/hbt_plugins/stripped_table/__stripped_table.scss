@@ -1,0 +1,27 @@
+.table-striped{
+    font-size:13px;
+    tr.header{
+        background-color:$head_blue !important;
+        th{
+            color:#fff;
+            text-align: left;
+            padding:10px;
+            padding-right:0;
+        }
+    }
+    tr.striped{
+        background-color:$silver_gray;
+        td{
+            color:$head_blue;
+        }
+    }
+    tr{
+        text-transform: uppercase;
+        td{
+            padding:10px;
+            text-align: left;
+        }
+        
+    }
+}
+

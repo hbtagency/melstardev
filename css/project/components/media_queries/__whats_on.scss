@@ -1,0 +1,83 @@
+// Mobile View
+@media (max-width: $screen-sm-max) {
+    .whats_on{
+
+        .whatson_content{
+            height: auto !important;
+
+            
+            span.whatson_hover_content{
+                display: none !important;
+            }
+        
+
+            .whatson_view_button{
+                display: none !important;
+            }
+        }
+    }
+                                              
+}
+
+// Tablet View
+@media (min-width:$screen-md-min) and (max-width:$screen-md-max){
+    .whatson_content{
+        height: 200px !important;
+
+        .centered{
+            transform: translate(0,-130px) !important;
+        }
+
+        &:hover{
+            span.whatson_hover_content{
+                height: 154px !important;  
+            }
+        }
+
+        .whatson_hover_content {
+            width: 294px;
+            bottom: 46px;
+        }
+    }
+
+    .image_wrapper{
+        height: 154px !important;
+    } 
+
+    .whatson_carousel_textarea{
+        .whatson_carousel_title{
+            font-size: 14px !important;        
+        }
+
+        .whatson_carousel_content{
+            font-size: 12px !important;
+        }
+    } 
+}
+
+// Special View
+@media (min-width:1200px) and (max-width:1230px){
+    .slick-next{
+        right: -10px !important;
+    }
+    .slick-prev {
+        left: -10px !important;
+    }
+}
+
+@media (min-width:992px) and (max-width:1030px){
+    .slick-next{
+        right: -10px !important;
+    }
+    .slick-prev {
+        left: -10px !important;
+    }
+}
+
+@media (max-width:$screen-xxs-max){
+            .container{
+            h1{
+                font-size:24px;
+            }
+        }
+}

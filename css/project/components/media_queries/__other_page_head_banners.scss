@@ -1,0 +1,47 @@
+@media (max-width:$screen-md-max){
+    .banner_area {
+        .mask{
+            height:300px;
+        }
+    }
+}
+
+@media (min-width:$screen-md-min) and (max-width:$screen-md-max){
+    .banner_area {
+        &.mgb70{
+            .mask{
+               height:370px; 
+            }
+            
+        }
+    }
+}
+@media (max-width: $screen-sm-max){
+    .banner_area{
+        height:150px;
+    }
+    .banner_area .mask{
+        height:220px;
+    }
+    
+    .banner_area .banner-heading.sit_left{
+        left:15px;
+        bottom:-35px;
+        
+    }
+    .box-container .box-center-container{
+        height:224px;
+    }
+}
+
+@media (max-width: $screen-xs-max){    
+    .banner_area .banner-heading.sit_left{
+        left:15px;
+        bottom:-35px;
+        h1{
+            font-size:22px;
+        }
+    }
+}
+
+

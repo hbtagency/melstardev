@@ -1,0 +1,105 @@
+body{
+    padding:0 30px;
+}
+
+.box-container{
+    @include transition(all 1s ease);
+    .left-bar{
+        margin-left:-30px;
+        .lines-button{
+                float:left;
+            }
+        &.expanded{
+            width:300px;
+            position:absolute;
+            z-index: 100;
+            margin-left:-300px;
+            .lines-button{
+                float:right;
+            }
+            .accordion{
+                margin-top:$top_nav_height;
+            }
+        }
+        &.extra-padding-left{
+            padding-left:62px;
+        }
+    }
+    
+    .right-bar{
+        margin-right:-30px;
+    }
+
+    width:100%;
+    .box-sidebar{
+        width:55px;
+        display:block;
+    }
+    
+    .box-center-container{
+        width:100%;      
+    }
+    
+    &.right-side{
+        padding-left:300px
+    }
+    &.no-padding{
+        padding:0;
+        margin-top: -40px;
+    }
+}
+
+@import '__more_menu.scss';
+
+@media (max-width: $screen-md-max) {
+    .box-container{
+        padding:0 $mobile_edge 0 $mobile_edge;
+        .top_nav{
+            height:$mobile_edge;
+        }
+        .left-bar{
+            width:150px;
+            margin-left:-$mobile_edge;
+        }
+        .left-bar.expanded{
+            width:150px;
+            margin-left: -150px;
+            .accordion{
+                .accordion-group{
+                    margin-left:15px;
+                    .accordion-heading{
+                        a{
+                            font-size:12px;
+                        }
+                    }
+                }
+            }
+        }
+        .right-bar{
+            margin-right:-$mobile_edge;
+        }
+        .box-sidebar{
+            width:$mobile_edge;
+        }
+    }
+    .box-container.right-side{
+        padding-left:150px;
+    }
+    .featured-home{
+        height:454px;
+    }       
+    
+    body{
+        padding:0;
+    }
+}
+@media (min-width:$screen-sm-min) and (max-width:$screen-md-max){
+    .box-container{
+        .box-center-container.horrizontal-parallax-banner{
+            height:524px;
+        }
+    }
+}
+
+
+

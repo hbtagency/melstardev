@@ -1,0 +1,13 @@
+#body-mask{
+    position:absolute;
+    z-index: 99;
+    width:100%;
+    background-color:rgba(0,0,0,0.7);
+    display:none;
+    &.show{
+       display:block; 
+    }
+    &.extra-margin-left{
+        margin-left: $mobile-menu-width;
+    }
+}

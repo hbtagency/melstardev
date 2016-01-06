@@ -1,0 +1,20 @@
+$list-padding : 30px;
+
+.centered_nav_area{
+    padding:70px 30px 60px 30px;
+    width:100%;
+    display: block;
+    text-align: center;
+    
+    .centered_list_nav{
+        li{
+            text-transform: uppercase;
+            font-size:16px;
+        }
+        
+    }
+}
+
+//You will need to define list padding before you list scss file
+@import 'sub_components/__centered_list_nav.scss';
+@import 'media_queries/__centered_nav_container.scss';

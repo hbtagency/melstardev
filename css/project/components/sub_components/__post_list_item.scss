@@ -1,0 +1,28 @@
+.post_list_item{
+    a{
+        display:inline-block;
+    }
+    .read_more{
+        margin-top:15px;
+        display:inline-block;
+        font-weight: bold;
+        padding: 12px 25px 12px 25px;
+        font-family: $font-fu-bold;
+    }
+    
+    .learn_more{
+        color:$title_blue;
+        text-decoration: underline;
+        text-transform: uppercase;
+        margin:15px 0;
+        font-family:$font-fu-book;
+    }
+    .whats_on{
+        text-transform: uppercase;
+        text-decoration: underline;
+        margin:0 0 15px 0;
+    }
+    
+    padding-bottom: 30px;
+}
+

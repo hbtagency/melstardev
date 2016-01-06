@@ -1,0 +1,50 @@
+.instagram{
+	text-align: center;
+	padding-bottom: 30px;
+        padding-top:30px;
+	.instagram_title{
+            padding-top: 50px;
+            font-size: 40px;
+            font-family: $font-fu-book;
+	}
+
+	.instagram_subtitle{
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-family: $font-fu-book;
+            color: $content_gray;
+	}
+
+	.instagram{
+            margin-top: 20px;
+	}
+
+	#instafeed a img{
+	    display:block;
+	    width:100%;
+	}
+        
+	#instafeed a{
+	    display:inline-block;
+	    margin:5px !important;
+	    float:center;
+	    width:135px;
+	    margin:0;
+	    padding:0;
+            border:1px solid $silver_gray;
+            @include transition(all 0.3s ease);
+
+	}
+        
+	#instafeed a:hover{
+	    opacity:0.6;
+	    -ms-opacity:0.6;
+	    -webkit-opacity:0.6;
+	    -moz-opacity:0.6;
+	    -o-box-shadow:0.6;
+
+            
+
+	}
+}
+

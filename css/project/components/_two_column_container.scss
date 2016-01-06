@@ -1,0 +1,12 @@
+.container.two_column{
+    padding:60px 15px 60px 15px;
+    h1{
+        color:$head_blue;
+    }
+}
+
+@media (max-width:$screen-xxs-max){
+    .container.two_column{
+        padding:30px 15px 30px 15px;
+    }
+}

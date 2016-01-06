@@ -1,0 +1,17 @@
+$rotation_time:800ms;
+
+#rotate{
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+}
+
+#rotate.over,.ticket_tab_rotate_trigger .over{
+    transform: rotate( -180deg );            
+    transition: transform $rotation_time ease;
+} 
+
+#rotate.out,.ticket_tab_rotate_trigger .out{
+    transform: rotate( -360deg );
+    transition: transform $rotation_time ease;
+} 

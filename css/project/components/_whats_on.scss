@@ -1,0 +1,124 @@
+.whats_on{
+	margin-top: 40px;
+        margin-left:0;
+        
+	text-align: center;
+	font-family: $font-fu-book;
+	font-size: 40px;
+	font-weight: 30px;
+        @include transition(all 1s ease);
+
+        &.move-left{
+            width:100%;
+            margin-left:$mobile-menu-width;
+            @include transition(all 1s ease);
+
+        }
+        
+	.whatson_content{
+		margin-top: 30px;
+		height:250px;
+
+		.centered{
+		    position: absolute;
+		    left: 0;
+		    right: 0;
+		    transform: translate(0,-150px);
+
+    		.whatson_carousel_title{
+				color: #fff;
+			}
+
+			.whatson_carousel_content{
+				color: #fff;
+			}
+		}
+
+		&:hover{
+			span.whatson_hover_content{
+				opacity: 1;
+				height: 188px;	
+			}
+			.whatson_view_button{
+				display: block;
+			}
+		}
+	}
+
+	.image_wrapper{
+		height: 188px;
+
+		img{
+			margin: 0 auto;
+		}
+	}
+
+	.whatson_carousel_textarea{
+		@include transition(all 0.5s ease 0s);
+		height: 50px;
+
+		.whatson_carousel_title{
+			margin-top: 10px;
+			font-family: $font-fu-l;
+			font-size: 15px;
+		    letter-spacing: -0.3px;
+			color: #000000;
+		}
+
+		.whatson_carousel_content{
+			font-size: 13px;
+		    letter-spacing: -0.3px;
+			color: $content_gray;
+		}	
+
+		.whatson_view_button{
+			display: none;
+		}
+
+		.whatson_view_button a{
+			color: white;
+			text-decoration: none;
+			border: 2px solid;
+			font-size: 16px;
+			font-family: $font-fu-bold;	
+			padding: 10px 25px 5px 25px;
+			@include transition(all 0.1s ease);
+
+			&:hover{
+				box-shadow: inset 0 0 0 1px #fff;
+			}
+		}
+	}
+
+	.whatson_hover_content {
+		@include transition(height 0.5s ease);
+	    
+		height: 0px;
+
+		background: rgba(0,0,0,0.5);
+		color: white;
+		display: table;
+		left: 15px;
+		position: absolute;
+		
+		width: 360px;
+		opacity: 1;
+		overflow: hidden;
+		// top: 0;
+		bottom: 62px;
+	}
+}
+
+// Slick outline
+.slick-initialized .slick-slide{
+	outline: none;
+}
+
+.slick-next{
+    top: 43% !important;
+}
+.slick-prev{
+    top: 43% !important;
+}
+
+@import "media_queries/__whats_on.scss";

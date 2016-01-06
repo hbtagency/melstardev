@@ -1,0 +1,97 @@
+.whats_new{
+	margin-top: 20px;
+	text-align: center;
+	padding-bottom: 30px;
+
+	.whats_news_title{
+		color: white;
+		padding-top: 50px;
+		font-size: 40px;
+	}
+
+    .whatsnew_content{
+            margin-top:30px;
+            height:250px;
+
+            .centered{
+                transform: translate(0,-150px);
+            }
+
+            &:hover{
+                    span.whatsnew_hover_content{
+                            height: 190px;	
+                    }
+                    .whatsnew_play_button{
+                            display: block;
+                    }
+            }
+    }
+
+	.whats_news_image_wrapper{
+		width: 100%;
+		height: 189px;
+		background-color: white;
+
+	}
+
+	.whatsnew_carousel_img{
+		max-width: 100%;
+		max-height: 100%;
+	    margin: 0 auto;
+	    // width: 100%;
+	}
+	.whatsnew_carousel_textarea{
+		@include transition(all 0.5s ease 0s);
+		min-height: 50px;
+
+            .whatsnew_carousel_title{
+                margin-top: 10px;
+                font-family: $font-fu-l;
+                font-size: 15px;
+                letter-spacing: -0.3px;
+                color: #fff;
+            }
+
+            .whatsnew_carousel_content{
+                    margin-top: 10px;
+                font-family: $font-fu-l;
+                font-size: 13px;
+                letter-spacing: -0.3px;
+                color: #fff;
+            }
+
+            .whatsnew_play_button{
+                    display: none;
+            }
+
+            .whatsnew_play_button a{
+                    color: white;
+                    text-decoration: none;
+                    font-size: 16px;
+                    font-family: $font-fu-bold;	
+            }
+    }
+
+    .whatsnew_hover_content {
+            @include transition(height 0.5s ease);
+
+            height: 0px;
+            background: rgba(0,0,0,0.5);
+            display: table;
+            // left: 15px;
+            position: absolute;
+            width: 360px;
+            overflow: hidden;
+            bottom: 60px;
+    }
+}
+
+
+.slick-next-white{
+    top: 40% !important;
+}
+.slick-prev-white{
+    top: 40% !important;
+}
+
+@import "media_queries/__whats_new.scss";

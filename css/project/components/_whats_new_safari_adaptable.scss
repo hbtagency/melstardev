@@ -1,0 +1,112 @@
+.whats_new_container{
+    margin-top: 20px;
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top:50px; 
+    .container{
+        .row{
+            h1{
+                color:#fff;
+            }
+            .slick-carousel{
+                position:relative;
+                .autoplay{
+                    .item{
+                        .do_not_activate_hover_for_text_area{
+                            width:100%;
+                            height:50px;
+                            position:absolute;
+                            bottom:-5px;
+                            display:block;
+                            background-color:black;
+                        }
+                        margin:12px;
+                        position:relative;
+                        .img-div{
+                            overflow:hidden;
+                           .whats_new_mask{
+                                position: absolute;
+                                background-color:rgba(0,0,0,0.4);
+                                width:100%;
+                                height:100%;
+                                display:block;
+                                left:0;
+                                top:300px;
+                                z-index: 9;
+                                @include transition(all 0.4s ease);
+                            } 
+                            &.hovered{
+                                .whats_new_mask{
+                                    top:0;
+                                } 
+                            }
+                        }
+                        
+                        .whatsnew_carousel_textarea{
+                            @include transition(all 0.5s ease 0s);
+                            display:block;
+                            height:42px;
+                            padding-top:10px;
+                            .whatsnew_carousel_title{
+                                font-family: $font-fu-l;
+                                font-size: 15px;
+                                letter-spacing: -0.3px;
+                                color: #fff;
+                            }
+
+                            .whatsnew_play_button{
+                                display: none;
+                            }
+
+                            .whatsnew_play_button a{
+                                color: white;
+                                text-decoration: none;
+                                font-size: 16px;
+                                font-family: $font-fu-bold;
+                            }
+                            &.hovered{
+                                position:absolute !important;
+                                top:25px;
+                                z-index:10;
+                                
+                                .whatsnew_carousel_title{
+                                    font-family: $font-fu-l;
+                                    font-size: 15px;
+                                    letter-spacing: -0.3px;
+                                    color: #fff;
+                                    width:80%;
+                                    margin:auto;
+                                    margin-bottom: 10px;
+                                }
+
+                                .whatsnew_play_button{
+                                    display: block;
+                                }
+
+                                .whatsnew_play_button a{
+                                    color: white;
+                                    text-decoration: none;
+                                    font-size: 16px;
+                                    font-family: $font-fu-bold;	
+                                }
+                            }
+                        }
+
+                    }
+                }
+                .controls{
+                    position:absolute;
+                    display:block;
+                    top:50%;
+                    margin-top:-29px;
+                }
+                .controls.prev{
+                    left:-15px;
+                }
+                .controls.next{
+                    right:-15px;
+                }
+            }
+        }
+    }
+}

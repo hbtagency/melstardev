@@ -1,0 +1,9 @@
+.two_column_posts{
+    margin-top:60px;
+}
+
+@media (max-width:$screen-xxs-max){
+    .two_column_posts{
+        margin-top:30px ;
+    }
+}

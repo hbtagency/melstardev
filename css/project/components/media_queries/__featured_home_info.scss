@@ -1,0 +1,16 @@
+@media (max-width:$screen-md-max){
+    .featured_home_info{
+	.full-screen-container{
+            padding-top:15px;
+            .info_content{
+                font-size: 14px
+            }
+            .infomation{
+                font-size:13px;
+                h3{
+                    font-size:18px;
+                }
+            }
+	}
+    }
+}

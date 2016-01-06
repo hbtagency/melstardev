@@ -1,0 +1,65 @@
+$interest_width: 150px;
+$join_button_width: 80px;
+
+.subscribe{
+	background-color: $gray_background;
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+	.subscribe_form{
+		padding-left: $interest_width + 40;
+		padding-right: $join_button_width;
+		float: left;
+		width: 100%;
+	}
+
+	.subscribe_title{
+		font-size: 20px;
+		font-family: $font-fu-book;
+		margin-bottom: 40px;
+	}
+
+	.interst{
+		margin-left: -166px;
+		width: $interest_width;
+		float: left;
+
+		select{
+			width: 100%;
+			height: 30px;
+			border: 0px;
+			padding-left: 10px;
+		}
+	}
+
+	.fluid_container {
+		width: 95%;
+		float: center;
+		position: relative;
+		left: 11px;
+
+		input.inline-block{
+			width: 30%;
+			margin-right: 15px;
+			border: 0px;
+			height: 50px;
+			padding-left: 26px;
+		}
+
+	}
+
+	.join_button{
+		margin-right: -$join_button_width;
+		padding-top: 15px;
+		width: $join_button_width + 40;
+		float: right;
+		background-color: black;	
+		height: 50px;
+
+		a{
+			color: white;
+			font-family: $font-fu-bold;
+		}
+	}
+}
