@@ -8,5 +8,6 @@ To use this repository you will need to
 6. Refresh umbraco project and rebuild solution 
 7. Rebuild the solution after file overwritten (bin folder is not sync as defined in git ignore)
 8. Ctrl+F5 to run project. 
+9. Either copy .git folder or re-init git to github. 
 
 All done and good luck!
