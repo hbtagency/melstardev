@@ -86,7 +86,8 @@ css/cache/sassOutput/
 **/App_Data/Logs/
 **/App_Data/[Pp]review/
 **/App_Data/TEMP/
-Cached/
+**/App_Data/cache/
+**/Cached/
 
 # Ignore Umbraco content cache file
 **/App_Data/umbraco.config
