@@ -1,79 +1,38 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
+
 <!-- What's On -->
 <div class="whats_on">
     <div class="container">
         <h1>@Umbraco.Field("whatsOnTitle")</h1>
         <div class="whats_on_carousel row">
-            <div class="col-md-4 whatson_content clearfix">
-                <div class="image_wrapper clearfix">
-                    <a href="#"><img class="img-responsive whatson_carousel_img" src='img/whatson_img1.jpg' /></a>
-                    <span class="whatson_hover_content"><span></span></span>
-                </div>
-                <div class="whatson_carousel_textarea clearfix">
-                    <div class="whatson_carousel_title">
-                        SCHOOL HOLIDAY FUN THIS WINTER
+            @{
+                var whatson = Umbraco.Content(1071);
+                
+                foreach(var c in whatson.Children())
+                {
+                    var content = c.pageTitle;
+                    var feature_img_url = Umbraco.Media(c.featuredImage).umbracoFile;
+
+                    <div class="col-md-4 whatson_content clearfix">
+                        <div class="image_wrapper clearfix">
+                            <a href="#"><img class="img-responsive whatson_carousel_img" src='@feature_img_url' /></a>
+                            <span class="whatson_hover_content"><span></span></span>
+                        </div>
+                        <div class="whatson_carousel_textarea clearfix">
+                            <div class="whatson_carousel_title">
+                                @c.postHeading
+                            </div>
+                            <div class="whatson_carousel_content">
+                                @c.postSubheading
+                            </div>
+                            <div class="whatson_view_button">
+                                <a href="#">VIEW</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="whatson_carousel_content">
-                        22ND JUNE TO 12TH JULY
-                    </div>
-                    <div class="whatson_view_button">
-                        <a href="#">VIEW</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 whatson_content clearfix">
-                <div class="image_wrapper clearfix">
-                    <a href="#"><img class="img-responsive whatson_carousel_img" src='img/whatson_img2.jpg' /></a>
-                    <span class="whatson_hover_content"><span></span></span>
-                </div>
-                <div class="whatson_carousel_textarea clearfix">
-                    <div class="whatson_carousel_title">
-                        FACE PAINING AND BALLOONS AT THE STAR
-                    </div>
-                    <div class="whatson_carousel_content">
-                        27TH JUNE TO 11TH JULY
-                    </div>
-                    <div class="whatson_view_button">
-                        <a href="#">VIEW</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 whatson_content clearfix">
-                <div class="image_wrapper clearfix">
-                    <a href="#"><img class="img-responsive whatson_carousel_img" src='img/whatson_img3.jpg' /></a>
-                    <span class="whatson_hover_content"><span></span></span>
-                </div>
-                <div class="whatson_carousel_textarea clearfix">
-                    <div class="whatson_carousel_title">
-                        DOCKLANDS WINTER FIREWORKS
-                    </div>
-                    <div class="whatson_carousel_content">
-                        3RD JULY TO 28TH AUGUST
-                    </div>
-                    <div class="whatson_view_button">
-                        <a href="#">VIEW</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 whatson_content">
-                <div class="image_wrapper clearfix">
-                    <a href="#">
-                        <img class="img-responsive whatson_carousel_img" src='img/whatson_img1.jpg' />
-                    </a>                            <span class="whatson_hover_content"><span></span></span>
-                </div>
-                <div class="whatson_carousel_textarea clearfix">
-                    <div class="whatson_carousel_title">
-                        SCHOOL HOLIDAY FUN THIS WINTER
-                    </div>
-                    <div class="whatson_carousel_content">
-                        22ND JUNE TO 12TH JULY
-                    </div>
-                    <div class="whatson_view_button">
-                        <a href="#">VIEW</a>
-                    </div>
-                </div>
-            </div>
+                }
+            }
         </div>
     </div>
 </div>

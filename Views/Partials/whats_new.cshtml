@@ -7,72 +7,39 @@
             <div class="whats_news_title">@Umbraco.Field("whatsNewTitle")</div>
         </div>
         <div class="whats_new_carousel row clearfix">
-            <!-- Template -->
-            <div class="col-md-4 whatsnew_content clearfix">
-                <div class="whats_news_image_wrapper clearfix">
-                    <img class="whatsnew_carousel_img img-responsive" src='img/whatsnew_img1.jpg' />
-                    <span class="whatsnew_hover_content"><span></span></span>
-                </div>
-                <div class="whatsnew_carousel_textarea clearfix">
-                    <div class="whatsnew_carousel_title">
-                        THE MELBOURNE STAR EXPERIENCE
+            
+            @{
+                var whatson = Umbraco.Content(1072);
+
+                foreach(var c in whatson.Children())
+                {
+                    var content = c.pageTitle;
+                    var feature_img_url = Umbraco.Media(c.featuredImage).umbracoFile;
+
+                    <!-- Template -->
+                    <div class="col-md-4 whatsnew_content clearfix">
+                        <div class="whats_news_image_wrapper clearfix">
+                            <img class="whatsnew_carousel_img img-responsive" src='@feature_img_url' />
+                            <span class="whatsnew_hover_content"><span></span></span>
+                        </div>
+                        <div class="whatsnew_carousel_textarea clearfix">
+                            <div class="whatsnew_carousel_title">
+                                @c.postHeading
+                            </div>
+                            <div class="whatsnew_carousel_content">
+                                @c.postSubheading
+                            </div>
+                            <div class="whatsnew_play_button">
+                                <a href="#"><img class="center" style="margin-bottom:15px" src="img/play_icon.png" />WATCH</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="whatsnew_carousel_content">
-                    </div>
-                    <div class="whatsnew_play_button">
-                        <a href="#"><img class="center" style="margin-bottom:15px" src="img/play_icon.png" />WATCH</a>
-                    </div>
-                </div>
-            </div>
-            <!-- End of Template -->
-            <div class="col-md-4 whatsnew_content clearfix">
-                <div class="whats_news_image_wrapper clearfix">
-                    <img class="whatsnew_carousel_img img-responsive" src='img/whatsnew_img2.jpg' />
-                    <span class="whatsnew_hover_content"><span></span></span>
-                </div>
-                <div class="whatsnew_carousel_textarea clearfix">
-                    <div class="whatsnew_carousel_title">
-                        MELBOURNE STAR GOES PINK
-                    </div>
-                    <div class="whatsnew_carousel_content">
-                    </div>
-                    <div class="whatsnew_play_button">
-                        <a href="#"><img class="center" style="margin-bottom:15px" src="img/play_icon.png" />WATCH</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 whatsnew_content clearfix">
-                <div class="whats_news_image_wrapper clearfix">
-                    <img class="whatsnew_carousel_img img-responsive" src='img/whatsnew_img3.jpg' />
-                    <span class="whatsnew_hover_content"><span></span></span>
-                </div>
-                <div class="whatsnew_carousel_textarea clearfix">
-                    <div class="whatsnew_carousel_title">
-                        MELBOURNE STAR ANNOUNCES ITS FIRST COMMUNITY PARTNER
-                    </div>
-                    <div class="whatsnew_carousel_content">
-                    </div>
-                    <div class="whatsnew_play_button">
-                        <a href="#"><img class="center" style="margin-bottom:15px" src="img/play_icon.png" />WATCH</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 whatsnew_content clearfix">
-                <div class="whats_news_image_wrapper clearfix">
-                    <img class="whatsnew_carousel_img img-responsive" src='img/whatsnew_img2.jpg' />
-                    <span class="whatsnew_hover_content"><span></span></span>
-                </div>
-                <div class="whatsnew_carousel_textarea clearfix">
-                    <div class="whatsnew_carousel_title">
-                        MELBOURNE STAR GOES PINK
-                    </div>
-                    <div class="whatsnew_carousel_content">
-                    </div>
-                    <div class="whatsnew_play_button">
-                        <a href="#"><img class="center" style="margin-bottom:15px" src="img/play_icon.png" />WATCH</a>
-                    </div>
-                </div>
-            </div>
+                    <!-- End of Template -->
+                }   
+            }
+            
+            
+
         </div>
     </div>
 </div>
