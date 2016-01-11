@@ -1,805 +1,159 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = "Layout.cshtml";
+    var bg_img_url = "";
 }
 
 <div id="body-mask" class="body-mask">
 </div>
+@Html.Partial("mobile_nav")
 
-<!-- Mobile Menu -->
-<div class="mobile-menu-sidebar hidden-lg clearfix" id="leftMobileMenu">
-    <a id="close-mobile" href="#">
-        <img class="pull-right img-responsive" src="img/close.png" />
-    </a>
-    <div class="accordion">
-        <div class="accordion-group hidden-lg">
-            <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
-                    <i class="icon-th"></i> Main one
-                </a>
-            </div>
-        </div>
-        <div class="accordion-group hidden-lg">
-            <div class="accordion-heading collapsed_item">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseMainTwo">
-                    <i class="icon-list-alt"></i> Main two
-                </a>
-            </div>
 
-            <div id="collapseMainTwo" class="accordion-body collapse" style="height: 0px; ">
-                <div class="accordion-inner">
-                    <ul>
-                        <li><a href='#'>This is one</a></li>
-                        <li><a href='#'>This is two</a></li>
-                        <li><a href='#'>This is three</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="accordion-group hidden-lg">
-            <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
-                    <i class="icon-th"></i> Main three
-                </a>
-            </div>
-        </div>
+@if(CurrentPage.HasValue("homeBannerImg")){
+    var dynamicMediaItem = Umbraco.Media(CurrentPage.homeBannerImg);
+    bg_img_url = dynamicMediaItem.umbracoFile;
+}
+    <div class="box-center-container clearfix right-side horrizontal-parallax-banner" id="parralax-hero" style="background:url('@bg_img_url') no-repeat;background-size:110% auto;">
 
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
-                    <i class="icon-th"></i> Layout
-                </a>
-            </div>
-        </div>
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
-                    <i class="icon-th-list"></i> UI Components
-                </a>
-            </div>
-        </div>
-        <div class="accordion-group">
-            <div class="accordion-heading collapsed_item">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#cf">
-                    <i class="icon-list-alt"></i> Forms
-                </a>
-            </div>
+        
 
-            <div id="cf" class="accordion-body collapse" style="height: 0px; ">
-                <div class="accordion-inner">
-                    <ul>
-                        <li><a href='#'>This is one</a></li>
-                        <li><a href='#'>This is two</a></li>
-                        <li><a href='#'>This is three</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
-                    <i class="icon-cog"></i> Plugins
-                </a>
-            </div>
-        </div>
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
-                    <i class="icon-file"></i> Templates
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="box-container home_box clearfix" id="box-container">
-    <div class="left-bar box-sidebar pull-left" id="left-bar">
-        <!-- More Menu Component -->
-        <button type="button" role="button" id="view_more_button" aria-label="Toggle Navigation" class="lines-button arrow arrow-left visible-lg">
-            <span class="lines"></span>
-        </button>
-
-        <div class="accordion" id="leftMenu">
-            <div class="accordion-group">
-                <div class="accordion-heading">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
-                        <i class="icon-th"></i> Layout
-                    </a>
-                </div>
-            </div>
-            <div class="accordion-group">
-                <div class="accordion-heading">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
-                        <i class="icon-th-list"></i> UI Components
-                    </a>
-                </div>
-            </div>
-            <div class="accordion-group">
-                <div class="accordion-heading collapsed_item">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseFour">
-                        <i class="icon-list-alt"></i> Forms
-                    </a>
-                </div>
-
-                <div id="collapseFour" class="accordion-body collapse" style="height: 0px; ">
-                    <div class="accordion-inner">
-                        <ul>
-                            <li><a href='#'>This is one</a></li>
-                            <li><a href='#'>This is two</a></li>
-                            <li><a href='#'>This is three</a></li>
+            <!-- Top Nav -->
+            <div class="top_nav">
+                <div class="full-screen-container visible-lg">
+                    <!-- Search component -->
+                    <div class="search inline-block">
+                        <ul class="nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle inline-block search_button" data-toggle="dropdown">
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="navbar--list-item">
+                                        <form action="#" method="post">
+                                            <input type="text" value="" placeholder="Enter key words ..." />
+                                            <a href="#" class="submit search_button pull-right">
+                                            </a>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
-                </div>
-            </div>
-            <div class="accordion-group">
-                <div class="accordion-heading">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
-                        <i class="icon-cog"></i> Plugins
-                    </a>
-                </div>
-            </div>
-            <div class="accordion-group">
-                <div class="accordion-heading">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
-                        <i class="icon-file"></i> Templates
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- End of Mobile Menu Component -->
-        <!--
-        <button type="button" class="navbar-toggle collapsed pull-right lines-button arrow-left" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" id="nav-button">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        -->
-        <!--<a class="view-more-text">More</a>-->
-    </div>
-    <div class="box-center-container clearfix right-side horrizontal-parallax-banner" id="parralax-hero" style="background:url('img/feature_bg_fullscreen.jpg') no-repeat;background-size:110% auto;">
-        <!-- Top Nav -->
-        <div class="top_nav">
-            <div class="full-screen-container visible-lg">
-                <!-- Search component -->
-                <div class="search inline-block">
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle inline-block search_button" data-toggle="dropdown">
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="navbar--list-item">
-                                    <form action="#" method="post">
-                                        <input type="text" value="" placeholder="Enter key words ..." />
-                                        <a href="#" class="submit search_button pull-right">
+                    <!-- End of search component -->
+                    <!-- Language component -->
+                    <div class="language inline-block">
+                        <ul class="nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle inline-block" data-toggle="dropdown">
+                                    <img src="img/ausflag.jpg" alt="$alt" class="center block " />
+                                    <span class="block text">AUS</span>
+                                    <img src="img/arrow_down.jpg" class="center block" />
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="navbar--list-item">
+                                        <a class="menu--link" href="#">
+                                            <img src="img/ausflag.jpg" alt="$alt" />
+                                            <span>English</span>
                                         </a>
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <!-- End of search component -->
-                <!-- Language component -->
-                <div class="language inline-block">
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle inline-block" data-toggle="dropdown">
-                                <img src="img/ausflag.jpg" alt="$alt" class="center block " />
-                                <span class="block text">AUS</span>
-                                <img src="img/arrow_down.jpg" class="center block" />
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="navbar--list-item">
-                                    <a class="menu--link" href="#">
-                                        <img src="img/ausflag.jpg" alt="$alt" />
-                                        <span>English</span>
-                                    </a>
-                                </li>
-                                <li class="navbar--list-item">
-                                    <a class="menu--link" href="#">
-                                        <img src="img/cnflag.jpg" alt="$alt" />
-                                        <span>Chinese</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Language component -->
+                                    </li>
+                                    <li class="navbar--list-item">
+                                        <a class="menu--link" href="#">
+                                            <img src="img/cnflag.jpg" alt="$alt" />
+                                            <span>Chinese</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Language component -->
 
-
-                <nav class="navbar inline-block contact-us">
-                    <ul class="nav navbar-nav level-1">
-                        <li class="root">
-                            <!-- Link tag only if link is present in backend -->
-                            <a href="$link">
-                                <!-- END IF -->
-                                <span class="menu--link-text current-parent">Contact Us</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                    <nav class="navbar inline-block contact-us">
+                        <ul class="nav navbar-nav level-1">
+                            <li class="root">
+                                <!-- Link tag only if link is present in backend -->
+                                <a href="$link">
+                                    <!-- END IF -->
+                                    <span class="menu--link-text current-parent">Contact Us</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-        </div>
-        <!-- End of Top Nav -->
-        <!-- Main Nav -->
-        <div class="main_nav home_nav clearfix" id="main_navigation">
-            <div class="full-screen-container">
-                <!-- Mobile Menu Component -->
-                <div class="mobile-menu hidden-lg">
-                    <!--
-                    <button type="button" role="button" aria-label="Toggle Navigation" class="lines-button arrow arrow-left pull-right visible-lg">
-                      <span class="lines"></span>
-                    </button>-->
+            <!-- End of Top Nav -->
+            @Html.Partial("main_nav")
 
-                    <button type="button" class="navbar-toggle collapsed pull-left lines-button arrow-left" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" id="nav-button">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
 
-                <!-- logo -->
-                <div class="rotating_logo_div logo left visible-lg">
-                    <a href="home.html" class="rotate_logo clearfix" id="rotate_logo_trigger">
-                        <img src="img/wheel.png" id="rotate_logo" />
-                        <div class="logo_text">
-                            <span class="white">Melbourne</span>
-                            <span class="green">Star</span>
-                        </div>
-
+            <!-- Featured home area -->
+            <div id="featured_area" class="featured-home">
+                <div class="banner-text clearfix">
+                    <h1>
+                        @Umbraco.Field("sloganTitle")
+                    </h1>
+                    <a href='#' class="button button-white">
+                        @Umbraco.Field("bannerButtonTitle")
                     </a>
                 </div>
-                <div class="logo inline-block left hidden-lg" id="logo">
-                    <a href="#" class="logo_span"></a>
+                <div class="floating-star">
+                    <img class="img-responsive" src='img/star.png' />
                 </div>
-
-                <!-- ticket -->
-                <div class="buy_tickets inline-block right visible-lg">
-                    <span class="uppercase"><a href="https://online.melbournestar.com/e-commerce/">Buy Ticket</a></span>
-                    <!-- Put buy ticket div in here but use absolute position -->
-                    <a class="book-ticket-button" id="book-ticket-button" />
-                    BOOK YOUR TICKETS
-                    <img id="rotate" class="img-responsive" src="img/plus.png" />
-                    </a>
-                    <!-- book-ticket-area-->
-                    <div class="book-ticket-area" id="book-ticket-area">
-                        <div class="accordion">
-                            <div class="accordion-group">
-                                <div class="accordion-heading main_heading">
-                                    BOOK YOUR TICKET
-                                    <a id='close-ticket' class="clearfix pull-right">
-                                        <img class="img-responsive" src="img/close_ticket.png" />
-                                    </a>
-                                </div>
-
-                            </div>
-                            <div class="accordion-group">
-                                <div class="accordion-heading collapsed_item">
-                                    <a class="accordion-toggle ticket_tab_rotate_trigger" data-toggle="collapse" data-parent="#leftMenu" href="#ticketTabOne">
-                                        <i class="icon-list-alt"></i>SINGLE FLIGHT
-                                    </a>
-                                </div>
-                                <div id="ticketTabOne" class="accordion-body collapse" style="height: 0px; ">
-                                    <div class="accordion-inner">
-                                        <div class="input-row white_row clearfix">
-                                            <span class="inline-block ticket_type">
-                                                adult ticket
-                                            </span>
-                                            <span class="inline-block ticket_price">
-                                                $34
-                                            </span>
-                                            <span class="inline-block ticket_number">
-                                                <input type="number" value="1" />
-                                            </span>
-                                        </div>
-
-                                        <div class="input-row white_row clearfix">
-                                            <span class="inline-block ticket_type">
-                                                child ticket
-                                            </span>
-                                            <span class="inline-block ticket_price">
-                                                $34
-                                            </span>
-                                            <span class="inline-block ticket_number">
-                                                <input type="number" value="1" />
-                                            </span>
-                                        </div>
-
-                                        <div class="input-row link_row">
-                                            <a href="#">Concession and senior flight: $30</a><br>
-                                        </div>
-                                        <div class="input-row link_row">
-                                            <a href="#">Family Discount</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-group">
-                                <div class="accordion-heading collapsed_item">
-                                    <a class="accordion-toggle ticket_tab_rotate_trigger" data-toggle="collapse" data-parent="#leftMenu" href="#ticketTabTwo">
-                                        <i class="icon-list-alt"></i> day & NIGHT FLIGHT
-                                    </a>
-                                </div>
-                                <div id="ticketTabTwo" class="accordion-body collapse" style="height: 0px; ">
-                                    <div class="accordion-inner">
-                                        <div class="input-row white_row clearfix">
-                                            <span class="inline-block ticket_type">
-                                                adult ticket
-                                            </span>
-                                            <span class="inline-block ticket_price">
-                                                $34
-                                            </span>
-                                            <span class="inline-block ticket_number">
-                                                <input type="number" value="1" />
-                                            </span>
-                                        </div>
-
-                                        <div class="input-row white_row clearfix">
-                                            <span class="inline-block ticket_type">
-                                                child ticket
-                                            </span>
-                                            <span class="inline-block ticket_price">
-                                                $34
-                                            </span>
-                                            <span class="inline-block ticket_number">
-                                                <input type="number" value="1" />
-                                            </span>
-                                        </div>
-
-                                        <div class="input-row link_row">
-                                            <a href="#">Concession and senior flight: $30</a><br>
-                                        </div>
-                                        <div class="input-row link_row">
-                                            <a href="#">Family Discount</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-group">
-                                <div class="accordion-heading collapsed_item">
-                                    <a class="accordion-toggle ticket_tab_rotate_trigger" data-toggle="collapse" data-parent="#leftMenu" href="#ticketTabThree">
-                                        <i class="icon-list-alt"></i>ANNUAL PASS
-                                    </a>
-                                </div>
-                                <div id="ticketTabThree" class="accordion-body collapse" style="height: 0px; ">
-                                    <div class="accordion-inner">
-                                        <div class="input-row white_row clearfix">
-                                            <span class="inline-block ticket_type">
-                                                adult ticket
-                                            </span>
-                                            <span class="inline-block ticket_price">
-                                                $34
-                                            </span>
-                                            <span class="inline-block ticket_number">
-                                                <input type="number" value="1" />
-                                            </span>
-                                        </div>
-
-                                        <div class="input-row white_row clearfix">
-                                            <span class="inline-block ticket_type">
-                                                child ticket
-                                            </span>
-                                            <span class="inline-block ticket_price">
-                                                $34
-                                            </span>
-                                            <span class="inline-block ticket_number">
-                                                <input type="number" value="1" />
-                                            </span>
-                                        </div>
-
-                                        <div class="input-row link_row">
-                                            <a href="#">Concession and senior flight: $30</a><br>
-                                        </div>
-                                        <div class="input-row link_row">
-                                            <a href="#">Family Discount</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+            </div>
+            <!-- End of Featured-home -->
+            <div class="featured_home_info clearfix" id="featured_home_info">
+                <div class="full-screen-container">
+                    <div class="col-sm-4 infomation">
+                        <h3>
+                            <img class="nav_icon" src='img/nav-icon.jpg' />
+                            @Umbraco.Field("firstColTitle")
+                        </h3>
+                        <div class="info_content">
+                            @Umbraco.Field("firstColContent")
                         </div>
-                        <div class="sit_bottom_container clearfix">
-                            <div class="ticket_pricing_button_div ">
-                                <a class="ticket_pricing_button button" href='#'>ticket & pricing</a>
-                            </div>
-                            <a class="view-cart">
-                                View cart
-                                <span class="price">
-                                    ($54)
-                                </span>
-                            </a>
+                    </div>
+                    <div class="col-sm-4 infomation hidden-xs">
+                        <h3>
+                            <!--<img class="nav_icon" src ='img/whatson_icon.jpg'/>-->
+                            @Umbraco.Field("secondColTitle")
+                        </h3>
+                        <div class="info_content">
+                            @Umbraco.Field("secondColContent")
+                        </div>
+                        <a id="bouncing_arrow" class="clearfix bounce" href="#">
+                            <img src='img/arrow.jpg' />
+                        </a>
+                    </div>
+                    <div class="col-sm-4 infomation hidden-xs">
+                        <h3>
+                            @Umbraco.Field("thirdColTitle")
+                        </h3>
+                        <div class="info_content">
+                            <!--<img class="nav_icon hidden-sm" src ='img/open_today.jpg'/>-->
+                            @Umbraco.Field("thirdColContent")
                         </div>
                     </div>
                 </div>
-                <!-- main navbar -->
-                <nav class="navbar inline-block pull-right visible-lg" id="main_nav">
-                    <ul class="nav navbar-nav level-1">
-                        <li class="root">
-                            <!-- Link tag only if link is present in backend -->
-                            <a class="dropdown-toggle menu--link" href="ticket_pricing.html">
-                                <!-- END IF -->
-                                <span class="menu--link-text current-parent">ticket & pricing</span>
-                                <!-- Control to use: -->
-                                <i class="icon menu--icon "></i>
-                            </a>
-                        </li>
-                        <li class="root">
-                            <!-- Link tag only if link is present in backend -->
-                            <a class="dropdown-toggle menu--link" href="news_events.html">
-                                <!-- END IF -->
-                                <span class="menu--link-text current-parent">news & events</span>
-                                <!-- Control to use: -->
-                                <i class="icon menu--icon "></i>
-                            </a>
-                        </li>
-                        <li class="root">
-                            <!-- Link tag only if link is present in backend -->
-                            <a class="dropdown-toggle menu--link" href="function.html">
-                                <!-- END IF -->
-                                <span class="menu--link-text current-parent">functions & catering</span>
-                                <!-- Control to use: -->
-                                <i class="icon menu--icon "></i>
-                            </a>
-                        </li>
-
-
-                        <li class="root dropdown">
-                            <!-- Link tag only if link is present in backend -->
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span class="menu--link-text current-parent">Dropdown Sample</span>
-                                <span class="arrow_down"></span>
-                            </a>
-                            <!-- Second level Nav Item -->
-                            <ul class="dropdown-menu level-2">
-                                <li class="">
-                                    <a class="" href="#">
-                                        <span class="">This is a very long sample name</span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a class="" href="#">
-                                        <span class="">Sample</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
             </div>
+            <!-- End of Featured_home_info -->
         </div>
-        <!-- End of Main Nav -->
-        <!-- Featured home area -->
-        <div id="featured_area" class="featured-home">
-            <div class="banner-text clearfix">
-                <h1>
-                    IT'S MORE THAN A VIEW.
-                    IT'S AN EXPRIENCE.
-                </h1>
-                <a href='#' class="button button-white">
-                    BOOK NOW
-                </a>
-            </div>
-            <div class="floating-star">
-                <img class="img-responsive" src='img/star.png' />
-            </div>
-        </div>
-        <!-- End of Featured-home -->
-        <div class="featured_home_info clearfix" id="featured_home_info">
-            <div class="full-screen-container">
-                <div class="col-sm-4 infomation">
-                    <h3>
-                        <img class="nav_icon" src='img/nav-icon.jpg' />
-                        GETTING HERE
-                    </h3>
-                    <div class="info_content">
-                        101 Waterfront way, Docklands,<br>
-                        VIC 3008, Melbourne
-                    </div>
-                </div>
-                <div class="col-sm-4 infomation hidden-xs">
-                    <h3>
-                        <!--<img class="nav_icon" src ='img/whatson_icon.jpg'/>-->
-                        WHAT'S ON
-                    </h3>
-                    <div class="info_content">
-                        SCHOOL HOLIDAY FUN THIS WINTER
-                    </div>
-                    <a id="bouncing_arrow" class="clearfix bounce" href="#">
-                        <img src='img/arrow.jpg' />
-                    </a>
-                </div>
-                <div class="col-sm-4 infomation hidden-xs">
-                    <h3>
-                        OPEN TODAY
-                    </h3>
-                    <div class="info_content">
-                        <!--<img class="nav_icon hidden-sm" src ='img/open_today.jpg'/>-->
-                        10AM TO 10PM
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End of Featured_home_info -->
-    </div>
     <div class="right-bar box-sidebar pull-right"></div>
 </div>
     </header>
 
-<!-- What's On -->
-<div class="whats_on">
-    <div class="container">
-        <h1>WHAT'S ON</h1>
-        <div class="whats_on_carousel row">
-            <div class="col-md-4 whatson_content clearfix">
-                <div class="image_wrapper clearfix">
-                    <a href="#"><img class="img-responsive whatson_carousel_img" src='img/whatson_img1.jpg' /></a>
-                    <span class="whatson_hover_content"><span></span></span>
-                </div>
-                <div class="whatson_carousel_textarea clearfix">
-                    <div class="whatson_carousel_title">
-                        SCHOOL HOLIDAY FUN THIS WINTER
-                    </div>
-                    <div class="whatson_carousel_content">
-                        22ND JUNE TO 12TH JULY
-                    </div>
-                    <div class="whatson_view_button">
-                        <a href="#">VIEW</a>
-                    </div>
-                </div>
+@Html.Partial("whats_on")
 
-            </div>
-            <div class="col-md-4 whatson_content clearfix">
-                <div class="image_wrapper clearfix">
-                    <a href="#"><img class="img-responsive whatson_carousel_img" src='img/whatson_img2.jpg' /></a>
-                    <span class="whatson_hover_content"><span></span></span>
-                </div>
-                <div class="whatson_carousel_textarea clearfix">
-                    <div class="whatson_carousel_title">
-                        FACE PAINING AND BALLOONS AT THE STAR
-                    </div>
-                    <div class="whatson_carousel_content">
-                        27TH JUNE TO 11TH JULY
-                    </div>
-                    <div class="whatson_view_button">
-                        <a href="#">VIEW</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 whatson_content clearfix">
-                <div class="image_wrapper clearfix">
-                    <a href="#"><img class="img-responsive whatson_carousel_img" src='img/whatson_img3.jpg' /></a>
-                    <span class="whatson_hover_content"><span></span></span>
-                </div>
-                <div class="whatson_carousel_textarea clearfix">
-                    <div class="whatson_carousel_title">
-                        DOCKLANDS WINTER FIREWORKS
-                    </div>
-                    <div class="whatson_carousel_content">
-                        3RD JULY TO 28TH AUGUST
-                    </div>
-                    <div class="whatson_view_button">
-                        <a href="#">VIEW</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 whatson_content">
-                <div class="image_wrapper clearfix">
-                    <a href="#">
-                        <img class="img-responsive whatson_carousel_img" src='img/whatson_img1.jpg' />
-                    </a>                            <span class="whatson_hover_content"><span></span></span>
-                </div>
-                <div class="whatson_carousel_textarea clearfix">
-                    <div class="whatson_carousel_title">
-                        SCHOOL HOLIDAY FUN THIS WINTER
-                    </div>
-                    <div class="whatson_carousel_content">
-                        22ND JUNE TO 12TH JULY
-                    </div>
-                    <div class="whatson_view_button">
-                        <a href="#">VIEW</a>
-                    </div>
-                </div>
-            </div>
+@Html.Partial("whats_new")
+
+
+<!-- Instagram-->
+<div class="instagram container">
+    <div class="row">
+        <h1>@Umbraco.Field("instagramTitle")</h1>
+        <div class="instagram_subtitle">
+            &#64;MELBOURNESTAR | &#35;MELBOURNESTAR
         </div>
     </div>
-</div>
-<!-- End of What's on -->
-<!--
-        <div class="whats_new_container" style="background:url('img/whatsnew_bg_fullscreen.jpg') no-repeat;background-size:cover;">
-            <div class="container">
-                <div class="row">
-                    <h1>WHAT'S NEWS</h1>
-                </div>
-                <div class="row">
-                    <div class="slick-carousel">
-                        <div class="autoplay">
-                            <div class="item">
-                                <div class="img-div clearfix">
-                                    <img class="whatsnew_carousel_img img-responsive" src = 'img/whatsnew_img1.jpg' />
-                                    <div class="whats_new_mask">
-                                        <div class="whatsnew_carousel_title">
-                                            MELBOURNE STAR ANNOUNCES ITS FIRST COMMUNITY PARTNER
-                                        </div>
-
-                                        <div class="whatsnew_play_button">
-                                            <a href="#"><img class="center" style="margin-bottom:15px" src="img/play_icon.png" />WATCH</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="whatsnew_carousel_textarea clearfix">
-                                    <div class="whatsnew_carousel_title">
-                                        MELBOURNE STAR ANNOUNCES ITS FIRST COMMUNITY PARTNER
-                                    </div>
-                                </div>
-                                <div class="do_not_activate_hover_for_text_area">
-
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="img-div clearfix">
-                                    <img class="whatsnew_carousel_img img-responsive" src = 'img/whatsnew_img1.jpg' />
-                                    <div class="whats_new_mask">
-                                        <div class="whatsnew_carousel_title">
-                                            MELBOURNE STAR ANNOUNCES ITS FIRST COMMUNITY PARTNER
-                                        </div>
-
-                                        <div class="whatsnew_play_button">
-                                            <a href="#"><img class="center" style="margin-bottom:15px" src="img/play_icon.png" />WATCH</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="whatsnew_carousel_textarea clearfix">
-                                    <div class="whatsnew_carousel_title">
-                                        MELBOURNE STAR ANNOUNCES ITS FIRST COMMUNITY PARTNER
-                                    </div>
-                                </div>
-                                <div class="do_not_activate_hover_for_text_area">
-
-                                </div>
-                            </div>
-                            <div class="item">
-                               <div class="img-div clearfix">
-                                    <img class="whatsnew_carousel_img img-responsive" src = 'img/whatsnew_img1.jpg' />
-                                    <div class="whats_new_mask">
-                                        <div class="whatsnew_carousel_title">
-                                            MELBOURNE STAR ANNOUNCES ITS FIRST COMMUNITY PARTNER
-                                        </div>
-
-                                        <div class="whatsnew_play_button">
-                                            <a href="#"><img class="center" style="margin-bottom:15px" src="img/play_icon.png" />WATCH</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="whatsnew_carousel_textarea clearfix">
-                                    <div class="whatsnew_carousel_title">
-                                        MELBOURNE STAR ANNOUNCES ITS FIRST COMMUNITY PARTNER
-                                    </div>
-                                </div>
-                                <div class="do_not_activate_hover_for_text_area">
-
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="img-div clearfix">
-                                    <img class="whatsnew_carousel_img img-responsive" src = 'img/whatsnew_img1.jpg' />
-                                    <div class="whats_new_mask">
-                                        <div class="whatsnew_carousel_title">
-                                            MELBOURNE STAR ANNOUNCES ITS FIRST COMMUNITY PARTNER
-                                        </div>
-
-                                        <div class="whatsnew_play_button">
-                                            <a href="#"><img class="center" style="margin-bottom:15px" src="img/play_icon.png" />WATCH</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="whatsnew_carousel_textarea clearfix">
-                                    <div class="whatsnew_carousel_title">
-                                        MELBOURNE STAR ANNOUNCES ITS FIRST COMMUNITY PARTNER
-                                    </div>
-                                </div>
-                                <div class="do_not_activate_hover_for_text_area">
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <span class="controls prev">
-                            <a href="javascript:;">
-                                <img src='plugins/slick/carousel_left_white.png'/>
-                            </a>
-                        </span>
-                        <span class="controls next">
-                            <a href="javascript:;">
-                                <img src='plugins/slick/carousel_right_white.png'/>
-                            </a>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-What's New -->
-
-
-
-
-<div class="whats_new" style="background:url('img/whatsnew_bg_fullscreen.jpg') no-repeat;background-size:cover;">
-    <div class="container">
-        <div class="row">
-            <div class="whats_news_title">WHAT'S NEWS</div>
-        </div>
-        <div class="whats_new_carousel row clearfix">
-            <!-- Template -->
-            <div class="col-md-4 whatsnew_content clearfix">
-                <div class="whats_news_image_wrapper clearfix">
-                    <img class="whatsnew_carousel_img img-responsive" src='img/whatsnew_img1.jpg' />
-                    <span class="whatsnew_hover_content"><span></span></span>
-                </div>
-                <div class="whatsnew_carousel_textarea clearfix">
-                    <div class="whatsnew_carousel_title">
-                        THE MELBOURNE STAR EXPERIENCE
-                    </div>
-                    <div class="whatsnew_carousel_content">
-                    </div>
-                    <div class="whatsnew_play_button">
-                        <a href="#"><img class="center" style="margin-bottom:15px" src="img/play_icon.png" />WATCH</a>
-                    </div>
-                </div>
-            </div>
-            <!-- End of Template -->
-            <div class="col-md-4 whatsnew_content clearfix">
-                <div class="whats_news_image_wrapper clearfix">
-                    <img class="whatsnew_carousel_img img-responsive" src='img/whatsnew_img2.jpg' />
-                    <span class="whatsnew_hover_content"><span></span></span>
-                </div>
-                <div class="whatsnew_carousel_textarea clearfix">
-                    <div class="whatsnew_carousel_title">
-                        MELBOURNE STAR GOES PINK
-                    </div>
-                    <div class="whatsnew_carousel_content">
-                    </div>
-                    <div class="whatsnew_play_button">
-                        <a href="#"><img class="center" style="margin-bottom:15px" src="img/play_icon.png" />WATCH</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 whatsnew_content clearfix">
-                <div class="whats_news_image_wrapper clearfix">
-                    <img class="whatsnew_carousel_img img-responsive" src='img/whatsnew_img3.jpg' />
-                    <span class="whatsnew_hover_content"><span></span></span>
-                </div>
-                <div class="whatsnew_carousel_textarea clearfix">
-                    <div class="whatsnew_carousel_title">
-                        MELBOURNE STAR ANNOUNCES ITS FIRST COMMUNITY PARTNER
-                    </div>
-                    <div class="whatsnew_carousel_content">
-                    </div>
-                    <div class="whatsnew_play_button">
-                        <a href="#"><img class="center" style="margin-bottom:15px" src="img/play_icon.png" />WATCH</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 whatsnew_content clearfix">
-                <div class="whats_news_image_wrapper clearfix">
-                    <img class="whatsnew_carousel_img img-responsive" src='img/whatsnew_img2.jpg' />
-                    <span class="whatsnew_hover_content"><span></span></span>
-                </div>
-                <div class="whatsnew_carousel_textarea clearfix">
-                    <div class="whatsnew_carousel_title">
-                        MELBOURNE STAR GOES PINK
-                    </div>
-                    <div class="whatsnew_carousel_content">
-                    </div>
-                    <div class="whatsnew_play_button">
-                        <a href="#"><img class="center" style="margin-bottom:15px" src="img/play_icon.png" />WATCH</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="row ">
+        <div id="instafeed" class="instagram"></div>
     </div>
 </div>
-<!-- End of What's new -->
+<!-- End of instagram-->
