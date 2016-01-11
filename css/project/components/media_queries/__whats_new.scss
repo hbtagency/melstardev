@@ -16,23 +16,36 @@
         .whats_news_image_wrapper{
             height: auto !important;
         }
-        .whatsnew_content{
-            .whatsnew_hover_content{
-                height: calc(100% - 11px);	
-            }
+
+                .whatsnew_content{
+
             .whatsnew_play_button{
                 display: block;
             }
+
+            //Chrome
+            // .whatsnew_hover_content {
+            //     height: calc(100%);
+            //     width: calc(100% - 30px);
+            //     top: 0;
+            // }
+
+            //Safari
             .whatsnew_hover_content {
-                width: calc(100% - 30px);
+                height: calc(100%);
+                width: calc(100% - 0px);
                 top: 0;
             }
+
             &:hover{
                 span.whatsnew_hover_content{
                     height: 100%;	
                 }
             }
         }
+        
+
+
         .whatsnew_carousel_img{
             width: 100%;
         }
@@ -128,8 +141,8 @@
     }
 }
 
-// Tablet View 3 stories (992px to 1499px)
-@media (min-width:$screen-md-min) and (max-width:$screen-md-max){
+// Tablet View 3 stories (992 to 1199) 
+@media (min-width:992px) and (max-width:1199px){
     .whats_new{
         .whatsnew_content{
             height: 200px !important;
@@ -172,8 +185,62 @@
     }
 }
 
+
+// Tablet View 3 stories (1200px to 1216px) Very Special Transition View
+@media (min-width:1200px) and (max-width:1285px){
+    .whats_new{
+        .whatsnew_content{
+            height: 200px !important;
+
+            .centered{
+                transform: translate(0,-130px) !important;
+            }
+
+            &:hover{
+                span.whatsnew_hover_content{
+                    height: 154px !important;  
+                }
+            }
+
+            .whatsnew_hover_content {
+                width: 294px;
+                bottom: 46px;
+            }
+        }
+
+        .whats_news_image_wrapper{
+            height: 154px !important;
+            width: 294px;
+        } 
+
+        .whatsnew_carousel_textarea{
+            width: 295px !important;
+
+            .whatsnew_carousel_title{
+                font-size: 14px !important;        
+            }
+
+            .whatsnew_carousel_content{
+                font-size: 12px !important;
+            }
+        } 
+
+        .whatsnew_carousel_img{
+            height: 154px;
+            width: 100%;
+        }
+    }
+
+    .slick-next-white{
+        right: 30px !important;
+    }
+    .slick-prev-white{
+        left: -7px !important;
+    }
+}
+
 // Special View
-@media (min-width:1200px) and (max-width:1230px){
+@media (min-width:1285px) and (max-width:1230px){
     .slick-next-white{
         right: -10px !important;
     }

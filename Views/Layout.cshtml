@@ -1,0 +1,234 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Official Melbourne Star Observation Wheel Website. Book your tickets online and experience one of the world's largest observation wheels.">
+    <meta name="keywords" content="melbournestar, melbourne star, observation wheel, ferris wheel, tourism, tourist attaction, melbourne tourism, australia tourism, dockland tourism ">
+    <meta name="author" content="HBT">
+    <title> Home | Melbourne Star </title>
+    <link rel="stylesheet" href="css/final/style.css" />
+
+    <!-- JS init -->
+    <script type="text/javascript" src="js/jquery/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- For dropdown effect on subscription section and this has to be on top of body -->
+    <script src="plugins/custom_dropdown/modernizr.custom.63321.js"></script>
+
+    <!--
+    <script language="javascript">
+        var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
+        if (isSafari) {
+            loadjscssfile("css/final/safari.css", "css") ////dynamically load and add this .css file
+        }
+
+        function loadjscssfile(filename, filetype) {
+            /*if (filetype==="js"){ //if filename is a external JavaScript file
+             var fileref=document.createElement('script');
+             fileref.setAttribute("type","text/javascript");
+             fileref.setAttribute("src", filename);
+             }
+             else */
+            if (filetype === "css") { //if filename is an external CSS file
+                var fileref = document.createElement("link");
+                fileref.setAttribute("rel", "stylesheet");
+                fileref.setAttribute("type", "text/css");
+                fileref.setAttribute("href", filename);
+            }
+            if (typeof fileref !== "undefined")
+                document.getElementsByTagName("head")[0].appendChild(fileref);
+        }
+    </script>
+    -->
+</head>
+
+<body>
+    <header>
+        
+
+    @RenderBody()
+    <!-- Instagram-->
+    <div class="instagram container">
+        <div class="row">
+            <h1>INSTAGRAM</h1>
+            <div class="instagram_subtitle">
+                &#64;MELBOURNESTAR | &#35;MELBOURNESTAR
+            </div>
+        </div>
+        <div class="row ">
+            <div id="instafeed" class="instagram"></div>
+        </div>
+    </div>
+    <!-- End of instagram-->
+    <!-- Js used only in home page -->
+    <script type="text/javascript" src="plugins/slick/slick.min.js"></script>
+    <script type="text/javascript" src="js/project/carousel.js"></script>
+    <!--
+    <script type="text/javascript" src="js/project/whats_new.js"></script>-->
+    <script type="text/javascript" src="js/project/hoverEffect.js"></script>
+    <script type="text/javascript" src="js/project/parallax_featured_scroll.js"></script>
+
+    <!--
+    <script type="text/javascript" src="js/project/parallax_featured.js"></script>
+    -->
+    <script type="text/javascript" src="js/project/parallax_featured_scroll.js"></script>
+    <script type="text/javascript" src="js/project/scroll_to_whatson.js"></script>
+    <script type="text/javascript" src="plugins/instafeed/instafeed.min.js"></script>
+    <script type="text/javascript" src="js/project/instagram.js"></script>
+
+
+    <!-- Subscribe -->
+    <div class="subscribe full-width visible-lg">
+        <div class="container">
+            <div class="row">
+                <div class="subscribe_title">
+                    RECEIVE OFFERS AND NEWS DIRECT TO YOUR INBOX
+                </div>
+            </div>
+            <div class="row subscribe_form">
+                <div class="interst inline-block">
+                    <!-- <select>
+                        <option value="interests">INTERESTS</option>
+                        <option value="test">TEST</option>
+                    </select> -->
+                    <select id="cd-dropdown" class="cd-select">
+                        <option value="-1" selected>OPTIONS</option>
+                        <option value="1">SAMPLE1</option>
+                        <option value="2">SAMPLE2</option>
+                        <option value="3">SAMPLE3</option>
+                        <option value="4">SAMPLE4</option>
+                    </select>
+                </div>
+                <div class="fluid_container inline-block">
+                    <input type="text" class="inline-block" placeholder="FIRST NAME*" />
+                    <input type="text" class="inline-block" placeholder="LAST NAME*" />
+                    <input type="text" class="inline-block" placeholder="EMAIL ADDRESS*" />
+                </div>
+                <div class="join_button inline-block">
+                    <button><a href="#">JOIN</a></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End of Subscribe -->
+    <footer>
+        <div class="container">
+            <div class="lets_connect row">
+                <div class="footer_title">
+                    LET'S CONNECT
+                </div>
+                <div class="social_links">
+                    <span><a href="#"><img src="img/tripadvisor_icon.jpg" /></a></span>
+                    <span><a href="#"><img src="img/instagram_icon.jpg" /></a></span>
+                    <span><a href="#"><img src="img/youtube_icon.jpg" /></a></span>
+                    <span><a href="#"><img src="img/facebook_icon.jpg" /></a></span>
+                </div>
+            </div>
+        </div>
+        <div class="full-width footer_wrapper clearfix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4 footer_col">
+                        <div class="footer_title">
+                            GETTING HERE
+                        </div>
+                        <div class="address">
+                            Ground floor, 101 Waterfront way, Docklands, VIC 3008, Melbourne
+                        </div>
+                        <div class="direction">
+                            <a href="#">
+                                <img src="img/direction_arrow.png" style="margin-bottom:6px" /> DIRECTIONS
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 footer_col">
+                        <div class="footer_title">
+                            INSTAGRAM
+                        </div>
+                        <div id="instafeed2">
+                        </div>
+                    </div>
+                    <div class="col-sm-4 footer_col">
+                        <div class="footer_title">
+                            QUICK LINKS
+                        </div>
+                        <div class="footer_links">
+                            <div><a>Plan Your Visit</a></div>
+                            <div><a>Pricing &amp; Ticketing</a></div>
+                            <div><a>Buy Tickets</a></div>
+                            <div><a>Functions &amp; Events</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container copyright_area">
+            <div class="row">
+                <div class="footer_bottom_left inline-block">
+                    &#169; Melbourne Star Observation Wheel 2011 ABN 84 165 079 390
+                </div>
+                <div class="pull-right inline-block visible-lg">
+                    <ul class="footer_bottom_links">
+                        <li class="root inline-block">
+                            <a href="#" class="inline-block ">
+                                Terms &amp; Conditions
+                            </a>
+                        </li>
+                        <li class="root">
+                            <a href="#" class="inline-block ">
+                                Disclaimer
+                            </a>
+                        </li>
+                        <li class="root">
+                            <a href="#" class="inline-block ">
+                                Privacy
+                            </a>
+                        </li>
+                        <li class="root">
+                            <a href="#" class="inline-block ">
+                                about us
+                            </a>
+                        </li>
+                        <li class="root">
+                            <a href="#" class="inline-block ">
+                                Sitemap
+                            </a>
+                        </li>
+                        <li class="root">
+                            <a href="#" class="inline-block ">
+                                contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- instafeed -->
+    <script type="text/javascript" src="plugins/instafeed/instafeed2.min.js"></script>
+    <script type="text/javascript" src="js/project/instagram2.js"></script>
+
+
+    <!-- The following js files has been used site widely -->
+    <script type="text/javascript" src="js/project/sitewide/transform_view_button.js"></script>
+    <script type="text/javascript" src="js/project/sitewide/full_height_menu.js"></script>
+    <script type="text/javascript" src="js/project/sitewide/body_mask.js"></script>
+    <script type="text/javascript" src="js/project/sitewide/rotate.js"></script>
+    <script type="text/javascript" src="js/project/sitewide/ticket.js"></script>
+    <script type="text/javascript" src="js/project/sitewide/sticky_nav.js"></script>
+    <script type="text/javascript" src="js/project/sitewide/rotate_logo.js"></script>
+    <script type="text/javascript" src="plugins/custom_dropdown/jquery.dropdown.js"></script>
+    <script type="text/javascript" src="js/project/sitewide/custom_dropdown.js"></script>
+    <script type="text/javascript" src="js/project/sitewide/parralax_banner.js"></script>
+
+</body>
+</html>
