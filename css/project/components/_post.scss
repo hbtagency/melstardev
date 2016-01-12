@@ -1,0 +1,59 @@
+.post_pagenation_nav{
+	font-family:$font-fu-book;
+}
+
+.post_content{
+	.post_heading{
+		margin-top: 50px;
+	}
+
+	.post_description{
+		font-size: 18px;
+		color: #000;
+	}
+
+	.post_feature_image{
+		margin-top: 30px;
+
+		img{
+			width:100%;
+		}
+	}
+}
+
+.post_related_articles{
+	.post_related_articles_title{
+		text-align: center;
+		margin-top: 30px;
+		margin-bottom: 20px;
+	}
+
+	.related_post_img{
+		width: 100%;
+	}
+	.post_related_posts {
+		margin-left: -30px;
+		margin-right: -30px;
+
+		.post_article_title{
+			font-family: $font-fu-book;
+		}
+
+		.post_category{
+			font-family: $font-fu-book;
+			font-size: 13px;
+			text-decoration: underline;
+		}
+
+		.post_article_description{
+			font-family: $font-fu-l;
+			color: #000;
+			margin-top: 10px;
+			font-size: 17px;
+		}
+	}
+}
+
+
+
+@import "media_queries/__post.scss";
