@@ -361,12 +361,22 @@
                     <a href="@newsNevent.Url">&lt; BACK TO NEWS EVENTS</a>
                 </div>
                 <div class="pull-right post_pagenation_nav">
-                    <div class="post_nav_prev inline-block">
-                        <a href="#">&lt; PREV</a>
-                    </div>
-                    <div class="post_nav_next inline-block">
-                        <a href="#">NEXT &gt;</a>
-                    </div>
+                    @{
+                        var prevNode = CurrentPage.Previous();
+                        var nextNode = CurrentPage.Next();
+
+                        if(prevNode != null){
+                            <div class="post_nav_prev inline-block">
+                                <a href="@prevNode.Url"> &lt; PREV</a>
+                            </div>
+                        }
+
+                        if(nextNode != null){
+                            <div class="post_nav_next inline-block">
+                                <a href="@nextNode.Url">NEXT &gt;</a>
+                            </div>
+                        }
+                    }
                 </div>
                 <div class="post_content">
                     <div class="post_heading">
@@ -396,9 +406,9 @@
                             if(c.Id != currentNodeId && count < 3){
                                 postImageUrl = Umbraco.Media(c.featuredImage).UmbracoFile;
                                 <div class="col-xs-4 related_post_column">
-                                    <img class="related_post_img" src="@postImageUrl" />
+                                    <a href="@c.Url"><img class="related_post_img" src="@postImageUrl" /></a>
                                     <div class="post_article_title">
-                                        <h4>@c.pageTitle</h4>
+                                        <a href="@c.Url"><h4>@c.pageTitle</h4></a>
                                     </div>
                                     <div class="post_category">
                                         @c.Parent().pageTitle
