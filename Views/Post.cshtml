@@ -253,7 +253,7 @@
 
                             <!-- logo -->
                             <div class="rotating_logo_div logo left visible-lg">
-                                <a href="home.html" class="rotate_logo clearfix" id="rotate_logo_trigger">
+                                <a href="/" class="rotate_logo clearfix" id="rotate_logo_trigger">
                                     <img src="/img/wheel.png" id="rotate_logo"/>
                                     <div class="logo_text">
                                         <span class="white">Melbourne</span>
@@ -352,14 +352,21 @@
 
 
         <!-- template content area -->
-
+        @{                       
+            var newsNevent = Umbraco.Content(1067);
+        }
         <div class="container two_column template_content">
             <div class="row">
                 <div class="pull-left post_pagenation_nav">
-                    &lt; BACK TO NEWS EVENTS
+                    <a href="@newsNevent.Url">&lt; BACK TO NEWS EVENTS</a>
                 </div>
                 <div class="pull-right post_pagenation_nav">
-                    &lt; PREV &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NEXT &gt;
+                    <div class="post_nav_prev inline-block">
+                        <a href="#">&lt; PREV</a>
+                    </div>
+                    <div class="post_nav_next inline-block">
+                        <a href="#">NEXT &gt;</a>
+                    </div>
                 </div>
                 <div class="post_content">
                     <div class="post_heading">

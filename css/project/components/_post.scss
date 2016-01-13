@@ -1,5 +1,13 @@
 .post_pagenation_nav{
 	font-family:$font-fu-book;
+
+	.post_nav_prev{
+		margin-right: 35px
+	}
+
+	.post_nav_next{
+		margin-right: 5px
+	}
 }
 
 .post_content{
