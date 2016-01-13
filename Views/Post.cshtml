@@ -3,8 +3,17 @@
     Layout = "Layout.cshtml";
     var banner_img_url = "";
 
-    var bannerImageItem = Umbraco.Media(CurrentPage.Parent().categoryBannerImage);
-    banner_img_url = bannerImageItem.UmbracoFile;
+    if(CurrentPage.HasValue("postBannerImage")){
+        var bannerImageItem = Umbraco.Media(CurrentPage.postBannerImage);
+        banner_img_url = bannerImageItem.UmbracoFile;
+    }
+    else{
+        var bannerImageItem = Umbraco.Media(CurrentPage.Parent().categoryBannerImage);
+        banner_img_url = bannerImageItem.UmbracoFile;
+    }
+    
+    
+
 }
 
 
