@@ -2,9 +2,13 @@
 @{
     Layout = "Layout.cshtml";
     var banner_img_url = "";
+
+    var bannerImageItem = Umbraco.Media(CurrentPage.Parent().categoryBannerImage);
+    banner_img_url = bannerImageItem.UmbracoFile;
 }
 
-                        <div id="body-mask" class="body-mask">
+
+            <div id="body-mask" class="body-mask">
             </div>
             <!-- Mobile Menu -->
             <div class="mobile-menu-sidebar hidden-lg clearfix" id="leftMobileMenu">
@@ -160,10 +164,7 @@
                     <!--<a class="view-more-text">More</a>-->
                 </div>
 
-                @{
-                    var bannerImageItem = Umbraco.Media(CurrentPage.Parent().categoryBannerImage);
-                    banner_img_url = bannerImageItem.UmbracoFile;
-                }
+                
 
                 <div class="box-center-container clearfix right-side parallax-banner" style="background:url('@banner_img_url') no-repeat;background-size:cover;">
                     <!-- Top Nav -->

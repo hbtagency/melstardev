@@ -1,4 +1,395 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-    Layout = null;
-}
+    Layout = "Layout.cshtml";
+}   
+
+        <div id="body-mask" class="body-mask">
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu-sidebar hidden-lg clearfix" id="leftMobileMenu">
+            <a id="close-mobile" href="#">
+                <img class="pull-right img-responsive" src="/img/close.png" />
+            </a>
+            <div class="accordion">
+                <div class="accordion-group hidden-lg">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+                            <i class="icon-th"></i> Main one
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-group hidden-lg">
+                    <div class="accordion-heading collapsed_item">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseMainTwo">
+                            <i class="icon-list-alt"></i> Main two
+                        </a>
+                    </div>
+
+                    <div id="collapseMainTwo" class="accordion-body collapse" style="height: 0px; ">
+                        <div class="accordion-inner">
+                            <ul>
+                                <li><a href='#'>This is one</a></li>
+                                <li><a href='#'>This is two</a></li>
+                                <li><a href='#'>This is three</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-group hidden-lg">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+                            <i class="icon-th"></i> Main three
+                        </a>
+                    </div>
+                </div>
+
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+                            <i class="icon-th"></i> Layout
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+                            <i class="icon-th-list"></i> UI Components
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading collapsed_item">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#cf">
+                            <i class="icon-list-alt"></i> Forms
+                        </a>
+                    </div>
+
+                    <div id="cf" class="accordion-body collapse" style="height: 0px; ">
+                        <div class="accordion-inner">
+                            <ul>
+                                <li><a href='#'>This is one</a></li>
+                                <li><a href='#'>This is two</a></li>
+                                <li><a href='#'>This is three</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+                            <i class="icon-cog"></i> Plugins
+                        </a>
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+                            <i class="icon-file"></i> Templates
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box-container clearfix" id="box-container">
+            <div class="left-bar box-sidebar pull-left" id="left-bar">
+                <!-- More Menu Component -->
+                <button type="button" role="button" id="view_more_button" aria-label="Toggle Navigation" class="lines-button arrow arrow-left visible-lg">
+                    <span class="lines"></span>
+                </button>
+
+                <div class="accordion" id="leftMenu">
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+                                <i class="icon-th"></i> Layout
+                            </a>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+                                <i class="icon-th-list"></i> UI Components
+                            </a>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading collapsed_item">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseFour">
+                                <i class="icon-list-alt"></i> Forms
+                            </a>
+                        </div>
+
+                        <div id="collapseFour" class="accordion-body collapse" style="height: 0px; ">
+                            <div class="accordion-inner">
+                                <ul>
+                                    <li><a href='#'>This is one</a></li>
+                                    <li><a href='#'>This is two</a></li>
+                                    <li><a href='#'>This is three</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+                                <i class="icon-cog"></i> Plugins
+                            </a>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+                                <i class="icon-file"></i> Templates
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- End of Mobile Menu Component -->
+                <!--
+                <button type="button" class="navbar-toggle collapsed pull-right lines-button arrow-left" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" id="nav-button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                -->
+                <!--<a class="view-more-text">More</a>-->
+            </div>
+            <div class="box-center-container clearfix right-side parallax-banner" style="background:url('/img/banner1.jpg') no-repeat;background-size:cover;">
+                <!-- Top Nav -->
+                <div class="top_nav">
+                    <div class="full-screen-container visible-lg">
+                        <!-- Search component -->
+                        <div class="search inline-block">
+                            <ul class="nav">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle inline-block search_button" data-toggle="dropdown">
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="navbar--list-item">
+                                            <form action="#" method="post">
+                                                <input type="text" value="" placeholder="Enter key words ..." />
+                                                <a href="#" class="submit search_button pull-right">
+                                                </a>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- End of search component -->
+                        <!-- Language component -->
+                        <div class="language inline-block">
+                            <ul class="nav">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle inline-block" data-toggle="dropdown">
+                                        <img src="/img/ausflag.jpg" alt="$alt" class="center block " />
+                                        <span class="block text">AUS</span>
+                                        <img src="/img/arrow_down.jpg" class="center block" />
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="navbar--list-item">
+                                            <a class="menu--link" href="#">
+                                                <img src="/img/ausflag.jpg" alt="$alt" />
+                                                <span>English</span>
+                                            </a>
+                                        </li>
+                                        <li class="navbar--list-item">
+                                            <a class="menu--link" href="#">
+                                                <img src="/img/cnflag.jpg" alt="$alt" />
+                                                <span>Chinese</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Language component -->
+
+
+                        <nav class="navbar inline-block contact-us">
+                            <ul class="nav navbar-nav level-1">
+                                <li class="root">
+                                    <!-- Link tag only if link is present in backend -->
+                                    <a href="$link">
+                                        <!-- END IF -->
+                                        <span class="menu--link-text current-parent">Contact Us</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!-- End of Top Nav -->
+                <!-- Main Nav -->
+                <div class="main_nav clearfix" id="main_navigation">
+                    <div class="full-screen-container">
+                        <!-- Mobile Menu Component -->
+                        <div class="mobile-menu hidden-lg">
+                            <!--
+                            <button type="button" role="button" aria-label="Toggle Navigation" class="lines-button arrow arrow-left pull-right visible-lg">
+                              <span class="lines"></span>
+                            </button>-->
+
+
+                            <button type="button" class="navbar-toggle collapsed pull-left lines-button arrow-left" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" id="nav-button">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+
+                        <!-- logo -->
+                        <div class="rotating_logo_div logo left visible-lg">
+                            <a href="/" class="rotate_logo clearfix" id="rotate_logo_trigger">
+                                <img src="/img/wheel.png" id="rotate_logo" />
+                                <div class="logo_text">
+                                    <span class="white">Melbourne</span>
+                                    <span class="green">Star</span>
+                                </div>
+
+                            </a>
+                        </div>
+                        <div class="logo inline-block left hidden-lg" id="logo">
+                            <a href="#" class="logo_span"></a>
+                        </div>
+
+                        <!-- ticket -->
+                        <div class="buy_tickets inline-block right visible-lg">
+                            <span class="uppercase"><a href="https://online.melbournestar.com/e-commerce/">Buy Ticket</a></span>
+                        </div>
+                        <!-- main navbar -->
+                        <nav class="navbar inline-block pull-right visible-lg" id="main_nav">
+                            <ul class="nav navbar-nav level-1">
+                                <li class="root">
+                                    <!-- Link tag only if link is present in backend -->
+                                    <a class="dropdown-toggle menu--link" href="ticket_pricing.html">
+                                        <!-- END IF -->
+                                        <span class="menu--link-text current-parent">ticket & pricing</span>
+                                        <!-- Control to use: -->
+                                        <i class="icon menu--icon "></i>
+                                    </a>
+                                </li>
+                                <li class="root">
+                                    <!-- Link tag only if link is present in backend -->
+                                    <a class="dropdown-toggle menu--link" href="news_events.html">
+                                        <!-- END IF -->
+                                        <span class="menu--link-text current-parent">news & events</span>
+                                        <!-- Control to use: -->
+                                        <i class="icon menu--icon "></i>
+                                    </a>
+                                </li>
+                                <li class="root">
+                                    <!-- Link tag only if link is present in backend -->
+                                    <a class="dropdown-toggle menu--link" href="function.html">
+                                        <!-- END IF -->
+                                        <span class="menu--link-text current-parent">functions & catering</span>
+                                        <!-- Control to use: -->
+                                        <i class="icon menu--icon "></i>
+                                    </a>
+                                </li>
+
+                                <li class="root dropdown">
+                                    <!-- Link tag only if link is present in backend -->
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <span class="menu--link-text current-parent">Dropdown Sample</span>
+                                        <span class="arrow_down"></span>
+                                    </a>
+                                    <!-- Second level Nav Item -->
+                                    <ul class="dropdown-menu level-2">
+                                        <li class="">
+                                            <a class="" href="#">
+                                                <span class="">This is a very long sample name</span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a class="" href="#">
+                                                <span class="">Sample</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!-- End of Main Nav -->
+                <div id="navplacehoder" class="navplacehoder hidden">
+
+                </div>
+                <!-- Banner area -->
+                <div class="banner_area">
+                    <div class="mask"></div>
+                    <div class="banner-heading sit_left clearfix">
+                        <h1>
+                            Tickets and Pricing
+                        </h1>
+                        <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
+                    </div>
+                </div>
+                <!-- End of Banner -->
+            </div>
+            <div class="right-bar box-sidebar pull-right"></div>
+        </div>
+    </header>
+
+    <div class="container template_content">
+        <div class="row">
+            <div class="col-lg-1 visible-lg">
+            </div>
+            <div class="col-xs-12 col-lg-10">
+                <nav class="centered_nav_area clearfix">
+                    <ul class="centered_list_nav">
+                        <li class="first"><a>All</a></li>
+                        <li><a>What's on</a></li>
+                        <li><a>Events</a></li>
+                        <li><a>Competitions</a></li>
+                        <li><a>Offers</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-1 visible-lg">
+            </div>
+            <div class="col-xs-12 col-lg-10 three-column-container">
+                
+                @{
+                        var newsEvent = Umbraco.Content(1067);
+                        var feature_img_url = "";
+
+                        foreach (var c in newsEvent.Descendants().Where("NodeTypeAlias == \"newsevents_post\""))
+                        {
+
+                            feature_img_url = Umbraco.Media(c.featuredImage).UmbracoFile;
+
+                            <div class="post_list_item col-lg-4 col-sm-6 col-xs-12">
+                            <img src="@feature_img_url" class="img-responsive" />
+                            <h2>@c.pageTitle</h2>
+                            <a class="whats_on" href="#">
+                                whats on
+                            </a>
+                            <p>
+                                @c.postSubheading
+                            </p>
+                        </div>
+                    }
+                }
+                
+                
+                
+                
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="/js/project/banner_mask_height_init.js"></script>
