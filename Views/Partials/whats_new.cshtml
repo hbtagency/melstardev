@@ -1,0 +1,46 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+
+<div class="whats_new" style="background:url('img/whatsnew_bg_fullscreen.jpg') no-repeat;background-size:cover;">
+    <div class="container">
+        <div class="row">
+            <div class="whats_news_title">@Umbraco.Field("whatsNewTitle")</div>
+        </div>
+        <div class="whats_new_carousel row clearfix">
+            
+            @{
+                var whatson = Umbraco.Content(1072);
+
+                foreach(var c in whatson.Children())
+                {
+                    var content = c.pageTitle;
+                    var feature_img_url = Umbraco.Media(c.featuredImage).umbracoFile;
+
+                    <!-- Template -->
+                    <div class="col-md-4 whatsnew_content clearfix">
+                        <div class="whats_news_image_wrapper clearfix">
+                            <img class="whatsnew_carousel_img img-responsive" src='@feature_img_url' />
+                            <span class="whatsnew_hover_content"><span></span></span>
+                        </div>
+                        <div class="whatsnew_carousel_textarea clearfix">
+                            <div class="whatsnew_carousel_title">
+                                @c.pageTitle
+                            </div>
+                            @*<div class="whatsnew_carousel_content">
+                                @c.postSubheading
+                            </div>*@
+                            <div class="whatsnew_play_button">
+                                <a href="@c.Url"><img class="center" style="margin-bottom:15px" src="img/play_icon.png" />WATCH</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Template -->
+                }   
+            }
+            
+            
+
+        </div>
+    </div>
+</div>
+<!-- End of What's new -->

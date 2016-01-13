@@ -1,0 +1,39 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+
+<!-- What's On -->
+<div class="whats_on">
+    <div class="container">
+        <h1>@Umbraco.Field("whatsOnTitle")</h1>
+        <div class="whats_on_carousel row">
+            @{
+                var whatson = Umbraco.Content(1071);
+                
+                foreach(var c in whatson.Children())
+                {
+                    var content = c.pageTitle;
+                    var feature_img_url = Umbraco.Media(c.featuredImage).umbracoFile;
+
+                    <div class="col-md-4 whatson_content clearfix">
+                        <div class="image_wrapper clearfix">
+                            <a href="#"><img class="img-responsive whatson_carousel_img" src='@feature_img_url' /></a>
+                            <span class="whatson_hover_content"><span></span></span>
+                        </div>
+                        <div class="whatson_carousel_textarea clearfix">
+                            <div class="whatson_carousel_title">
+                                @c.pageTitle
+                            </div>
+                            <div class="whatson_carousel_content">
+                                @c.postSubheading
+                            </div>
+                            <div class="whatson_view_button">
+                                <a href="@c.Url">VIEW</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+<!-- End of What's on -->

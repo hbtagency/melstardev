@@ -1,0 +1,147 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+<!-- Mobile Menu -->
+<div class="mobile-menu-sidebar hidden-lg clearfix" id="leftMobileMenu">
+    <a id="close-mobile" href="#">
+        <img class="pull-right img-responsive" src="img/close.png" />
+    </a>
+    <div class="accordion">
+        <div class="accordion-group hidden-lg">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+                    <i class="icon-th"></i> Main one
+                </a>
+            </div>
+        </div>
+        <div class="accordion-group hidden-lg">
+            <div class="accordion-heading collapsed_item">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseMainTwo">
+                    <i class="icon-list-alt"></i> Main two
+                </a>
+            </div>
+            <div id="collapseMainTwo" class="accordion-body collapse" style="height: 0px; ">
+                <div class="accordion-inner">
+                    <ul>
+                        <li><a href='#'>This is one</a></li>
+                        <li><a href='#'>This is two</a></li>
+                        <li><a href='#'>This is three</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-group hidden-lg">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+                    <i class="icon-th"></i> Main three
+                </a>
+            </div>
+        </div>
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+                    <i class="icon-th"></i> Layout
+                </a>
+            </div>
+        </div>
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+                    <i class="icon-th-list"></i> UI Components
+                </a>
+            </div>
+        </div>
+        <div class="accordion-group">
+            <div class="accordion-heading collapsed_item">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#cf">
+                    <i class="icon-list-alt"></i> Forms
+                </a>
+            </div>
+            <div id="cf" class="accordion-body collapse" style="height: 0px; ">
+                <div class="accordion-inner">
+                    <ul>
+                        <li><a href='#'>This is one</a></li>
+                        <li><a href='#'>This is two</a></li>
+                        <li><a href='#'>This is three</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+                    <i class="icon-cog"></i> Plugins
+                </a>
+            </div>
+        </div>
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+                    <i class="icon-file"></i> Templates
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="box-container home_box clearfix" id="box-container">
+    <div class="left-bar box-sidebar pull-left" id="left-bar">
+        <!-- More Menu Component -->
+        <button type="button" role="button" id="view_more_button" aria-label="Toggle Navigation" class="lines-button arrow arrow-left visible-lg">
+            <span class="lines"></span>
+        </button>
+        <div class="accordion" id="leftMenu">
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+                        <i class="icon-th"></i> Layout
+                    </a>
+                </div>
+            </div>
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+                        <i class="icon-th-list"></i> UI Components
+                    </a>
+                </div>
+            </div>
+            <div class="accordion-group">
+                <div class="accordion-heading collapsed_item">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseFour">
+                        <i class="icon-list-alt"></i> Forms
+                    </a>
+                </div>
+                <div id="collapseFour" class="accordion-body collapse" style="height: 0px; ">
+                    <div class="accordion-inner">
+                        <ul>
+                            <li><a href='#'>This is one</a></li>
+                            <li><a href='#'>This is two</a></li>
+                            <li><a href='#'>This is three</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+                        <i class="icon-cog"></i> Plugins
+                    </a>
+                </div>
+            </div>
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
+                        <i class="icon-file"></i> Templates
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- End of Mobile Menu Component -->
+        <!--
+        <button type="button" class="navbar-toggle collapsed pull-right lines-button arrow-left" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" id="nav-button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        -->
+        <!--<a class="view-more-text">More</a>-->
+    </div>

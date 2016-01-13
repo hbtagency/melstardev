@@ -1,0 +1,166 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Layout.cshtml";
+    var bg_img_url = "";
+}
+
+<div id="body-mask" class="body-mask">
+</div>
+@Html.Partial("mobile_nav")
+
+
+@if(CurrentPage.HasValue("homeBannerImg")){
+    var dynamicMediaItem = Umbraco.Media(CurrentPage.homeBannerImg);
+    bg_img_url = dynamicMediaItem.umbracoFile;
+}
+    <div class="box-center-container clearfix right-side horrizontal-parallax-banner" id="parralax-hero" style="background:url('@bg_img_url') no-repeat;background-size:110% auto;">
+
+        
+
+            <!-- Top Nav -->
+            <div class="top_nav">
+                <div class="full-screen-container visible-lg">
+                    <!-- Search component -->
+                    <div class="search inline-block">
+                        <ul class="nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle inline-block search_button" data-toggle="dropdown">
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="navbar--list-item">
+                                        <form action="#" method="post">
+                                            <input type="text" value="" placeholder="Enter key words ..." />
+                                            <a href="#" class="submit search_button pull-right">
+                                            </a>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- End of search component -->
+                    <!-- Language component -->
+                    <div class="language inline-block">
+                        <ul class="nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle inline-block" data-toggle="dropdown">
+                                    <img src="img/ausflag.jpg" alt="$alt" class="center block " />
+                                    <span class="block text">AUS</span>
+                                    <img src="img/arrow_down.jpg" class="center block" />
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="navbar--list-item">
+                                        <a class="menu--link" href="#">
+                                            <img src="img/ausflag.jpg" alt="$alt" />
+                                            <span>English</span>
+                                        </a>
+                                    </li>
+                                    <li class="navbar--list-item">
+                                        <a class="menu--link" href="#">
+                                            <img src="img/cnflag.jpg" alt="$alt" />
+                                            <span>Chinese</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Language component -->
+
+                    <nav class="navbar inline-block contact-us">
+                        <ul class="nav navbar-nav level-1">
+                            <li class="root">
+                                <!-- Link tag only if link is present in backend -->
+                                <a href="$link">
+                                    <!-- END IF -->
+                                    <span class="menu--link-text current-parent">Contact Us</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- End of Top Nav -->
+            @Html.Partial("main_nav")
+
+
+            <!-- Featured home area -->
+            <div id="featured_area" class="featured-home">
+                <div class="banner-text clearfix">
+                    <h1>
+                        @Umbraco.Field("sloganTitle")
+                    </h1>
+                    <a href='#' class="button button-white">
+                        @Umbraco.Field("bannerButtonTitle")
+                    </a>
+                </div>
+                <div class="floating-star">
+                    <img class="img-responsive" src='img/star.png' />
+                </div>
+            </div>
+            <!-- End of Featured-home -->
+            <div class="featured_home_info clearfix" id="featured_home_info">
+                <div class="full-screen-container">
+                    <div class="col-sm-4 infomation">
+                        <h3>
+                            <img class="nav_icon" src='img/nav-icon.jpg' />
+                            @Umbraco.Field("firstColTitle")
+                        </h3>
+                        <div class="info_content">
+                            @Umbraco.Field("firstColContent")
+                        </div>
+                    </div>
+                    <div class="col-sm-4 infomation hidden-xs">
+                        <h3>
+                            <!--<img class="nav_icon" src ='img/whatson_icon.jpg'/>-->
+                            @Umbraco.Field("secondColTitle")
+                        </h3>
+                        <div class="info_content">
+                            @Umbraco.Field("secondColContent")
+                        </div>
+                        <a id="bouncing_arrow" class="clearfix bounce" href="#">
+                            <img src='img/arrow.jpg' />
+                        </a>
+                    </div>
+                    <div class="col-sm-4 infomation hidden-xs">
+                        <h3>
+                            @Umbraco.Field("thirdColTitle")
+                        </h3>
+                        <div class="info_content">
+                            <!--<img class="nav_icon hidden-sm" src ='img/open_today.jpg'/>-->
+                            @Umbraco.Field("thirdColContent")
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Featured_home_info -->
+        </div>
+    <div class="right-bar box-sidebar pull-right"></div>
+</div>
+    </header>
+
+@Html.Partial("whats_on")
+
+@Html.Partial("whats_new")
+
+
+<!-- Instagram-->
+<div class="instagram container">
+    <div class="row">
+        <h1>@Umbraco.Field("instagramTitle")</h1>
+        <div class="instagram_subtitle">
+            &#64;MELBOURNESTAR | &#35;MELBOURNESTAR
+        </div>
+    </div>
+    <div class="row ">
+        <div id="instafeed" class="instagram"></div>
+    </div>
+</div>
+<!-- End of instagram-->
+
+<!-- Js used only in home page -->
+<script type="text/javascript" src="plugins/slick/slick.min.js"></script>
+<script type="text/javascript" src="js/project/carousel.js"></script>
+<script type="text/javascript" src="js/project/hoverEffect.js"></script>
+<script type="text/javascript" src="js/project/parallax_featured_scroll.js"></script>
+<script type="text/javascript" src="js/project/scroll_to_whatson.js"></script>

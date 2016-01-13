@@ -1,0 +1,104 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    var logo_img_url = "";
+}
+<!-- Main Nav -->
+        <div class="main_nav home_nav clearfix" id="main_navigation">
+            <div class="full-screen-container">
+                <!-- Mobile Menu Component -->
+                <div class="mobile-menu hidden-lg">
+                    <!--
+                    <button type="button" role="button" aria-label="Toggle Navigation" class="lines-button arrow arrow-left pull-right visible-lg">
+                      <span class="lines"></span>
+                    </button>-->
+
+                    <button type="button" class="navbar-toggle collapsed pull-left lines-button arrow-left" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" id="nav-button">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <!-- logo -->
+                @if(CurrentPage.HasValue("logo")){
+                    var dynamicMediaItem = Umbraco.Media(CurrentPage.logo);
+                    logo_img_url = dynamicMediaItem.umbracoFile;
+                }
+                <div class="rotating_logo_div logo left visible-lg">
+                    <a href="\" class="rotate_logo clearfix" id="rotate_logo_trigger">
+                        <img src="@logo_img_url" id="rotate_logo" />
+                        <div class="logo_text">
+                            <span class="white">Melbourne</span>
+                            <span class="green">Star</span>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="logo inline-block left hidden-lg" id="logo">
+                    <a href="#" class="logo_span"></a>
+                </div>
+
+                <!-- ticket -->
+                <div class="buy_tickets inline-block right visible-lg">
+                    <span class="uppercase"><a href="https://online.melbournestar.com/e-commerce/">@Umbraco.Field("ticketButtonTitle")</a></span>
+                </div>
+
+
+                <!-- main navbar -->
+                <nav class="navbar inline-block pull-right visible-lg" id="main_nav">
+                    <ul class="nav navbar-nav level-1">
+                        <li class="root">
+                            <!-- Link tag only if link is present in backend -->
+                            <a class="dropdown-toggle menu--link" href="ticket_pricing.html">
+                                <!-- END IF -->
+                                <span class="menu--link-text current-parent">ticket & pricing</span>
+                                <!-- Control to use: -->
+                                <i class="icon menu--icon "></i>
+                            </a>
+                        </li>
+                        <li class="root">
+                            <!-- Link tag only if link is present in backend -->
+                            <a class="dropdown-toggle menu--link" href="news_events.html">
+                                <!-- END IF -->
+                                <span class="menu--link-text current-parent">news & events</span>
+                                <!-- Control to use: -->
+                                <i class="icon menu--icon "></i>
+                            </a>
+                        </li>
+                        <li class="root">
+                            <!-- Link tag only if link is present in backend -->
+                            <a class="dropdown-toggle menu--link" href="function.html">
+                                <!-- END IF -->
+                                <span class="menu--link-text current-parent">functions & catering</span>
+                                <!-- Control to use: -->
+                                <i class="icon menu--icon "></i>
+                            </a>
+                        </li>
+
+
+                        <li class="root dropdown">
+                            <!-- Link tag only if link is present in backend -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <span class="menu--link-text current-parent">Dropdown Sample</span>
+                                <span class="arrow_down"></span>
+                            </a>
+                            <!-- Second level Nav Item -->
+                            <ul class="dropdown-menu level-2">
+                                <li class="">
+                                    <a class="" href="#">
+                                        <span class="">This is a very long sample name</span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a class="" href="#">
+                                        <span class="">Sample</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- End of Main Nav -->
