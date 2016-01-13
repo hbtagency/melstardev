@@ -1,7 +1,15 @@
 .three-column-container{
     padding-left:0;
     padding-right:0;
+    display:inline-block;
+    box-sizing:border-box;
     .post_list_item{
-
+        display:inline-block;
+        vertical-align:bottom;
+        float:left;
+        border:1px solid #000;
+    }
+    .clear{
+        clear:both;
     }
 }

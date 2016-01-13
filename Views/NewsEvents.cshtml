@@ -356,30 +356,30 @@
             <div class="col-lg-1 visible-lg">
             </div>
             <div class="col-xs-12 col-lg-10 three-column-container">
-                
-                @{
-                        var newsEvent = Umbraco.Content(1067);
-                        var feature_img_url = "";
+                <div class="row">
+                    @{
+                    var newsEvent = Umbraco.Content(1067);
+                    var feature_img_url = "";
 
-                        foreach (var c in newsEvent.Descendants().Where("NodeTypeAlias == \"newsevents_post\""))
-                        {
+                    foreach (var c in newsEvent.Descendants().Where("NodeTypeAlias == \"newsevents_post\""))
+                    {
 
-                            feature_img_url = Umbraco.Media(c.featuredImage).UmbracoFile;
+                    feature_img_url = Umbraco.Media(c.featuredImage).UmbracoFile;
 
-                            <div class="post_list_item col-lg-4 col-sm-6 col-xs-12">
-                            <img src="@feature_img_url" class="img-responsive" />
-                            <h2>@c.pageTitle</h2>
-                            <a class="whats_on" href="#">
-                                whats on
-                            </a>
-                            <p>
-                                @c.postSubheading
-                            </p>
-                        </div>
+                    <div class="post_list_item col-lg-4 col-sm-6 col-xs-12">
+                        <img src="@feature_img_url" class="img-responsive" />
+                        <h2>@c.pageTitle</h2>
+                        <a class="whats_on" href="#">
+                            whats on
+                        </a>
+                        <p>
+                            @c.postSubheading
+                        </p>
+                    </div>
                     }
-                }
-                
-                
+                    }
+
+                </div>
                 
                 
 
