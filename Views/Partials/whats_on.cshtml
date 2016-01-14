@@ -9,10 +9,11 @@
             @{
                 var whatson = Umbraco.Content(1071);
                 
-                foreach(var c in whatson.Children())
+                foreach(var c in whatson.Children().Where("NodeTypeAlias == \"newsevents_post\""))
                 {
+                    var feature_img_url = "";
                     var content = c.pageTitle;
-                    var feature_img_url = Umbraco.Media(c.featuredImage).umbracoFile;
+                    feature_img_url = Umbraco.Media(c.featuredImage).umbracoFile;
 
                     <div class="col-md-4 whatson_content clearfix">
                         <div class="image_wrapper clearfix">
