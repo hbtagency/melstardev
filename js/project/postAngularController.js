@@ -14,13 +14,14 @@ mainApp.controller('postController', function ($scope, $location, postService){
 			$scope.posts = JSON.parse(data);
 			// console.log(data);
 			
-
-			// console.log($scope.posts);
-			// for(var post in $scope.posts[0]){
-			// 	console.log(post.categoryName);
-
-			// }
-
+			for (var i = 0; i < $scope.posts.length; i++) {
+				var slash = "/";
+				var newCategoryPathName = slash.concat($scope.posts[i].categoryName);
+				if(newCategoryPathName == $location.path()){
+					$scope.search.categoryID = $scope.posts[i].categoryID;
+				}
+			};
+			
 		})
 		.error(function(error){
 			console.log(error);
@@ -31,12 +32,6 @@ mainApp.controller('postController', function ($scope, $location, postService){
 
 	getPosts();
 
-
-	// if ($location.path()=="/What's On") {
-	//     // var filter = $filter('filterB');
-	//     // alert("ok");
-	//     $scope.search.categoryID = 1071;
- //    };
 });
 
 mainApp.factory('postService', ['$http', function ($http) {
