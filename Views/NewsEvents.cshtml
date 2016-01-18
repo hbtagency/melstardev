@@ -3,31 +3,14 @@
     Layout = "Layout.cshtml";
     var newsEvent = Umbraco.Content(1067);
 }   
-<script type="text/javascript" src="/js/project/postAngularController.js"></script>
+
+@Html.Partial("_header")
 
 
-            <div class="box-center-container clearfix right-side parallax-banner" style="background:url('/img/banner1.jpg') no-repeat;background-size:cover;">
-                @Html.Partial("_top_nav")
-                @Html.Partial("_main_nav")
-                <div id="navplacehoder" class="navplacehoder hidden">
-                </div>
-                <!-- Banner area -->
-                <div class="banner_area">
-                    <div class="mask"></div>
-                    <div class="banner-heading sit_left clearfix">
-                        <h1>
-                            Tickets and Pricing
-                        </h1>
-                        <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-                    </div>
-                </div>
-                <!-- End of Banner -->
-            </div>
-            <div class="right-bar box-sidebar pull-right"></div>
-        </div>
-    </header>
 
-    
+
+    <script type="text/javascript" src="/js/project/postAngularController.js"></script>
+
     <div ng-app="mainApp" class="container template_content">
         <div ng-controller="postController">
         <div class="row">

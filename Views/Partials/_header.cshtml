@@ -1,0 +1,39 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{ 
+    var banner_img = "";
+    if (CurrentPage.HasValue("bannerImage"))
+    {
+        var banner_img_obj = Umbraco.Media(CurrentPage.bannerImage);
+        banner_img = banner_img_obj.Umbracofile;
+    }
+    else if(CurrentPage.Parent().HasValue("bannerImage") && CurrentPage.Parent().Id != 1049)
+    {
+        var banner_img_obj = Umbraco.Media(CurrentPage.Parent().bannerImage);
+        banner_img = banner_img_obj.Umbracofile;
+    }
+    else
+    {
+        banner_img = "/img/banner1.jpg";
+    }
+}
+<div class="box-center-container clearfix right-side parallax-banner" style="background:url('@banner_img') no-repeat;background-size:cover;">
+    @Html.Partial("_top_nav")
+    @Html.Partial("_main_nav")
+    <div id="navplacehoder" class="navplacehoder hidden">
+    </div>
+    <!-- Banner area -->
+    <div class="banner_area">
+        <div class="mask"></div>
+        <div class="banner-heading sit_left clearfix">
+            <h1>
+                @CurrentPage.pageTitle
+            </h1>
+            <p>@CurrentPage.subTitle</p>
+        </div>
+    </div>
+    <!-- End of Banner -->
+</div>
+<div class="right-bar box-sidebar pull-right"></div>
+    </div>
+</header>

@@ -48,7 +48,7 @@ namespace melstardev.controllers
             foreach (var obj in contentNode.Descendants().Where("NodeTypeAlias == \"newsevents_post\"")) {
                 var post = new Dictionary<string, string>();
                 post.Add("title", obj.pageTitle);
-                post.Add("subtitle", obj.postSubheading);
+                post.Add("subtitle", obj.subTitle);
                 post.Add("url", obj.Url);
                 post.Add("featuredImage", Umbraco.Media(obj.featuredImage).umbracoFile);
                 post.Add("categoryName", obj.Parent().pageTitle);

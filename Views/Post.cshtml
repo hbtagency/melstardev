@@ -1,40 +1,9 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = "Layout.cshtml";
-    var banner_img_url = "";
-
-    if(CurrentPage.HasValue("postBannerImage")){
-        var bannerImageItem = Umbraco.Media(CurrentPage.postBannerImage);
-        banner_img_url = bannerImageItem.UmbracoFile;
-    }
-    else{
-        var bannerImageItem = Umbraco.Media(CurrentPage.Parent().categoryBannerImage);
-        banner_img_url = bannerImageItem.UmbracoFile;
-    }
-
 }
-                <div class="box-center-container clearfix right-side parallax-banner" style="background:url('@banner_img_url') no-repeat;background-size:cover;">
-                    @Html.Partial("_top_nav")
-                    @Html.Partial("_main_nav")
+@Html.Partial("_header")
 
-                    <div id="navplacehoder" class="navplacehoder hidden">
-
-                    </div>
-                    <!-- Banner area -->
-                    <div class="banner_area">
-                        <div class="mask"></div>
-                        <div class="banner-heading sit_left clearfix">
-                            <h1>
-                                @CurrentPage.pageTitle
-                            </h1>
-                            <p>@CurrentPage.postSubheading</p>
-                        </div>
-                    </div>
-                    <!-- End of Banner -->
-                </div>
-                <div class="right-bar box-sidebar pull-right"></div>
-            </div>
-        </header>
 
 
 
@@ -101,7 +70,7 @@
                                         @c.Parent().pageTitle
                                     </div>
                                     <div class="post_article_description">
-                                        @c.postSubheading
+                                        @c.subTitle
                                     </div>
                                 </div>
                                 count++;
