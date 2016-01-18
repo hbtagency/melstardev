@@ -1,9 +1,11 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     var logo_img_url = "";
+    var rootNode = CurrentPage.AncestorsOrSelf(1).First();
+
 }
 <!-- Main Nav -->
-        <div class="main_nav home_nav clearfix" id="main_navigation">
+        <div class="main_nav clearfix" id="main_navigation">
             <div class="full-screen-container">
                 <!-- Mobile Menu Component -->
                 <div class="mobile-menu hidden-lg">
@@ -21,8 +23,8 @@
                 </div>
 
                 <!-- logo -->
-                @if(CurrentPage.HasValue("logo")){
-                    var dynamicMediaItem = Umbraco.Media(CurrentPage.logo);
+                @if(rootNode.HasValue("logo")){
+                    var dynamicMediaItem = Umbraco.Media(rootNode.logo);
                     logo_img_url = dynamicMediaItem.umbracoFile;
                 }
                 <div class="rotating_logo_div logo left visible-lg">
@@ -41,7 +43,7 @@
 
                 <!-- ticket -->
                 <div class="buy_tickets inline-block right visible-lg">
-                    <span class="uppercase"><a href="https://online.melbournestar.com/e-commerce/">@Umbraco.Field("ticketButtonTitle")</a></span>
+                    <span class="uppercase"><a href="https://online.melbournestar.com/e-commerce/">@rootNode.ticketButtonTitle</a></span>
                 </div>
 
 

@@ -1,0 +1,64 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+<div class="top_nav">
+    <div class="full-screen-container visible-lg">
+        <!-- Search component -->
+        <div class="search inline-block">
+            <ul class="nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle inline-block search_button" data-toggle="dropdown">
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="navbar--list-item">
+                            <form action="#" method="post">
+                                <input type="text" value="" placeholder="Enter key words ..." />
+                                <a href="#" class="submit search_button pull-right">
+                                </a>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- End of search component -->
+        <!-- Language component -->
+        <div class="language inline-block">
+            <ul class="nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle inline-block" data-toggle="dropdown">
+                        <img src="/img/ausflag.jpg" alt="$alt" class="center block " />
+                        <span class="block text">AUS</span>
+                        <img src="/img/arrow_down.jpg" class="center block" />
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="navbar--list-item">
+                            <a class="menu--link" href="#">
+                                <img src="/img/ausflag.jpg" alt="$alt" />
+                                <span>English</span>
+                            </a>
+                        </li>
+                        <li class="navbar--list-item">
+                            <a class="menu--link" href="#">
+                                <img src="/img/cnflag.jpg" alt="$alt" />
+                                <span>Chinese</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- Language component -->
+
+        <nav class="navbar inline-block contact-us">
+            <ul class="nav navbar-nav level-1">
+                <li class="root">
+                    <!-- Link tag only if link is present in backend -->
+                    <a href="$link">
+                        <!-- END IF -->
+                        <span class="menu--link-text current-parent">Contact Us</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
