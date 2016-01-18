@@ -1,8 +1,12 @@
 var mainApp = angular.module('mainApp',[]);
-mainApp.controller('postController', function ($scope, $location, filterFilter, postService){
+mainApp.controller('postController', function ($scope, $location, postService){
     
-    
-	
+    $scope.search = {
+        categoryID: "",
+    };
+    $scope.selectCat = function (cat) {
+        $scope.search.categoryID = cat;
+    }
 
 	function getPosts(){
 		postService.getPosts().success(function(data){
@@ -16,10 +20,11 @@ mainApp.controller('postController', function ($scope, $location, filterFilter, 
 
 
 	getPosts();
-	
+
 	if ($location.path()=="/test") {
-		// var filter = $filter('filterB');
-		alert("test");
+	    // var filter = $filter('filterB');
+	    alert("ok");
+	    $scope.search.categoryID = 1071;
     };
 });
 

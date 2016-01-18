@@ -29,36 +29,36 @@
 
     
     <div ng-app="mainApp" class="container template_content">
-        
+        <div ng-controller="postController">
         <div class="row">
             <div class="col-lg-1 visible-lg">
             </div>
             <div class="col-xs-12 col-lg-10">
                 <nav class="centered_nav_area clearfix">
                     <ul class="centered_list_nav">
-                        <li class="first"><a ng-click="filterB.categoryID = ''">All</a></li>
+                        <li class="first"><a ng-click="selectCat('')">All</a></li>
 
                         @{
                             foreach (var c in newsEvent.Children())
                             {
-                                <li><a href="#" ng-click="filterB.categoryID = '@c.Id'">@c.pageTitle</a></li>
+                                <li><a href="#" ng-click="selectCat(@c.Id)">@c.pageTitle</a></li>
                             }
                         }
                     </ul>
                 </nav>
             </div>
         </div>
-        <div class="row" ng-controller="postController">
+        <div class="row">
             <div class="col-lg-1 visible-lg">
             </div>
             <div class="col-xs-12 col-lg-10 three-column-container">
                 <div class="row">
                    
-                    <div ng-repeat="obj in posts | filter:filterB">
+                    <div ng-repeat="obj in posts | filter: {categoryID:search.categoryID}">
                         <div class="post_list_item col-lg-4 col-sm-6 col-xs-12">
                             <a href="{{obj.url}}"><img src="{{obj.featuredImage}}" class="img-responsive" /></a>
                             <a href="{{obj.url}}"><h2>{{obj.title}}</h2></a>
-                            <a class="whats_on" href="#" ng-click="filterB.categoryID = '1071'">{{obj.categoryName}}</a>
+                            <a class="whats_on" href="#" ng-click="search.categoryID = '1071'">{{obj.categoryName}}</a>
                             <p>
                                {{obj.subtitle}}
                             </p>
@@ -71,6 +71,7 @@
 
 
         </div>
+            </div>
     </div>
 
 
