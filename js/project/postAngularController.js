@@ -20,7 +20,12 @@ mainApp.controller('postController', function ($scope, $location, postService){
 
 
 	getPosts();
+	var id_cat_map = data.idcatmap;
+	for (alis in id_cat_map) {
+	    if (alias.alias == $location.path()) {
 
+	    }
+	}
 	if ($location.path()=="/test") {
 	    // var filter = $filter('filterB');
 	    alert("ok");
