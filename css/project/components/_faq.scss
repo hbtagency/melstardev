@@ -1,0 +1,50 @@
+.faq_container{
+    padding:60px 0 30px 0;
+    width:80%;
+    margin:0 auto;
+    .accordion-group{
+        margin:10px 0;
+        .accordion-inner{
+            text-align: left;
+            padding:30px 0;
+        }
+        
+        .accordion-heading{
+            padding:15px 15px 15px 30px;
+            background-color:$head_blue;
+            text-align: left;
+
+            a{
+                color:#fff;
+                text-transform: uppercase;
+                font-size:20px;
+                text-decoration: none;
+                &:hover{
+                    color:gray;
+                }
+
+                .icon-list-alt{
+                    margin-top:-2px;
+                    display:block;
+                    float:left;
+                    margin-right:15px;
+                    width:15px
+                    
+                }
+                .icon-list-alt.open{
+                    font-size:40px;
+                    margin-top:-20px;
+                    display:block;
+                    float:left;
+                    margin-right:15px;
+                    width:15px
+                }
+                
+               
+            }
+            
+        }
+    }
+}
+
+
