@@ -8,29 +8,35 @@ mainApp.controller('postController', function ($scope, $location, postService){
         $scope.search.categoryID = cat;
     }
 
+    // $scope.posts = "";
 	function getPosts(){
 		postService.getPosts().success(function(data){
 			$scope.posts = JSON.parse(data);
 			// console.log(data);
+			
+
+			// console.log($scope.posts);
+			// for(var post in $scope.posts[0]){
+			// 	console.log(post.categoryName);
+
+			// }
+
 		})
 		.error(function(error){
 			console.log(error);
 		})
+
 	}
 
 
 	getPosts();
-	var id_cat_map = data.idcatmap;
-	for (alis in id_cat_map) {
-	    if (alias.alias == $location.path()) {
 
-	    }
-	}
-	if ($location.path()=="/test") {
-	    // var filter = $filter('filterB');
-	    alert("ok");
-	    $scope.search.categoryID = 1071;
-    };
+
+	// if ($location.path()=="/What's On") {
+	//     // var filter = $filter('filterB');
+	//     // alert("ok");
+	//     $scope.search.categoryID = 1071;
+ //    };
 });
 
 mainApp.factory('postService', ['$http', function ($http) {
