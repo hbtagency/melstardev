@@ -4,86 +4,83 @@
 }
 @Html.Partial("_header")
 
+<!-- template content area -->
+@{                       
+    var newsNevent = Umbraco.Content(1067);
+}
+<div class="container two_column template_content">
+    <div class="row">
+        <div class="pull-left post_pagenation_nav">
+            <a href="@newsNevent.Url">&lt; BACK TO NEWS EVENTS</a>
+        </div>
+        <div class="pull-right post_pagenation_nav">
+            @{
+                var prevNode = CurrentPage.Previous();
+                var nextNode = CurrentPage.Next();
 
-
-
-        <!-- template content area -->
-        @{                       
-            var newsNevent = Umbraco.Content(1067);
-        }
-        <div class="container two_column template_content">
-            <div class="row">
-                <div class="pull-left post_pagenation_nav">
-                    <a href="@newsNevent.Url">&lt; BACK TO NEWS EVENTS</a>
-                </div>
-                <div class="pull-right post_pagenation_nav">
-                    @{
-                        var prevNode = CurrentPage.Previous();
-                        var nextNode = CurrentPage.Next();
-
-                        if(prevNode != null){
-                            <div class="post_nav_prev inline-block">
-                                <a href="@prevNode.Url"> &lt; PREV</a>
-                            </div>
-                        }
-
-                        if(nextNode != null){
-                            <div class="post_nav_next inline-block">
-                                <a href="@nextNode.Url">NEXT &gt;</a>
-                            </div>
-                        }
-                    }
-                </div>
-                <div class="post_content">
-                    <div class="post_heading">
-                        <h2>@CurrentPage.pageTitle</h2>
+                if(prevNode != null){
+                    <div class="post_nav_prev inline-block">
+                        <a href="@prevNode.Url"> &lt; PREV</a>
                     </div>
-                    <div class="post_description">
-                        @Html.Raw(CurrentPage.postContent)
-                    </div>
-                </div>
+                }
 
+                if(nextNode != null){
+                    <div class="post_nav_next inline-block">
+                        <a href="@nextNode.Url">NEXT &gt;</a>
+                    </div>
+                }
+            }
+        </div>
+        <div class="post_content">
+            <div class="post_heading">
+                <h2>@CurrentPage.pageTitle</h2>
             </div>
-
-            
-            <div class="post_related_articles ">
-                <div class="post_related_articles_title row">
-                    <h2>RELATED ARTICLES</h2>
-                </div>
-                <div class="post_related_posts row">
-
-                    @{
-                        var currentNodeId = CurrentPage.Id;
-                        var parentNode = CurrentPage.Parent();
-                        var postImageUrl = "";
-                        var count = 0;
-
-                        foreach(var c in parentNode.Children()){
-                            if(c.Id != currentNodeId && count < 3){
-                                postImageUrl = Umbraco.Media(c.featuredImage).UmbracoFile;
-                                <div class="col-xs-4 related_post_column">
-                                    <a href="@c.Url"><img class="related_post_img" src="@postImageUrl" /></a>
-                                    <div class="post_article_title">
-                                        <a href="@c.Url"><h4>@c.pageTitle</h4></a>
-                                    </div>
-                                    <div class="post_category">
-                                        @c.Parent().pageTitle
-                                    </div>
-                                    <div class="post_article_description">
-                                        @c.subTitle
-                                    </div>
-                                </div>
-                                count++;
-                            }
-                        }
-                    }
-                       
-                </div>
+            <div class="post_description">
+                @Html.Raw(CurrentPage.postContent)
             </div>
         </div>
 
-        <!-- end of template content -->
+    </div>
 
-        <!-- Js used only in post page -->
-        <script type="text/javascript" src="/js/project/striped_table.js"></script>
-        <script type="text/javascript" src="/js/project/banner_mask_height_init.js"></script>
+            
+    <div class="post_related_articles ">
+        <div class="post_related_articles_title row">
+            <h2>RELATED ARTICLES</h2>
+        </div>
+        <div class="post_related_posts row">
+
+            @{
+                var currentNodeId = CurrentPage.Id;
+                var parentNode = CurrentPage.Parent();
+                var postImageUrl = "";
+                var count = 0;
+
+                foreach(var c in parentNode.Children()){
+                    if(c.Id != currentNodeId && count < 3){
+                        postImageUrl = Umbraco.Media(c.featuredImage).UmbracoFile;
+                        <div class="col-xs-4 related_post_column">
+                            <a href="@c.Url"><img class="related_post_img" src="@postImageUrl" /></a>
+                            <div class="post_article_title">
+                                <a href="@c.Url"><h4>@c.pageTitle</h4></a>
+                            </div>
+                            <div class="post_category">
+                                @c.Parent().pageTitle
+                            </div>
+                            <div class="post_article_description">
+                                @c.subTitle
+                            </div>
+                        </div>
+                        count++;
+                    }
+                }
+            }
+                       
+        </div>
+    </div>
+</div>
+
+<!-- end of template content -->
+
+<!-- Js used only in post page -->
+<script type="text/javascript" src="/js/project/striped_table.js"></script>
+<script type="text/javascript" src="/js/project/banner_mask_height_init.js"></script>

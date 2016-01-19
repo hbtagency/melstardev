@@ -11,8 +11,7 @@ mainApp.controller('postController', function ($scope, $location, postService){
     // $scope.posts = "";
 	function getPosts(){
 		postService.getPosts().success(function(data){
-			$scope.posts = JSON.parse(data);
-			// console.log(data);
+		    $scope.posts = JSON.parse(data);
 			
 			for (var i = 0; i < $scope.posts.length; i++) {
 				var slash = "/";

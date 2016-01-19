@@ -50,57 +50,61 @@
                 <!-- main navbar -->
                 <nav class="navbar inline-block pull-right visible-lg" id="main_nav">
                     <ul class="nav navbar-nav level-1">
-                        <li class="root">
-                            <!-- Link tag only if link is present in backend -->
-                            <a class="dropdown-toggle menu--link" href="ticket_pricing.html">
-                                <!-- END IF -->
-                                <span class="menu--link-text current-parent">ticket & pricing</span>
-                                <!-- Control to use: -->
-                                <i class="icon menu--icon "></i>
-                            </a>
-                        </li>
-                        <li class="root">
-                            <!-- Link tag only if link is present in backend -->
-                            <a class="dropdown-toggle menu--link" href="news_events.html">
-                                <!-- END IF -->
-                                <span class="menu--link-text current-parent">news & events</span>
-                                <!-- Control to use: -->
-                                <i class="icon menu--icon "></i>
-                            </a>
-                        </li>
-                        <li class="root">
-                            <!-- Link tag only if link is present in backend -->
-                            <a class="dropdown-toggle menu--link" href="function.html">
-                                <!-- END IF -->
-                                <span class="menu--link-text current-parent">functions & catering</span>
-                                <!-- Control to use: -->
-                                <i class="icon menu--icon "></i>
-                            </a>
-                        </li>
+                        @foreach (var childPage in rootNode.Children)
+                        {
+                            if (childPage.Children.Any() && (!childPage.hideDescendantInNav))
+                            {
 
-
-                        <li class="root dropdown">
-                            <!-- Link tag only if link is present in backend -->
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span class="menu--link-text current-parent">Dropdown Sample</span>
-                                <span class="arrow_down"></span>
-                            </a>
-                            <!-- Second level Nav Item -->
-                            <ul class="dropdown-menu level-2">
-                                <li class="">
-                                    <a class="" href="#">
-                                        <span class="">This is a very long sample name</span>
+                                <li class="root dropdown has-child @(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <span class="menu--link-text current-parent">@childPage.Name</span>
+                                        <span class="arrow_down"></span>
+                                    </a>
+                                    @childPages(childPage.Children)
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="root @(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
+                                    <!-- Link tag only if link is present in backend -->
+                                    <a class="dropdown-toggle menu--link" href="@childPage.Url">
+                                        <!-- END IF -->
+                                        <span class="menu--link-text current-parent">@childPage.Name</span>
+                                        <!-- Control to use: -->
+                                        <i class="icon menu--icon "></i>
                                     </a>
                                 </li>
-                                <li class="">
-                                    <a class="" href="#">
-                                        <span class="">Sample</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                            }
+                        }
                     </ul>
                 </nav>
             </div>
         </div>
         <!-- End of Main Nav -->
+
+@helper childPages(dynamic pages)
+{
+    @* Ensure that we have a collection of pages *@
+    if (pages.Any())
+    {
+        @* Get the first page in pages and get the level *@
+    var naviLevel = pages.First().Level;
+
+        @* Add in level for a CSS hook *@
+        <ul class="dropdown-menu level-2">
+            @foreach (var page in pages)
+            {
+                <li>
+                    <a href="@page.Url">@page.Name</a>
+
+                    @* if the current page has any children *@
+                    @if (page.Children.Any())
+                    {
+                        @* Call our helper to display the children *@
+                        @childPages(page.Children)
+                    }
+                </li>
+            }
+        </ul>
+    }
+}

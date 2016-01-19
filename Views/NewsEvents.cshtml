@@ -20,7 +20,6 @@
                 <nav class="centered_nav_area clearfix">
                     <ul class="centered_list_nav">
                         <li class="first"><a href="/en/newsevents" ng-click="selectCat('')">All</a></li>
-
                         @{
                             foreach (var c in newsEvent.Children())
                             {
@@ -39,22 +38,19 @@
                    
                     <div ng-repeat="obj in posts | filter: {categoryID:search.categoryID}">
                         <div class="post_list_item col-lg-4 col-sm-6 col-xs-12">
-                            <a href="{{obj.url}}"><img src="{{obj.featuredImage}}" class="img-responsive" /></a>
-                            <a href="{{obj.url}}"><h2>{{obj.title}}</h2></a>
-                            <a class="whats_on" href="/en/newsevents/#/{{obj.categoryName}}">{{obj.categoryName}}</a>
-                            <p>
+                            <a class="in-row" href="{{obj.url}}"><img src="{{obj.featuredImage}}" class="img-responsive" /></a>
+                            <a class="in-row" href="{{obj.url}}"><h2>{{obj.title}}</h2></a>
+                            <a class="in-row whats_on" href="/en/newsevents/#/{{obj.categoryName}}">{{obj.categoryName}}</a>
+                            <p class="in-row">
                                {{obj.subtitle}}
                             </p>
                         </div>
                         <div ng-if="($index+1)%3 == 0" class="clear"></div>
                     </div>
-            
                 </div> 
             </div>
-
-
         </div>
-            </div>
+        </div>
     </div>
 
 

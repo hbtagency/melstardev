@@ -48,8 +48,7 @@ $ticket_container_width:177px;
         nav.navbar{
             margin-bottom:0px;
             border:none;
-            ul
-                li.root{
+            ul li.root{
                     min-width:150px;
                     a{
                         height:94px;
@@ -105,6 +104,11 @@ $ticket_container_width:177px;
                     }
                 }
                 
+            ul li.selected{
+                
+                    background-color:$head_blue;
+                
+            }
                 .dropdown:hover .dropdown-menu{
                     display:block !important;
                 }
