@@ -9,23 +9,11 @@
         <div class="container">
             <div class="row">
                 <div class="subscribe_title">
-                    RECEIVE OFFERS AND NEWS DIRECT TO YOUR INBOX
+                    @Umbraco.Field("subscribeTitle")
                 </div>
             </div>
             <div class="row subscribe_form">
-                <div class="interst inline-block">
-                    <!-- <select>
-                        <option value="interests">INTERESTS</option>
-                        <option value="test">TEST</option>
-                    </select> -->
-                    <select id="cd-dropdown" class="cd-select">
-                        <option value="-1" selected>OPTIONS</option>
-                        <option value="1">SAMPLE1</option>
-                        <option value="2">SAMPLE2</option>
-                        <option value="3">SAMPLE3</option>
-                        <option value="4">SAMPLE4</option>
-                    </select>
-                </div>
+                
                 <div class="fluid_container inline-block">
                     <input type="text" class="inline-block" placeholder="FIRST NAME*" />
                     <input type="text" class="inline-block" placeholder="LAST NAME*" />
@@ -43,13 +31,13 @@
         <div class="container">
             <div class="lets_connect row">
                 <div class="footer_title">
-                    LET'S CONNECT
+                    @Umbraco.Field("socialLinksTitle")
                 </div>
                 <div class="social_links">
-                    <span><a href="#"><img src="/img/tripadvisor_icon.jpg" /></a></span>
-                    <span><a href="#"><img src="/img/instagram_icon.jpg" /></a></span>
-                    <span><a href="#"><img src="/img/youtube_icon.jpg" /></a></span>
-                    <span><a href="#"><img src="/img/facebook_icon.jpg" /></a></span>
+                    <span><a target="_blank" href="@Umbraco.Field("tripAdvisorLink")"><img src="/img/tripadvisor_icon.jpg" /></a></span>
+                    <span><a target="_blank" href="@Umbraco.Field("instagramLink")"><img src="/img/instagram_icon.jpg" /></a></span>
+                    <span><a target="_blank" href="@Umbraco.Field("youtubeLink")"><img src="/img/youtube_icon.jpg" /></a></span>
+                    <span><a target="_blank" href="@Umbraco.Field("facebookLink")"><img src="/img/facebook_icon.jpg" /></a></span>
                 </div>
             </div>
         </div>
@@ -147,6 +135,4 @@
     <script type="text/javascript" src="/js/project/sitewide/ticket.js"></script>
     <script type="text/javascript" src="/js/project/sitewide/sticky_nav.js"></script>
     <script type="text/javascript" src="/js/project/sitewide/rotate_logo.js"></script>
-    <script type="text/javascript" src="/plugins/custom_dropdown/jquery.dropdown.js"></script>
-    <script type="text/javascript" src="/js/project/sitewide/custom_dropdown.js"></script>
     <script type="text/javascript" src="/js/project/sitewide/parralax_banner.js"></script>

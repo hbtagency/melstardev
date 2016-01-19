@@ -8,7 +8,7 @@ $join_button_width: 80px;
 	padding-bottom: 50px;
 
 	.subscribe_form{
-		padding-left: $interest_width + 40;
+		// padding-left: $interest_width + 40;
 		padding-right: $join_button_width;
 		float: left;
 		width: 100%;
@@ -20,28 +20,16 @@ $join_button_width: 80px;
 		margin-bottom: 40px;
 	}
 
-	.interst{
-		margin-left: -166px;
-		width: $interest_width;
-		float: left;
-
-		select{
-			width: 100%;
-			height: 30px;
-			border: 0px;
-			padding-left: 10px;
-		}
-	}
-
+	
 	.fluid_container {
-		width: 95%;
+		width: 97%;
 		float: center;
 		position: relative;
-		left: 11px;
+		left: 0px;
 
 		input.inline-block{
 			width: 30%;
-			margin-right: 15px;
+			margin-right: 25px;
 			border: 0px;
 			height: 50px;
 			padding-left: 26px;
@@ -50,7 +38,7 @@ $join_button_width: 80px;
 	}
 
 	.join_button{
-		margin-right: -$join_button_width;
+		margin-right: -90px;
 		padding-top: 15px;
 		width: $join_button_width + 40;
 		float: right;
@@ -63,3 +51,5 @@ $join_button_width: 80px;
 		}
 	}
 }
+
+@import "media_queries/__subscribe.scss";
