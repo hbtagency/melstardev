@@ -1,5 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-
+@{
+    var homepageNode = Umbraco.Content(1049);
+}
 <script type="text/javascript" src="/plugins/instafeed/instafeed.min.js"></script>
     <script type="text/javascript" src="/js/project/instagram.js"></script>
 
@@ -9,7 +11,7 @@
         <div class="container">
             <div class="row">
                 <div class="subscribe_title">
-                    @Umbraco.Field("subscribeTitle")
+                    @homepageNode.subscribeTitle
                 </div>
             </div>
             <div class="row subscribe_form">
@@ -31,13 +33,13 @@
         <div class="container">
             <div class="lets_connect row">
                 <div class="footer_title">
-                    @Umbraco.Field("socialLinksTitle")
+                    @homepageNode.socialLinksTitle
                 </div>
                 <div class="social_links">
-                    <span><a target="_blank" href="@Umbraco.Field("tripAdvisorLink")"><img src="/img/tripadvisor_icon.jpg" /></a></span>
-                    <span><a target="_blank" href="@Umbraco.Field("instagramLink")"><img src="/img/instagram_icon.jpg" /></a></span>
-                    <span><a target="_blank" href="@Umbraco.Field("youtubeLink")"><img src="/img/youtube_icon.jpg" /></a></span>
-                    <span><a target="_blank" href="@Umbraco.Field("facebookLink")"><img src="/img/facebook_icon.jpg" /></a></span>
+                    <span><a target="_blank" href="@homepageNode.tripAdvisorLink"><img src="/img/tripadvisor_icon.jpg" /></a></span>
+                    <span><a target="_blank" href="@homepageNode.instagramLink"><img src="/img/instagram_icon.jpg" /></a></span>
+                    <span><a target="_blank" href="@homepageNode.youtubeLink"><img src="/img/youtube_icon.jpg" /></a></span>
+                    <span><a target="_blank" href="@homepageNode.facebookLink"><img src="/img/facebook_icon.jpg" /></a></span>
                 </div>
             </div>
         </div>

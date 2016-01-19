@@ -8,50 +8,22 @@
             <span class="lines"></span>
         </button>
         <div class="accordion" id="leftMenu">
-            <div class="accordion-group">
-                <div class="accordion-heading">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
-                        <i class="icon-th"></i> Layout
-                    </a>
-                </div>
-            </div>
-            <div class="accordion-group">
-                <div class="accordion-heading">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
-                        <i class="icon-th-list"></i> UI Components
-                    </a>
-                </div>
-            </div>
-            <div class="accordion-group">
-                <div class="accordion-heading collapsed_item">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseFour">
-                        <i class="icon-list-alt"></i> Forms
-                    </a>
-                </div>
-                <div id="collapseFour" class="accordion-body collapse" style="height: 0px; ">
-                    <div class="accordion-inner">
-                        <ul>
-                            <li><a href='#'>This is one</a></li>
-                            <li><a href='#'>This is two</a></li>
-                            <li><a href='#'>This is three</a></li>
-                        </ul>
+
+            @{
+                var visitorInfoNode = Umbraco.Content(1164);
+
+                foreach (var c in visitorInfoNode.Children)
+                {
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a href="@c.Url">
+                                <i class="icon-th"></i>@c.pageTitle
+                            </a>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="accordion-group">
-                <div class="accordion-heading">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
-                        <i class="icon-cog"></i> Plugins
-                    </a>
-                </div>
-            </div>
-            <div class="accordion-group">
-                <div class="accordion-heading">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
-                        <i class="icon-file"></i> Templates
-                    </a>
-                </div>
-            </div>
+                }
+            }
+            
         </div>
         <!-- End of Mobile Menu Component -->
         <!--
