@@ -43,11 +43,28 @@ var anchor = $('#view_more_button');
 
           open = false;
         }
-        
-        
-        
-        
-        
-        
       }
-}); 
+
+
+});
+
+$(window).scroll(function () {
+    if ($('#view_more_button').hasClass("close")){
+        $('#view_more_button').removeClass('close');
+        $("#left-bar").removeClass('expanded');
+        //$('#box-container').removeClass('right-side');
+        if ($("#box-container").hasClass("move-left")) {
+            $("#box-container").removeClass("move-left");
+            $(".whats_on").css("margin-left", "0");
+            $("#left-bar").removeClass("extra-padding-left");
+            //$("#body-mask").removeClass("show");
+            //$("#body-mask").removeClass("extra-margin-left");
+        }
+
+        //As main body are squashed, need to hide some space
+        $('#main_nav').removeClass('hidden');
+        $('#main_nav').addClass('visible-lg');
+        $('#logo').removeClass('hidden');
+    }
+});
+

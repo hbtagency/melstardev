@@ -50,15 +50,13 @@
     <header>
     <div id="body-mask" class="body-mask">
     </div>
+
     <!-- Load mobile nav which should only be displayed in Mobile and Tab view-->
     @Html.Partial("_mobile_nav")   
+
     <!-- Load extra nav which hides in left side of box container. -->
     @Html.Partial("_extra_nav")
-         
     @RenderBody()
-    
-    
-
     @Html.Partial("_footer")
     
 

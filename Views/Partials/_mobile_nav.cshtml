@@ -1,84 +1,67 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-
+@{
+    var rootNode = CurrentPage.AncestorsOrSelf(1).First();
+}
 <!-- Mobile Menu -->
 <div class="mobile-menu-sidebar hidden-lg clearfix" id="leftMobileMenu">
     <a id="close-mobile" href="#">
         <img class="pull-right img-responsive" src="/img/close.png" />
     </a>
-    <div class="accordion">
-        <div class="accordion-group hidden-lg">
-            <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
-                    <i class="icon-th"></i> Main one
-                </a>
-            </div>
-        </div>
-        <div class="accordion-group hidden-lg">
-            <div class="accordion-heading collapsed_item">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseMainTwo">
-                    <i class="icon-list-alt"></i> Main two
-                </a>
-            </div>
-            <div id="collapseMainTwo" class="accordion-body collapse" style="height: 0px; ">
-                <div class="accordion-inner">
-                    <ul>
-                        <li><a href='#'>This is one</a></li>
-                        <li><a href='#'>This is two</a></li>
-                        <li><a href='#'>This is three</a></li>
-                    </ul>
+    <div class="accordion" id="#leftMenu">
+
+
+        @foreach (var childPage in rootNode.Children)
+        {
+            if (childPage.Children.Any() && (!childPage.hideDescendantInNav))
+            {
+                <div class="accordion-group hidden-lg">
+                    <div class="accordion-heading collapsed_item">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#@childPage.Id">
+                            <i class="icon-list-alt"></i> @childPage.Name
+                        </a>
+                    </div>
+                    @childPages(childPage.Children, @childPage.Id)
+
+
                 </div>
-            </div>
-        </div>
-        <div class="accordion-group hidden-lg">
-            <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
-                    <i class="icon-th"></i> Main three
-                </a>
-            </div>
-        </div>
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
-                    <i class="icon-th"></i> Layout
-                </a>
-            </div>
-        </div>
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
-                    <i class="icon-th-list"></i> UI Components
-                </a>
-            </div>
-        </div>
-        <div class="accordion-group">
-            <div class="accordion-heading collapsed_item">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#cf">
-                    <i class="icon-list-alt"></i> Forms
-                </a>
-            </div>
-            <div id="cf" class="accordion-body collapse" style="height: 0px; ">
-                <div class="accordion-inner">
-                    <ul>
-                        <li><a href='#'>This is one</a></li>
-                        <li><a href='#'>This is two</a></li>
-                        <li><a href='#'>This is three</a></li>
-                    </ul>
+
+            }
+            else
+            {
+                <div class="accordion-group hidden-lg">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" href="@childPage.Url">
+                            <i class="icon-th"></i> @childPage.Name
+                        </a>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
-                    <i class="icon-cog"></i> Plugins
-                </a>
-            </div>
-        </div>
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#">
-                    <i class="icon-file"></i> Templates
-                </a>
-            </div>
-        </div>
-    </div>
+            }
+        }
+    </div>   
 </div>
+
+
+@helper childPages(dynamic pages,dynamic ID)
+{
+    @* Ensure that we have a collection of pages *@
+if (pages.Any())
+{
+    @* Get the first page in pages and get the level *@
+var naviLevel = pages.First().Level;
+
+    @* Add in level for a CSS hook *@
+    <div id="@ID" class="accordion-body collapse" style="height: 0px; ">
+        <div class="accordion-inner">
+            <ul>
+                @foreach (var page in pages)
+                {
+                    <li>
+                        <a href="@page.Url">@page.Name</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>        
+    
+}
+}

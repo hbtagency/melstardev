@@ -40,7 +40,7 @@
                         <div class="post_list_item col-lg-4 col-sm-6 col-xs-12">
                             <a class="in-row" href="{{obj.url}}"><img src="{{obj.featuredImage}}" class="img-responsive" /></a>
                             <a class="in-row" href="{{obj.url}}"><h2>{{obj.title}}</h2></a>
-                            <a class="in-row whats_on" href="/en/newsevents/#/{{obj.categoryName}}">{{obj.categoryName}}</a>
+                            <a class="in-row whats_on_newsevents" href="/en/newsevents/#/{{obj.categoryName}}">{{obj.categoryName}}</a>
                             <p class="in-row">
                                {{obj.subtitle}}
                             </p>
@@ -55,3 +55,30 @@
 
 
     <script type="text/javascript" src="/js/project/banner_mask_height_init.js"></script>
+
+@helper childPages(dynamic pages)
+{
+    @* Ensure that we have a collection of pages *@
+    if (pages.Any())
+    {
+        @* Get the first page in pages and get the level *@
+        var naviLevel = pages.First().Level;
+
+        @* Add in level for a CSS hook *@
+        <ul class="dropdown-menu level-2">
+            @foreach (var page in pages)
+            {
+                <li>
+                    <a href="@page.Url">@page.Name</a>
+
+                    @* if the current page has any children *@
+                    @if (page.Children.Any())
+                    {
+                        @* Call our helper to display the children *@
+                        @childPages(page.Children)
+                    }
+                </li>
+            }
+        </ul>
+    }
+}

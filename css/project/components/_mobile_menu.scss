@@ -16,6 +16,8 @@
     font-family: $font-fu-book,$font-fu-l;
     @include transition(all 1s ease);
     &.move-left{left:0;}
+
+
     .accordion{
         .accordion-group{
             padding-bottom:10px;
@@ -31,12 +33,13 @@
                     font-size:14px;
                 }
             }
-            .accordion-body{
+            .accordion-body{ 
                 ul{
-                    padding-left:15px;
+                    padding-left:0;
                     padding-top:10px;
                     list-style:none;
                     li{
+                        list-style:none;
                         padding:3px 0;
                         a{
                             color:#000;
