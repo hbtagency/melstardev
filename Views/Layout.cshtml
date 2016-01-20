@@ -18,7 +18,10 @@
     <!-- JS init -->
     <script type="text/javascript" src="/js/jquery/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap/bootstrap.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    @*<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>*@
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular-animate.js"></script>
+
     <!--
     <script language="javascript">
         var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
@@ -50,13 +53,17 @@
     <header>
     <div id="body-mask" class="body-mask">
     </div>
-
+    <div id="search-mask" class="body-mask">
+    </div>
     <!-- Load mobile nav which should only be displayed in Mobile and Tab view-->
     @Html.Partial("_mobile_nav")   
-
     <!-- Load extra nav which hides in left side of box container. -->
     @Html.Partial("_extra_nav")
+         
     @RenderBody()
+    
+    
+
     @Html.Partial("_footer")
     
 
