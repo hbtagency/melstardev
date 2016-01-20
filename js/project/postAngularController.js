@@ -1,4 +1,4 @@
-var mainApp = angular.module('mainApp',[]);
+var mainApp = angular.module('mainApp',['ngAnimate']);
 mainApp.controller('postController', function ($scope, $location, postService){
     
     $scope.search = {
@@ -43,6 +43,10 @@ mainApp.factory('postService', ['$http', function ($http) {
 
 }]);
 
+
+angular.element(document).ready(function() {
+    angular.bootstrap(document.getElementById('mainApp'), ['mainApp']);
+});
 
 // mainApp
 // .constant('baseHref', '/en/newsevents/')
