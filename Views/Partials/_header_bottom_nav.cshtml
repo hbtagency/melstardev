@@ -1,0 +1,72 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{ 
+    var banner_img = "";
+    if (CurrentPage.HasValue("bannerImage"))
+    {
+        var banner_img_obj = Umbraco.Media(CurrentPage.bannerImage);
+        banner_img = banner_img_obj.Umbracofile;
+    }
+    else if(CurrentPage.Parent().HasValue("bannerImage") && CurrentPage.Parent().Id != 1049)
+    {
+        var banner_img_obj = Umbraco.Media(CurrentPage.Parent().bannerImage);
+        banner_img = banner_img_obj.Umbracofile;
+    }
+    else
+    {
+        banner_img = "/img/banner1.jpg";
+    }
+}
+<div class="box-center-container clearfix right-side parallax-banner" style="background:url('@banner_img') no-repeat;background-size:cover;">
+    @Html.Partial("_top_nav")
+    @Html.Partial("_main_nav")
+    <div id="navplacehoder" class="navplacehoder hidden">
+    </div>
+    <!-- Banner area -->
+    <div class="banner_area">
+        <div class="mask"></div>
+        <div class="banner-heading sit_left clearfix">
+            <h1>
+                @CurrentPage.pageTitle
+            </h1>
+            <p>@CurrentPage.subTitle</p>
+        </div>
+
+        <!-- Sticky Menu 2 -->
+        <div class="sticky_menu_2 visible-lg">
+            <div class="container">
+                <nav class="navbar inline-block pull-center visible-lg" id="main_nav">
+                    <ul class="nav navbar-nav level-1" id="sticky_nav">
+                        @foreach (var childPage in CurrentPage.Children)
+                        {
+                            if (childPage.DocumentTypeAlias == "Function_page")
+                            {
+                            <li class="root nav_margin_right">
+                                <!-- Link tag only if link is present in backend -->
+                                <a class="dropdown-toggle menu--link" href="@childPage.Url">
+                                    <!-- END IF -->
+                                    <span class="menu--link-text current-parent">@childPage.Name</span>
+                                    <!-- Control to use: -->
+                                    <i class="icon menu--icon "></i>
+                                </a>
+                            </li>
+                            }
+                        }
+
+                        <!-- Last element
+                        <li class="root">
+                            <a class="dropdown-toggle menu--link" href="#">
+                                <span class="menu--link-text current-parent">ENQUIRY</span>
+                                <i class="icon menu--icon "></i>
+                            </a>
+                        </li>-->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- End of Sticky Menu 2 -->
+    </div>
+    <!-- End of Banner -->
+</div>
+<div class="right-bar box-sidebar pull-right"></div>
+    </div>
+</header>
