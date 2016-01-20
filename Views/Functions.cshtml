@@ -5,6 +5,8 @@
     var functionRootNode = Umbraco.Content(1174);
     var venueNode = functionRootNode.Children.Where("DocumentTypeAlias==\"Functions_venues\"").FirstOrDefault();
     var loopCounter = 0;
+    var venueLoopCounter = 0;
+
 }
 
 @Html.Partial("_header_bottom_nav")
@@ -74,7 +76,12 @@
                         </a>
                     </div>
                     
-                }
+                    venueLoopCounter++;
+            }
+
+            if(venueLoopCounter % 3 == 0 && venueLoopCounter !=0){
+            <div class="clear"></div>
+            }
             }
 
         </div>

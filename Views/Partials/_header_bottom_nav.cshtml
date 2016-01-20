@@ -15,6 +15,8 @@
     {
         banner_img = "/img/banner1.jpg";
     }
+
+    var functionRootNode = Umbraco.Content(1174);
 }
 <div class="box-center-container clearfix right-side parallax-banner" style="background:url('@banner_img') no-repeat;background-size:cover;">
     @Html.Partial("_top_nav")
@@ -32,21 +34,21 @@
         </div>
 
         <!-- Sticky Menu 2 -->
-        <div class="sticky_menu_2 visible-lg">
+        <div class="sticky_menu_2 visible-lg text-center">
             <div class="container">
-                <nav class="navbar inline-block pull-center visible-lg" id="main_nav">
-                    <ul class="nav navbar-nav level-1" id="sticky_nav">
-                        @foreach (var childPage in CurrentPage.Children)
+                <nav class="navbar inline-block text-center pull-center visible-lg" id="main_nav">
+                    <ul class="nav navbar-nav inline-block level-1" id="sticky_nav">
+                        @foreach (var childPage in functionRootNode.Children)
                         {
                             if (childPage.DocumentTypeAlias == "Function_page")
                             {
-                            <li class="root nav_margin_right">
+                            <li class="root nav_margin_right @(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
                                 <!-- Link tag only if link is present in backend -->
                                 <a class="dropdown-toggle menu--link" href="@childPage.Url">
                                     <!-- END IF -->
                                     <span class="menu--link-text current-parent">@childPage.Name</span>
                                     <!-- Control to use: -->
-                                    <i class="icon menu--icon "></i>
+                                    <i class="icon menu--icon"></i>
                                 </a>
                             </li>
                             }

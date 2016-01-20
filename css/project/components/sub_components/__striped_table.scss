@@ -1,9 +1,18 @@
 $blue_text: #394758;
 
-.table-striped{
+
+
+.table-striped, #table-striped-inside table{
     font-size:12px;
     color:$blue_text !important;
     width:100%;
+
+    caption{
+        font-size:24px !important;
+        text-align:left;
+        text-transform:uppercase;
+    }
+
     tr.header{
         background-color:$head_blue !important;
         th{

@@ -5,11 +5,27 @@
     width: 100%;
     bottom:-70px;
     padding-top:10px;
+
+    .selected{
+        .dropdown-toggle{
+        background-color:#000;
+        }
+    }
+
+    .inline-block{
+        display:inline-block !important;
+        margin:0 auto;
+    }
+
     .menu--link-text{
         color: white;
     }
     
     .dropdown-toggle:hover{
+            background-color:#000;
+        }
+
+    .dropdown-toggle:focus{
             background-color:#000;
         }
         

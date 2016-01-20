@@ -1,4 +1,81 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-    Layout = null;
+    Layout = "~/Views/Layout.cshtml";
+    //The following node ID needs to be replaced if the corresponding node is removed from CMS.
+    var functionRootNode = Umbraco.Content(1174);
+    var venueNode = functionRootNode.Children.Where("DocumentTypeAlias==\"Functions_venues\"").FirstOrDefault();
+    var loopCounter = 0;
+    var venueLoopCounter = 0;
 }
+
+@Html.Partial("_header_bottom_nav")
+
+<br /><br /><br />
+<div class="container template_content two_column_posts">
+
+    <div class="row">
+        <div class="col-lg-1 visible-lg">
+        </div>
+        <div class="col-lg-10 col-xs-12" id="table-striped-inside">
+            @Html.Raw(CurrentPage.description)
+        </div>
+    </div>
+
+    <div class="row divider">
+        <div class="col-lg-1 visible-lg">
+        </div>
+        <div class="col-xs-12 col-lg-10">
+            <hr>
+        </div>
+    </div>
+</div>
+<div class="container template_content">
+    <div class="row">
+        <div class="col-lg-1 visible-lg">
+        </div>
+        <div class="col-xs-12 col-lg-10">
+            <div class="heading"></div>
+            <h1>VENUES</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1 visible-lg">
+        </div>
+        <div class="col-xs-12 col-lg-10 three-column-container">
+            @foreach (var item in venueNode.Children){
+
+
+                if(item.DocumentTypeAlias == "Functions_venues_page" && item.Id != CurrentPage.Id){
+                <div class="post_list_item col-lg-4 col-sm-6 col-xs-12">
+                    <img src="@Umbraco.Media(item.featuredImage).UmbracoFile" class="img-responsive" />
+                    <h2>@item.pageTitle</h2>
+                    <p>
+                        <b>
+                            @item.subTitle
+                        </b>
+                    </p>
+                    <p>
+                        @Umbraco.Truncate(item.description,350,true)
+                    </p>
+                    <a class="learn_more" href="@item.Url">
+                        lear more
+                    </a>
+                </div>
+                    venueLoopCounter++;
+                }
+                
+                if(venueLoopCounter % 3 == 0 && venueLoopCounter !=0){
+                    <div class="clear"></div>
+                }
+            }
+
+        </div>
+    </div>
+</div>
+
+<!-- Js used only in current page -->
+<script type="text/javascript" src="/js/project/stickyMenu2.js"></script>
+<script type="text/javascript" src="/js/project/banner_mask_height_init.js"></script>
+<script type="text/javascript" src="/js/project/function_menu_remove_last_class.js"></script>
+<script type="text/javascript" src="/js/project/striped_table.js"></script>
+
