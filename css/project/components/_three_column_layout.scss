@@ -1,8 +1,10 @@
 .three-column-container{
     padding-left:0;
     padding-right:0;
-    display:inline-block;
+    display:block;
     box-sizing:border-box;
+    position:relative;
+    min-height:500px;
     #preloader{
         position:absolute;
         margin:0 auto;

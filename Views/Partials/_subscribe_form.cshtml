@@ -1,0 +1,36 @@
+﻿<!-- Subscribe -->
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+    var homepageNode = Umbraco.Content(1049);
+         //var homenode = this.ViewData.ContainsKey("homePageNode") ? this.ViewData["homePageNode"] : "SIGN UP WITH US";
+}
+<div class="subscribe full-width visible-lg">
+    <div class="container">
+        <div class="row">
+            <div class="subscribe_title">
+                @homepageNode.subscribeTitle
+            </div>
+        </div>
+        <div class="row subscribe_form">
+            <form action="http://melbournestar.us11.list-manage.com/subscribe/post-json?u=780de5edae0da9609d83bdfdc&amp;id=df97abedaf" name="mc-embedded-subscribe-form" method="post">
+                <div class="sign-up-msg red" id="sign-up-msg">This is a message</div>
+                <div class="fluid_container inline-block">
+                    <div class="input-container">
+                        <input name="FNAME" type="text" class="inline-block" placeholder="FIRST NAME*" />
+                    </div>
+                    <div class="input-container">
+                        <input name="LNAME" type="text" class="inline-block" placeholder="LAST NAME*" />
+                    </div>
+                    <div class="input-container">
+                        <input name="EMAIL" type="text" class="inline-block" placeholder="EMAIL ADDRESS*" />
+                    </div>
+                </div>
+                <div class="join_button inline-block">
+                    <input type="submit" name="subscribe" id="signup_submit" value="JOIN">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- End of Subscribe -->

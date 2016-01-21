@@ -2,33 +2,12 @@
 @{
     var homepageNode = Umbraco.Content(1049);
 }
+
 <script type="text/javascript" src="/plugins/instafeed/instafeed.min.js"></script>
-    <script type="text/javascript" src="/js/project/instagram.js"></script>
+<script type="text/javascript" src="/js/project/instagram.js"></script>
 
+@Html.Partial("_subscribe_form")
 
-    <!-- Subscribe -->
-    <div class="subscribe full-width visible-lg">
-        <div class="container">
-            <div class="row">
-                <div class="subscribe_title">
-                    @homepageNode.subscribeTitle
-                </div>
-            </div>
-            <div class="row subscribe_form">
-                
-                <div class="fluid_container inline-block">
-                    <input type="text" class="inline-block" placeholder="FIRST NAME*" />
-                    <input type="text" class="inline-block" placeholder="LAST NAME*" />
-                    <input type="text" class="inline-block" placeholder="EMAIL ADDRESS*" />
-                </div>
-                <div class="join_button inline-block">
-                    <button><a href="#">JOIN</a></button>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!-- End of Subscribe -->
     <footer>
         <div class="container">
             <div class="lets_connect row">

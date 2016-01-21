@@ -12,6 +12,7 @@ $join_button_width: 80px;
 		padding-right: $join_button_width;
 		float: left;
 		width: 100%;
+            position:relative;
 	}
 
 	.subscribe_title{
@@ -27,13 +28,20 @@ $join_button_width: 80px;
 		position: relative;
 		left: 0px;
 
-		input.inline-block{
-			width: 30%;
-			margin-right: 25px;
-			border: 0px;
-			height: 50px;
-			padding-left: 26px;
-		}
+        .input-container{
+            width:30%;
+            height:50px;
+            display:inline-block;
+            margin-right: 25px;
+            input.inline-block{
+			    width: 100%;
+			    margin-right: 25px;
+			    border: 0px;
+			    height: 50px;
+			    padding-left: 26px;
+		    }
+        }
+		
 
 	}
 
@@ -45,11 +53,32 @@ $join_button_width: 80px;
 		background-color: black;	
 		height: 50px;
 
-		a{
+		input[type=submit]{
 			color: white;
 			font-family: $font-fu-bold;
+            background-color: black;	
+            border:0;
 		}
 	}
 }
+
+.sign-up-msg{
+    padding:8px 15px 10px 15px;
+    font-size:20px;
+    display:inline-block;
+    width:300px;
+    z-index:10;
+    top:-40px;
+    position:absolute;
+    margin:0 auto;
+    left:0;
+    &.green{
+        background-color:green;
+    }
+    &.red{
+        background-color:red;
+    }
+}
+
 
 @import "media_queries/__subscribe.scss";

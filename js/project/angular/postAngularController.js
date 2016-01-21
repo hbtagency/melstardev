@@ -55,7 +55,7 @@ mainApp.factory('postService', ['$http', function ($http) {
 //Defind ng-repead finish events. 
 mainApp.directive('ngRepeatEndWatch', function () {
     return {
-        restrict: 'A',
+        restrict: '',
         scope: {},
         link: function (scope, element, attrs) {
             if (attrs.ngRepeat) {
