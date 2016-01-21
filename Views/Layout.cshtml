@@ -53,6 +53,29 @@
     <div id="body-mask" class="body-mask">
     </div>
     <div id="search-mask" class="body-mask">
+        <div id="search-close-button"><a id="mask_close_button" href="#"><img src="/img/icon-close.png" /></a></div>
+
+        <script type="text/javascript" src="/js/project/angular/searchAngularController.js"></script>
+        <!--search-->
+        <div class="search-box" ng-app="searchModule">
+            <div class="search-box-container" ng-controller="searchController">
+                <div class="search-box-input inline-block">
+                    Search: 
+                </div>
+                <input class="inline-block" type="search" ng-model="q" placeholder="Click to search..." />
+                <ul class="example-animate-container">
+                    <li class="animate-repeat" ng-if="q.length > 0" ng-repeat="page in pages | filter:q as results">
+                        [{{$index + 1}}] {{page.title}} link is <a href="{{page.url}}">{{page.url}}</a>
+                    </li>
+                    <li class="animate-repeat" ng-if="results.length == 0">
+                        <strong>No results found...</strong>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        
+        <!--End of search-->
     </div>
     <!-- Load mobile nav which should only be displayed in Mobile and Tab view-->
     @Html.Partial("_mobile_nav")   

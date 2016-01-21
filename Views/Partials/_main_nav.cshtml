@@ -4,23 +4,7 @@
     var rootNode = CurrentPage.AncestorsOrSelf(1).First();
 }
 
-<script type="text/javascript" src="/js/project/angular/searchAngularController.js"></script>
-<!--testing-->
-<div ng-app="searchModule">
-    <div ng-controller="searchController">
-        <input type="search" ng-model="q" placeholder="Click to search..." />
-        <ul class="example-animate-container">
-            <li class="animate-repeat" ng-if="q.length > 0" ng-repeat="page in pages | filter:q as results">
-                [{{$index + 1}}] {{page.title}} link is <a href="{{page.url}}">{{page.url}}</a>
-            </li>
-            <li class="animate-repeat" ng-if="results.length == 0"> 
-                <strong>No results found...</strong>
-            </li>
-        </ul>
 
-    </div>
-</div>
-<!--End of testing-->
 
 <!-- Main Nav -->
         <div class="main_nav clearfix" id="main_navigation">

@@ -1,19 +1,8 @@
-var clickStatus = 0;
 $(".search_button").click(function(){
-	if(clickStatus == 0){
-		displayOverLay();
-		clickStatus = 1;
-	}
-	else{
-		dismissOverLay();
-		clickStatus = 0;
-	}
+	$("#search-mask").addClass("show");
+	$("#search-mask").fadeIn(1500);
 });
 
-function displayOverLay(){
-			alert("open");
-}
-
-function dismissOverLay(){
-		alert("close");
-}
+$("#mask_close_button").click(function(){
+	$("#search-mask").removeClass("show");
+});
