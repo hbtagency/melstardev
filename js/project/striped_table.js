@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
     var striped_table = $("#table-striped-inside table tr");
     var counter = 0; 
     striped_table.each(function(){

@@ -9,7 +9,7 @@
 
 
 
-    <script type="text/javascript" src="/js/project/postAngularController.js"></script>
+    <script type="text/javascript" src="/js/project/angular/postAngularController.js"></script>
 
     <div id="mainApp" class="container template_content">
         <div ng-controller="postController">
@@ -34,9 +34,10 @@
             <div class="col-lg-1 visible-lg">
             </div>
             <div class="col-xs-12 col-lg-10 three-column-container">
+                <img id="preloader" src="/img/preloader.gif"/>
                 <div class="row example-animate-container">
                    
-                    <div ng-repeat="obj in posts | filter: {categoryID:search.categoryID}">
+                    <div ng-repeat="obj in posts | filter: {categoryID:search.categoryID}" ng-repeat-end-watch="myFunction">
                         <div class="animate-repeat post_list_item col-lg-4 col-sm-6 col-xs-12">
                             <a class="in-row" href="{{obj.url}}"><img src="{{obj.featuredImage}}" class="img-responsive" /></a>
                             <a class="in-row" href="{{obj.url}}"><h2>{{obj.title}}</h2></a>
@@ -82,3 +83,5 @@
         </ul>
     }
 }
+
+<script type="text/javascript" src="/js/project/news_events_loading_in_order.js"></script>

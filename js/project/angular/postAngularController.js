@@ -1,6 +1,15 @@
 var mainApp = angular.module('mainApp',['ngAnimate']);
 mainApp.controller('postController', function ($scope, $location, postService){
-    
+    //This functions will load news items in order after ng-repeat completes
+    $scope.myFunction = function () {
+        $(".three-column-container").show();
+        $('.post_list_item').each(function (i) {
+            var el = $(this);
+            $(this).hide();
+            setTimeout(function () { el.fadeIn(1000); }, i * 300);
+        });
+    }
+
     $scope.search = {
         categoryID: "",
     };
@@ -28,7 +37,6 @@ mainApp.controller('postController', function ($scope, $location, postService){
 
 	}
 
-
 	getPosts();
 
 });
@@ -42,6 +50,45 @@ mainApp.factory('postService', ['$http', function ($http) {
     return postService;
 
 }]);
+
+
+//Defind ng-repead finish events. 
+mainApp.directive('ngRepeatEndWatch', function () {
+    return {
+        restrict: 'A',
+        scope: {},
+        link: function (scope, element, attrs) {
+            if (attrs.ngRepeat) {
+                if (scope.$parent.$last) {
+                    if (attrs.ngRepeatEndWatch !== '') {
+                        if (typeof scope.$parent.$parent[attrs.ngRepeatEndWatch] === 'function') {
+                            // Executes defined function
+                            scope.$parent.$parent[attrs.ngRepeatEndWatch]();
+                        } else {
+                            // For watcher, if you prefer
+                            scope.$parent.$parent[attrs.ngRepeatEndWatch] = true;
+                        }
+                    } else {
+                        // If no value was provided than we will provide one on you controller scope, that you can watch
+                        // WARNING: Multiple instances of this directive could yeild unwanted results.
+                        scope.$parent.$parent.ngRepeatEnd = true;
+                    }
+                }
+            } else {
+                throw 'ngRepeatEndWatch: `ngRepeat` Directive required to use this Directive';
+            }
+        }
+    };
+});
+
+
+
+
+
+
+
+
+
 
 
 angular.element(document).ready(function() {
