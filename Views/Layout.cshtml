@@ -18,6 +18,8 @@
     <!-- JS init -->
     <script type="text/javascript" src="/js/jquery/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap/bootstrap.min.js"></script>
+    
+
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular-animate.js"></script>
 
@@ -62,10 +64,10 @@
                 <div class="search-box-input inline-block">
                     Search: 
                 </div>
-                <input class="inline-block" type="search" ng-model="q" placeholder="Click to search..." />
+                <input class="search-input inline-block" type="search" ng-model="q" placeholder="Click to search..." />
                 <ul class="example-animate-container">
-                    <li class="animate-repeat" ng-if="q.length > 0" ng-repeat="page in pages | filter:q as results">
-                        [{{$index + 1}}] {{page.title}} link is <a href="{{page.url}}">{{page.url}}</a>
+                    <li ng-animate="'animate'" class="animate-repeat" ng-if="q.length > 0" ng-repeat="page in pages | filter:q as results">
+                        [{{$index + 1}}] <a href="{{page.url}}">{{page.title}}</a>
                     </li>
                     <li class="animate-repeat" ng-if="results.length == 0">
                         <strong>No results found...</strong>
