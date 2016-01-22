@@ -62,6 +62,13 @@ $join_button_width: 80px;
 	}
 }
 
+.error-msg{
+    padding:5px 10px;
+    display:inline-block;
+    background-color:red;
+    position:absolute;
+}
+
 .sign-up-msg{
     padding:8px 15px 10px 15px;
     font-size:20px; 

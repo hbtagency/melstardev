@@ -3,7 +3,6 @@
 
 @{
     var homepageNode = Umbraco.Content(1049);
-         //var homenode = this.ViewData.ContainsKey("homePageNode") ? this.ViewData["homePageNode"] : "SIGN UP WITH US";
 }
 <div class="subscribe full-width visible-lg">
     <div class="container">
@@ -17,12 +16,15 @@
                 <div class="sign-up-msg red" id="sign-up-msg">This is a message</div>
                 <div class="fluid_container inline-block">
                     <div class="input-container">
+                        <div class="error-msg">Error message of first name</div>
                         <input name="FNAME" type="text" class="inline-block" placeholder="FIRST NAME*" />
                     </div>
                     <div class="input-container">
+                        <div class="error-msg">Error message of last name</div>
                         <input name="LNAME" type="text" class="inline-block" placeholder="LAST NAME*" />
                     </div>
                     <div class="input-container">
+                        <div class="error-msg">Error message of email</div>
                         <input name="EMAIL" type="text" class="inline-block" placeholder="EMAIL ADDRESS*" />
                     </div>
                 </div>
@@ -34,3 +36,5 @@
     </div>
 </div>
 <!-- End of Subscribe -->
+
+<script type="text/javascript" src="/js/project/sitewide/signup.js"></script>
