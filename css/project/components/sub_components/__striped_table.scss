@@ -27,10 +27,14 @@ $blue_text: #394758;
     }
     tr{
         text-transform: uppercase;
-        td{
+        td,th{
             padding:15px 0 15px 10px;
             text-align: left;
             font-weight: bold;
+        }
+        th{
+            background-color:#808080;
+            color:#fff;
         }
         
     }

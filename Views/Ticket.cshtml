@@ -1,0 +1,66 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Layout.cshtml";
+    var loopCounter = 0;
+}
+@Html.Partial("_header")
+
+        <!-- template content area -->
+<div class="container two_column template_content" id="table-striped-inside">
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="left col-md-5 col-xs-12">
+            @Html.Raw(CurrentPage.leftColumn)
+        </div>
+        <div class="right col-md-5 col-xs-12 hidden-xs">
+            @Html.Raw(CurrentPage.rightColumn)
+        </div>
+    </div>
+
+    <div class="row divider">
+        <div class="col-lg-1 visible-lg">
+        </div>
+        <div class="col-xs-12 col-lg-10">
+            <br />
+            <hr>
+            <br />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-xs-12 col-md-10" style="margin:0 auto;">
+            @foreach (var item in CurrentPage.Children){
+                if(item.DocumentTypeAlias == "Ticket_subpage"){
+                    <div class="post_list_item col-lg-4 col-sm-6 col-xs-12">
+                            <a href="@item.Url">
+                            <img src="@Umbraco.Media(item.featuredImage).UmbracoFile" class="img-responsive" />
+                            </a>
+                            <h2>@item.pageTitle</h2>
+                            <p>
+                                <b>
+                                    @item.subTitle
+                                </b>
+                            </p>
+                            <p>
+                                @Umbraco.Truncate(item.mainEditor,350,true)
+                            </p>
+                            <a class="learn_more" href="@item.Url">
+                                lear more
+                            </a>
+</div>
+                    loopCounter++;
+                }
+
+                if(loopCounter % 3 == 0 && loopCounter !=0){
+                    <div class="clear"></div>
+                }
+            }
+
+        </div>
+    </div>
+</div>
+<!-- end of template content -->
+<!-- Js used only in ticket page -->
+<script type="text/javascript" src="/js/project/striped_table.js"></script>

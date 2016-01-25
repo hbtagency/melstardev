@@ -36,7 +36,7 @@
                 if(loopCounter < 2 ){
                 <div class="col-sm-6 col-lg-5 col-xs-12">
                     <div class="post_list_item">
-                        <img src="@Umbraco.Media(item.featuredImage).UmbracoFile" class="img-responsive" />
+                        <a href="@item.Url"><img src="@Umbraco.Media(item.featuredImage).UmbracoFile" class="img-responsive" /></a>
                         <h1>@item.pageTitle</h1>
                         <p>
                             @Umbraco.Truncate(item.mainEditor,350,true)

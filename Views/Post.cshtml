@@ -31,6 +31,8 @@
                 }
             }
         </div>
+
+        <script type="text/javascript" src="/js/jquery/jquery.qrcode.min.js"></script>
         <div class="post_content">
             <div class="post_heading">
                 <h2>@CurrentPage.pageTitle</h2>
@@ -38,10 +40,18 @@
             <div class="post_description">
                 @Html.Raw(CurrentPage.postContent)
             </div>
+            <div class="share_post_to_socials">
+                <a id="wechat" href="#">Share on wechat</a>
+            </div>
+            <div id="qrcode_popup" style="width:200px;height:200px;position:absolute;left:0;right:0;"></div> 
         </div>
-
     </div>
 
+    <script>
+        $("#wechat").click(function () {
+            $('#qrcode_popup').qrcode("@umbraco.library.NiceUrl(CurrentPage.Id)");
+        });
+    </script>
             
     <div class="post_related_articles ">
         <div class="post_related_articles_title row">

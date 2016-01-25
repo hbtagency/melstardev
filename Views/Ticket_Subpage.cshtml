@@ -1,0 +1,10 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "~/Views/Layout.cshtml";
+}
+
+@Html.Partial("_header")
+
+<div class="container template_content">
+    <div class="row">@Html.Raw(CurrentPage.mainEditor)</div>
+</div>
