@@ -1,0 +1,19 @@
+.post_social_links{
+    display:inline-block;
+    float:left;
+    a{
+        width:30px;
+        height:30px; 
+        display:inline-block;
+        float:left;
+        margin-right:5px;
+    }
+}
+
+#qrcode_popup{
+    display:none;
+    z-index:300;
+    padding:20px;
+    border:5px solid #000;
+    background-color:#fff;
+}
