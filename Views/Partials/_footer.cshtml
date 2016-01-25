@@ -49,11 +49,25 @@
                         <div class="footer_title">
                             QUICK LINKS
                         </div>
+
+                        
+
                         <div class="footer_links">
-                            <div><a>Plan Your Visit</a></div>
+                            @{
+                                var homeNode = Umbraco.Content(1049);
+
+                                foreach (var childPage in homeNode.Descendants())
+                                {
+                                    if (childPage.showInQuickLinks)
+                                    {
+                                        <div><a href="@childPage.Url">@childPage.pageTitle</a></div>
+                                    }
+                                }
+                            }
+                            @*<div><a>Plan Your Visit</a></div>
                             <div><a>Pricing &amp; Ticketing</a></div>
                             <div><a>Buy Tickets</a></div>
-                            <div><a>Functions &amp; Events</a></div>
+                            <div><a>Functions &amp; Events</a></div>*@
                         </div>
                     </div>
                 </div>
