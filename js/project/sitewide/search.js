@@ -4,7 +4,11 @@ $(".search_button").click(function(){
 	    'overflow': 'hidden',
 	    'height': '100%'
 	});
-	$("#search-mask").fadeIn(1500);
+	window.setTimeout(function ()
+    {
+        $("#search-input-box").focus();
+    }, 300);
+	
 });
 
 $("#mask_close_button").click(function(){
