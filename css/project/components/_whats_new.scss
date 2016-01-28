@@ -3,6 +3,10 @@
 	text-align: center;
 	padding-bottom: 30px;
 
+    .whats_new_carousel{
+        visibility: hidden;
+    }
+
 	.whats_news_title{
 		color: white;
 		padding-top: 50px;
@@ -19,7 +23,7 @@
 
             &:hover{
                     span.whatsnew_hover_content{
-                            height: 190px;	
+                            height: 190px;
                     }
                     .whatsnew_play_button{
                             display: block;
