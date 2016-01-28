@@ -5,7 +5,7 @@ using System.Text;
 using Umbraco.Web;
 using System.Net.Mail;
 using Melstar.Models;
-
+using System.Net;
 
 namespace Melstar.Controllers
 {
@@ -53,6 +53,32 @@ namespace Melstar.Controllers
         {
             //This is a hardcoded name, please refer to umbraco->settings->dictionary->configs
             return umbraco.library.GetDictionaryItem("Admin Email");
+        }
+
+        private Boolean RecaptchaWork(string recaptcha)
+        {
+            // Get recaptcha value
+            //var r = Request.Params["g-recaptcha-response"];
+            var r = recaptcha;
+            // ... validate null or empty value if you want
+            // then
+            // make a request to recaptcha api
+            using (var wc = new WebClient())
+            {
+                var validateString = string.Format(
+                    "https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}",
+                   "your_secret_key",    // secret recaptcha key
+                   r); // recaptcha value
+                       // Get result of recaptcha
+                var recaptcha_result = wc.DownloadString(validateString);
+                // Just check if request make by user or bot
+                if (recaptcha_result.ToLower().Contains("false"))
+                {
+                    return false;
+                }
+            }
+            // Do your work if request send from human :)
+            return true;
         }
     }
 
