@@ -1,0 +1,14 @@
+@media (max-width:$screen-xs-max){
+    .contact-form {
+        padding:15px 15px;
+        #contact_us_form_result{
+            height:75px;
+            top:-50px;
+        }
+        .contact-form-area{
+            padding-top:15px;
+            form{
+            }
+        }
+    } 
+}

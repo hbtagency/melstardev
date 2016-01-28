@@ -3,9 +3,6 @@
     var logo_img_url = "";
     var rootNode = CurrentPage.AncestorsOrSelf(1).First();
 }
-
-
-
 <!-- Main Nav -->
         <div class="main_nav clearfix" id="main_navigation">
             <div class="full-screen-container">
@@ -67,6 +64,7 @@
                             }
                             else
                             {
+                                if (!childPage.hideInNav) {
                                 <li class="root @(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
                                     <!-- Link tag only if link is present in backend -->
                                     <a class="dropdown-toggle menu--link" href="@childPage.Url">
@@ -76,6 +74,7 @@
                                         <i class="icon menu--icon "></i>
                                     </a>
                                 </li>
+                                }
                             }
                         }
                     </ul>
@@ -100,7 +99,7 @@
                     <a href="@page.Url">@page.Name</a>
 
                     @* if the current page has any children *@
-                    @if (page.Children.Any())
+                    @if (page.Children.Any() && (!page.hideDescendantInNav))
                     {
                         @* Call our helper to display the children *@
                         @childPages(page.Children)

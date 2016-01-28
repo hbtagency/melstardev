@@ -122,6 +122,6 @@ body
     @include transition(all 0.4s ease);
 }
 
-#box-container.move-left{
-    margin-left:$mobile-menu-width;
+.container{
+   @include transition(all 1s ease);
 }

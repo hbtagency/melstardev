@@ -4,6 +4,8 @@ $(window).load(function(){
     $("#leftMobileMenu").height(window_height);
 });
 
+
+//Mobile menu
 $("#nav-button").click(function(){
     if(!$("#box-container").hasClass("move-left")){
         $("#main_navigation").addClass("when_mobile_menu_open");
@@ -11,6 +13,7 @@ $("#nav-button").click(function(){
         $(".whats_on").addClass("move-left");
         $("#box-container").addClass("move-left");
         $("#body-mask").addClass("show");
+        $(".container").css("margin-left", "200px");
     }
 });
 
@@ -21,6 +24,7 @@ $("#close-mobile").click(function(){
         $("#box-container").removeClass("move-left");
         $(".whats_on").removeClass("move-left");
         $("#body-mask").removeClass("show");
+        $(".container").css("margin", "0 auto");
     }
 });
 
