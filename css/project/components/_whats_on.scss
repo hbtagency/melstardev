@@ -13,8 +13,15 @@
             margin-left:$mobile-menu-width;
             @include transition(all 1s ease);
 
-        }
-        
+    }
+    
+    .whats_on_carousel {
+    	visibility: hidden;
+    } 
+    .preloader{
+    	padding-top:50px;
+    }
+
 	.whatson_content{
 		margin-top: 30px;
 		height:250px;

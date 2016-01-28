@@ -5,7 +5,9 @@
 <div class="whats_on">
     <div class="container">
         <h1>@Umbraco.Field("whatsOnTitle")</h1>
+        <div class="preloader"><img src="/img/preloader.gif" /></div>
         <div class="whats_on_carousel row">
+            
             @{
                 var whatson = Umbraco.Content(1071);
                 

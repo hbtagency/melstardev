@@ -26,6 +26,8 @@ $(window).load(function(){
 		]
   	});
 
+	$(".preloader").css("display","none");
+	$(".whats_on_carousel").css("visibility","visible");
 
 	$('.whats_new_carousel').slick({
         slidesToShow: 3,
@@ -66,12 +68,14 @@ $(window).load(function(){
 		]
   	});
 
+	$(".whats_new_carousel").css("visibility","visible");
+
 	var width = window.innerWidth;
 	if(width < 890){
 		var img_height = $('.whatson_carousel_img').height();
 		$('.image_wrapper').css('height', img_height);
 	}
-	
+
 });
 
 
