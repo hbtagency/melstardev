@@ -15,6 +15,11 @@ mainApp.controller('postController', function ($scope, $location, postService){
     };
     $scope.selectCat = function (cat) {
         $scope.search.categoryID = cat;
+        start();
+        function start() {
+            dynamicHeightUpdater();
+            setTimeout(start, 10);
+        };
     }
 
     // $scope.posts = "";
@@ -39,6 +44,38 @@ mainApp.controller('postController', function ($scope, $location, postService){
 
 	getPosts();
 
+
+    function dynamicHeightUpdater(){
+        var width = window.innerWidth;
+        var numOfEachRow = 3;
+        if(width > 767 && width < 1200) numOfEachRow = 2;
+
+        var maxHeight=0; 
+        var t_elem; 
+        var updated_i = 0;
+        var current_i = 1;
+        $(".post_list_item").each(function () {
+            $this = $(this);
+            var currentHeight = $this.height() + 30;
+            if ( currentHeight > maxHeight ) {
+                t_elem=this;
+                maxHeight=currentHeight;
+            }
+            console.log(currentHeight + "->" + maxHeight + ":" +current_i);
+            if(current_i % numOfEachRow == 0){
+                //Update min-height for every 2 or 2 elements
+                $(".post_list_item").slice(updated_i,current_i).css("min-height",maxHeight);
+                console.log("!" + numOfEachRow + "(" + updated_i +"," + current_i + ") Max height:" + maxHeight);
+                updated_i = current_i;
+                maxHeight = 0;
+            } 
+            current_i++;
+        });
+
+        if(width < 768){
+            $(".post_list_item").css("min-height","0");
+        }
+    }
 });
 
 mainApp.factory('postService', ['$http', function ($http) {

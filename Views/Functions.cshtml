@@ -19,7 +19,7 @@
             if(item.DocumentTypeAlias == "Function_page"){
                 if(loopCounter < 2 ){
                 <div class="col-sm-6 col-lg-5 col-xs-12">
-                    <div class="post_list_item">
+                    <div class="function_list_item">
                         <img src="@Umbraco.Media(item.featuredImage).UmbracoFile" class="img-responsive" />
                         <h1>@item.pageTitle</h1>
                         <p>
@@ -59,7 +59,7 @@
             @foreach (var item in venueNode.Children){
                 if(item.DocumentTypeAlias == "Functions_venues_page"){
                     <div class="post_list_item col-lg-4 col-sm-6 col-xs-12">
-                        <img src="@Umbraco.Media(item.featuredImage).UmbracoFile" class="img-responsive" />
+                        <img src="@Umbraco.Media(item.featuredImage).UmbracoFile" class="img-responsive venues-img" />
                         <h2>@item.pageTitle</h2>
                         <p>
                             <b>
@@ -70,7 +70,7 @@
                             @Umbraco.Truncate(item.description,350,true)
                         </p>
                         <a class="learn_more" href="@item.Url">
-                            lear more
+                            learn more
                         </a>
                     </div>
                     
@@ -87,4 +87,5 @@
 <script type="text/javascript" src="/js/project/stickyMenu2.js"></script>
 <script type="text/javascript" src="/js/project/banner_mask_height_init.js"></script>
 <script type="text/javascript" src="/js/project/function_menu_remove_last_class.js"></script>
-<script type="text/javascript" src="/js/project/dynamic_content_height.js"></script>
+<script type="text/javascript" src="/js/project/dynamic_content_height_for_postList.js"></script>
+

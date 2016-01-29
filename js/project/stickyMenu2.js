@@ -8,5 +8,5 @@ $(window).scroll(function(){
 	else{
 		$('.sticky_menu_2').removeClass('stickyMenu');
 	}
-	console.log(currentHeight);
+	// console.log(currentHeight);
 })

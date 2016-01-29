@@ -1,7 +1,3 @@
-/*
- * Dynamic content height plugin for post list item
- */
-
 window.onload = function(){
 	dynamicHeightUpdater();
 };
@@ -15,6 +11,9 @@ window.onresize = function() {
 };
 
 function dynamicHeightUpdater(){
+	/*
+	/* For general post list item
+	*/
 	var width = window.innerWidth;
 	var numOfEachRow = 3;
 	if(width > 767 && width < 1200) numOfEachRow = 2;
@@ -44,8 +43,10 @@ function dynamicHeightUpdater(){
 	if(width < 768){
 		$(".post_list_item").css("min-height","0");
 	}
-		alert("test");
 
+	/*
+	/* For function list item
+	*/
 	var width = window.innerWidth;
 	var numOfEachRow = 2;
 
@@ -53,7 +54,6 @@ function dynamicHeightUpdater(){
 	var updated_i = 0;
 	var current_i = 1;
 	$(".function_list_item").each(function () {
-		alert("test");
 	    // Find highest element
 	    $this = $(this);
 	    var currentHeight = $this.height() + 30;
