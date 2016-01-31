@@ -19,7 +19,6 @@
         color:$title_blue;
         text-decoration: underline;
         text-transform: uppercase;
-        margin:15px 0;
         font-family:$font-fu-book;
     }
     .whats_on_newsevents{
@@ -31,3 +30,40 @@
     padding-bottom: 30px;
 }
 
+.function_list_item{
+    .in-row{
+        width:100%;
+        text-align:left;
+    }
+
+    a{
+        display:inline-block;
+    }
+    .read_more{
+        margin-top:15px;
+        display:inline-block;
+        font-weight: bold;
+        padding: 12px 25px 12px 25px;
+        font-family: $font-fu-bold;
+    }
+    
+    .learn_more{
+        color:$title_blue;
+        text-decoration: underline;
+        text-transform: uppercase;
+        font-family:$font-fu-book;
+    }
+    .whats_on_newsevents{
+        text-transform: uppercase;
+        text-decoration: underline;
+        margin:0 0 15px 0;
+    }
+    
+    padding-bottom: 30px;
+}
+
+@media(max-width: 1199px) {
+    .venues-img{
+        width: 100%;
+    }
+}
