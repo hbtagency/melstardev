@@ -30,6 +30,10 @@ $font-fu-l: "futura_lightregular";
 $font-fu-book: "futura_bkbook";
 $font-fu-bold: "futura_bold";
 
+/* Mobile box edge */
+$mobile_edge:0;
+$top_nav_height : 33px;
+$mobile-menu-width:200px;
 
 /* Cross browser */
 @mixin transition($transition_string){
@@ -48,13 +52,12 @@ $font-fu-bold: "futura_bold";
 }
 
 
-/* Mobile box edge */
-$mobile_edge:0;
-$top_nav_height : 33px;
-$mobile-menu-width:200px;
+
 
 /***Global effects*/
-
+.img-responsive{
+    width:100%;
+}
 
 .transparent-bg{
     background-color:rgba(0, 0, 0, 0.4);
@@ -95,8 +98,6 @@ a{cursor: pointer;
         box-shadow: inset 0 0 0 2px white;
     }
 }
-
-
 
 .button-white {
     border: 2px solid #fff;

@@ -6,6 +6,9 @@ using Umbraco.Web;
 using System.Net.Mail;
 using Melstar.Models;
 using System.Net;
+using Newtonsoft.Json;
+using melbournestardev.models;
+using System.Configuration;
 
 namespace Melstar.Controllers
 {
@@ -13,72 +16,92 @@ namespace Melstar.Controllers
     {
         public String SendMail(ContactModel model)
         {
+            string response = model.Response;
             List<string> resultList = new List<string>();
-            string retValue = "{\"error\":\"Validation error, please put in the correct email format. As well as required fields.\"}";
 
-            if (!ModelState.IsValid)
+            //If required, could remove error message to config or umbraco.
+            Dictionary<string, string> errorMessages = new Dictionary<string, string>()
             {
-                return retValue;
-            }
+                {"general","Form validation error!"},
+                {"success","Your Request was submitted successfully. We will contact you shortly."},
+                {"recaptcha","Please complete recaptcha field!"},
+                {"system","There was an error submitting the form, could possibly due to invalid email format, please try again later."}
+            };
 
-            if (ModelState.IsValid)
+            string retValue = "{\"error\":\""+ errorMessages["general"] + "\"}";
+
+            if (RecaptchaWork(response))
             {
-                SmtpClient client = new SmtpClient();
-                var mail = new MailMessage();
-                try
+                if (!ModelState.IsValid)
                 {
-                    //Update your email address
-                    string email = GetEmailFromUmbraco(); 
-                    mail.To.Add(email);
-                    mail.From = new MailAddress(model.Email, model.FirstName);
-                    mail.Subject = String.Format("Enquiry from customer: " + model.FirstName + " " + model.LastName + "(" + model.Email + ")");
-                    mail.Body = "<p>" + model.Message + "<p>" + "<br>" + "Phone: " + model.Phone + "<br>" + "PostCode: " + model.PostCode + "<br>" + "State: " + model.State;
-                    mail.IsBodyHtml = true;
-                    client.Send(mail);
-
-                    retValue = "{\"success\":\"Your Request for Contact was submitted successfully. We will contact you shortly.\"}";
-                }
-
-                catch (Exception e)
-                {
-                    retValue = "{\"error\":\"There was an error submitting the form, could possibly due to invalid email format, please try again later." + e.Message + "\"}";
                     return retValue;
                 }
 
+                if (ModelState.IsValid)
+                {
+                    SmtpClient client = new SmtpClient();
+                    var mail = new MailMessage();
+                    try
+                    {
+                        //Update your email address
+                        string email = GetEmailFromUmbraco(); 
+                        mail.To.Add(email);
+                        mail.From = new MailAddress(model.Email, model.FirstName);
+                        mail.Subject = String.Format("Enquiry from customer: " + model.FirstName + " " + model.LastName + "(" + model.Email + ")");
+                        mail.Body = "<p>" + model.Message + "<p>" + "<br>" + "Phone: " + model.Phone + "<br>" + "PostCode: " + model.PostCode + "<br>" + "State: " + model.State;
+                        mail.IsBodyHtml = true;
+                        client.Send(mail);
+
+                        retValue = "{\"success\":\""+ errorMessages["success"] + "\"}";
+                    }
+
+                    catch (Exception e)
+                    {
+                        retValue = "{\"error\":\"" + errorMessages["system"] + ":"+e.Message+"\"}";
+                        return retValue;
+                    }
+
+                }
+                return retValue;
+
             }
-            return retValue;
+            else
+            {
+                retValue = "{\"error\":\"" + errorMessages["recaptcha"] + "\"}";
+                return retValue;
+            }
         }
 
         private string GetEmailFromUmbraco()
         {
-            //This is a hardcoded name, please refer to umbraco->settings->dictionary->configs
+            //Please refer to umbraco->settings->dictionary->configs
             return umbraco.library.GetDictionaryItem("Admin Email");
         }
 
-        private Boolean RecaptchaWork(string recaptcha)
+        private Boolean RecaptchaWork(string recaptchaResponse)
         {
-            // Get recaptcha value
-            //var r = Request.Params["g-recaptcha-response"];
-            var r = recaptcha;
-            // ... validate null or empty value if you want
-            // then
-            // make a request to recaptcha api
-            using (var wc = new WebClient())
+            //var response = Request["g-recaptcha-response"];
+            var response = recaptchaResponse;
+            //secret that was generated in key value pair
+            string secret = Convert.ToString(ConfigurationManager.AppSettings["recaptchaSecret"]);
+
+            var client = new WebClient();
+            var reply =
+                client.DownloadString(
+                    string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secret, response));
+
+            var captchaResponse = JsonConvert.DeserializeObject<CaptchaResponse>(reply);
+
+            //when response is false check for the error message
+            if (!captchaResponse.Success)
             {
-                var validateString = string.Format(
-                    "https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}",
-                   "your_secret_key",    // secret recaptcha key
-                   r); // recaptcha value
-                       // Get result of recaptcha
-                var recaptcha_result = wc.DownloadString(validateString);
-                // Just check if request make by user or bot
-                if (recaptcha_result.ToLower().Contains("false"))
-                {
-                    return false;
-                }
+                return false;
             }
-            // Do your work if request send from human :)
-            return true;
+            else
+            {
+                return true;
+            }
+
         }
     }
 

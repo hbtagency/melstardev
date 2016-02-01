@@ -1,52 +1,65 @@
-.sticky_menu_2{
+.sticky_menu_2 {
     position: absolute;
     height: 70px;
     background-color: #304665;
     width: 100%;
-    bottom:-70px;
-    padding-top:10px;
+    bottom: -70px;
 
-    .selected{
-        .dropdown-toggle{
-        background-color:#000;
+    .container {
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 70px;
+
+        li a{
+            height:69px;
+            padding-top:23px;
+            span{
+                height:69px;
+            }
         }
-    }
-
-    .inline-block{
-        display:inline-block !important;
-        margin:0 auto;
-    }
-
-    .menu--link-text{
-        color: white;
-        font-size:16px;
-    }
-    
-    .dropdown-toggle:hover{
-            background-color:#000;
+        .selected {
+            .dropdown-toggle {
+                background-color: #1e2e41;
+            }
         }
 
-    .dropdown-toggle:focus{
-            background-color:#000;
+        .inline-block {
+            display: inline-block !important;
+            margin: 0 auto;
+            height: 70px;
         }
-        
-    .nav_margin_right{
-        margin-right: 20px;
-        padding-right: 20px;
-        i.icon {
-            width:1px;
-            height:20px;
-            display:block;
-            position:absolute;
-            right:-20px;
-            top:15px;
-            background-color:#fff;
+
+        .menu--link-text {
+            color: white;
+            font-size: 16px;
         }
-        
+
+        .dropdown-toggle:hover {
+            background-color: #1e2e41;
+        }
+
+        .dropdown-toggle:focus {
+            background-color: #000;
+        }
+
+        .nav_margin_right {
+            margin-right: 20px;
+            padding-right: 20px;
+
+            i.icon {
+                width: 1px;
+                height: 40px;
+                display: block;
+                position: absolute;
+                right: -20px;
+                top: 15px;
+                background-color: #fff;
+            }
+        }
     }
 }
 
-.stickyMenu{
+.stickyMenu {
     position: fixed !important;
     display: block;
     top: 95px;
@@ -55,6 +68,3 @@
     border-left: 30px solid #fff;
     z-index: 98;
 }
-
-
-

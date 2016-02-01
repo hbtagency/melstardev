@@ -17,5 +17,9 @@ namespace Melstar.Models
         public string State { get; set; }
 
         public string Message { get; set; }
+
+        //Google captcha
+        [Required]
+        public string Response { get; set; }
     }
 }
