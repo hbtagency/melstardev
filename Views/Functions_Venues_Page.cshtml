@@ -1,5 +1,6 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @using System.Text.RegularExpressions;
+@using System.Web;
 @{
     Layout = "~/Views/Layout.cshtml";
     //The following node ID needs to be replaced if the corresponding node is removed from CMS.
@@ -57,12 +58,13 @@
                     <p>
                         @{
                             string content = Umbraco.Truncate(item.description, 350, true).ToString();
-                            string pattern = @"<.*?>";
+                            string pattern = @"<[^>]*>";
                             string replacement = "";
                             Regex rgx = new Regex(pattern);
                             string processedContent = rgx.Replace(content, replacement);
-                        } 
-                        @content
+                            var htmlContent = HttpUtility.HtmlDecode(processedContent);
+                        }
+                        @htmlContent
                     </p>
                     <a class="learn_more" href="@item.Url">
                         learn more
