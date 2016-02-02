@@ -110,7 +110,15 @@ a{cursor: pointer;
     }
 }
 
-/* End of global */
+.transit{
+    @include transition(all 1s ease);
+}
+
+.transit.move-left{
+    margin-left:200px;
+    margin-right:-200px;
+}
+
 body
 {
     font-family: $font-fu-l;
@@ -119,3 +127,5 @@ body
     overflow-x: hidden !important;
     @include transition(all 0.4s ease);
 }
+
+/* End of global */

@@ -13,7 +13,8 @@ $("#nav-button").click(function(){
         $(".whats_on").addClass("move-left");
         $("#box-container").addClass("move-left");
         $("#body-mask").addClass("show");
-        $(".container").css("margin-left", "200px");
+        $(".container").addClass("move-left")
+        //$(".container").css("margin-left", "200px");
     }
 });
 
@@ -24,7 +25,8 @@ $("#close-mobile").click(function(){
         $("#box-container").removeClass("move-left");
         $(".whats_on").removeClass("move-left");
         $("#body-mask").removeClass("show");
-        $(".container").css("margin", "0 auto");
+        $(".container").removeClass("move-left");
+        //$(".container").css("margin", "0 auto");
     }
 });
 
