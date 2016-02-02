@@ -99,5 +99,5 @@ gulp.task('concat-js', function () {
     console.log('#=>concat-js');
     return gulp.src('js/final/sitewide/*.js')
       .pipe(concat("sitewide.js"))
-      .pipe(gulp.dest('js/final/sitewide/'));
+      .pipe(gulp.dest('js/final/'));
 });

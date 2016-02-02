@@ -10,7 +10,9 @@
     "gulp-batch": "*",
     "browser-sync": "*",
     "balanced-match": "*",
-    "concat-map": "*"
+    "concat-map": "*",
+    "gulp-concat": "*"
+
   },
   "devDependencies": {
     "gulp-uglify": "^1.5.1"
