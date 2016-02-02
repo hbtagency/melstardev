@@ -49,6 +49,11 @@
                 <!-- main navbar -->
                 <nav class="navbar inline-block pull-right visible-lg" id="main_nav">
                     <ul class="nav navbar-nav level-1">
+                        <li class="root dropdown">
+                            <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <span class="menu--link-text current-parent">Home</span>
+                            </a>
+                        </li>
                         @foreach (var childPage in rootNode.Children)
                         {
                             if (childPage.Children.Any() && (!childPage.hideDescendantInNav))

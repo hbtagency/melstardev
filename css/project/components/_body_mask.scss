@@ -4,9 +4,13 @@
     width:100%;
     background-color:rgba(0,0,0,0.7);
     display: none;
+    @include transition(all 1s ease);
+
+    &.move-left{
+        margin-left:200px;
+    }
     &.show{
        display: block;
-       opacity: 1;
     }
     &.extra-margin-left{
         margin-left: $mobile-menu-width;
@@ -14,7 +18,7 @@
 }
 
 
-// Search Animation
+// Search Animation 
 .example-animate-container {
   background:transparent;
   color: white;

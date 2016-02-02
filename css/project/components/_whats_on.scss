@@ -1,18 +1,15 @@
 .whats_on{
-	margin-top: 40px;
-        margin-left:0;
-        
+    margin-left:0;
 	text-align: center;
 	font-family: $font-fu-book;
 	font-size: 40px;
 	font-weight: 30px;
-        @include transition(all 1s ease);
+    @include transition(all 1s ease);
 
         &.move-left{
             width:100%;
             margin-left:$mobile-menu-width;
             @include transition(all 1s ease);
-
     }
     
     .whats_on_carousel {

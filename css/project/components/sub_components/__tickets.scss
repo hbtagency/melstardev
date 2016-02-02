@@ -230,16 +230,32 @@ $green_font_family:futura_bold;
             height:95px;
             text-align: center;
             position:relative;
+            @include transition(all 0.4s ease);
+
+            &:hover{
+                background-color:forestgreen;
+            }
             
             .uppercase{
+               
                 a{
+                    height:95px;
+                    width: 100%;
+                    display: block;
+                    @include transition(all 0.4s ease);
                     color:#fff;
+                    padding-top:35px;
                     &:hover{
+                        text-decoration: none;
+                        color:#fff;
+                    }
+                    &:focus{
                         text-decoration: none;
                     }
                 }
+                height:95px;
+                margin-top:0;
                 display:block;
-                margin-top:36px;
                 font-size:$green_font_size;
                 font-weight:bold;
                 color:#fff;

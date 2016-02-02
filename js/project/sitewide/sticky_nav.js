@@ -3,7 +3,7 @@ var star_point = $('.main_nav').first().offset().top;
 var sticky_element = $('.main_nav').first();
 var box = $('.box-container').first();
 $(window).scroll(function(){
-    if($(window).scrollTop() > star_point){
+    if ($(window).scrollTop() > star_point) {
         sticky_element.addClass('stick');
         box.addClass("no-padding");
         //$("#navplacehoder").removeClass("hidden");

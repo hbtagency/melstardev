@@ -47,16 +47,18 @@ $ticket_container_width:177px;
         }
         nav.navbar{
             margin-bottom:0px;
+            margin-right:-24px;
             border:none;
             ul li.root{
-                    min-width:150px;
+                    display:inline-block;
                     a{
+                        padding:0 40px;
                         height:94px;
                         padding-top:40px;
                         text-align: center;
                         @include transition(all 0.4s ease);
                         color:#fff;
-                        padding-bottom:0px;;
+                        padding-bottom:0px;
                         &:hover{
                             background-color:$head_blue;
                         }
@@ -96,6 +98,7 @@ $ticket_container_width:177px;
                     }
                     .level-2{
                         padding:0;
+                        margin-right:-18%;
                         li{
                             a{
                                 height:40px;
@@ -106,9 +109,7 @@ $ticket_container_width:177px;
                 }
                 
             ul li.selected{
-                
-                    background-color:$head_blue;
-                
+                background-color:$head_blue;
             }
                 .dropdown:hover .dropdown-menu{
                     display:block !important;

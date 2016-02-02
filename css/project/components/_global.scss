@@ -8,6 +8,7 @@ $title_blue:#1e3044;
 $green:#92d400;
 $content_gray:#696969;
 $gray_background: #f5f5f5;
+$link_hover_color:rgba(0,0,0,0.6);
 /* Break Points */
 
 $screen-xxxs-min: 320px;
@@ -65,7 +66,8 @@ $mobile-menu-width:200px;
 a{cursor: pointer;
   color:#000;
   &:hover{
-      color:#000;
+      color:$link_hover_color;
+      text-decoration:none;
   }
 }
 //eg.@include transition(all 0.4s ease);

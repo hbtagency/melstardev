@@ -10,7 +10,6 @@
            height:34px;
            float:right;
        }
-       
        .navbar{
            margin-right:15px;
            ul{
@@ -25,7 +24,10 @@
                        font-size:13px;
                        &:hover{
                            background-color: #fff;
-                           color:gainsboro;
+                           color:$link_hover_color;
+                       }
+                       &:focus{
+                           background-color:#fff;
                        }
                    }
                }
