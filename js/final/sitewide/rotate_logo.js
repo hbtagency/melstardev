@@ -1,0 +1,1 @@
+var hover_element2=$("#rotate_logo_trigger"),rotate2=$("#rotate_logo"),lock=!1;hover_element2.hover(function(){rotate2.hasClass("over")||rotate2.addClass("over")}),hover_element2.mouseleave(function(){lock||(lock=!0,window.setTimeout(function(){rotate2.removeClass("over"),lock=!1},19e3))});

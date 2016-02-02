@@ -1,0 +1,1 @@
+$("#sticky_nav").children(":last").removeClass("nav_margin_right");

@@ -1,0 +1,1 @@
+$(document).ready(function(){var t=$("#table-striped-inside table tr"),e=0;t.each(function(){e%2===0&&$(this).addClass("striped"),e++})});

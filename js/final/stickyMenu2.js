@@ -1,0 +1,1 @@
+$(window).scroll(function(){var i=$(window).scrollTop(),n=$(".banner_area").first().height()-$(".main_nav").first().height();i>n?$(".sticky_menu_2").addClass("stickyMenu"):$(".sticky_menu_2").removeClass("stickyMenu")});

@@ -5,20 +5,31 @@ var sass = require('gulp-sass');
 var watch = require('gulp-watch');
 var batch = require('gulp-batch');
 var browserSync = require('browser-sync');
+var uglify = require('gulp-uglify');
+var concat = require('gulp-concat');
+
 
 gulp.task('default', function() {
   browserSync.init({
-        
         //change proxy server to your localhost
         //proxy: "http://localhost:3000/melbournestar_frontend/new-home.html",
       proxy: "http://localhost:60793/",
     });
 
   gulp.start('sass');
+  gulp.start('minify-js');
   
   watch('css/project/style.scss', batch(function (events, done) {
         gulp.start('sass', done);
-    }));
+  }));
+    
+  watch('js/final/sitewide/*.js', batch(function (events, done) {
+      gulp.start('concat-js', done);
+  }));
+
+  watch(['js/project/**/*.js', 'js/project/*.js'], batch(function (events, done) {
+      gulp.start('minify-js', done);
+  }));
     
   watch(['css/project/components/*.scss', 'css/project/components/**/*.scss'], batch(function (events, done) {
         gulp.start('sass', done);
@@ -53,6 +64,7 @@ gulp.task('sass', function () {
     console.log('#=>sass');
 });
 
+
 //Step 2: concat CSS files
 gulp.task('concat', function () {
   console.log('#=>concat');
@@ -71,4 +83,21 @@ gulp.task('minify', function() {
     .pipe(minifyCss({compatibility: 'ie8'}))
     .pipe(gulp.dest('css/final/'))
     .pipe(browserSync.reload({stream:true}));
+});
+
+//Step 4: minify JS file and reload browser
+gulp.task('minify-js', function () {
+    console.log('#=>minify js');
+    return gulp.src(['js/project/*/*.js','js/project/*.js'])
+      .pipe(uglify())
+      .pipe(gulp.dest('js/final/'))
+      .pipe(browserSync.reload({ stream: true }));
+});
+
+//Step 5: concat sitewide js
+gulp.task('concat-js', function () {
+    console.log('#=>concat-js');
+    return gulp.src('js/final/sitewide/*.js')
+      .pipe(concat("sitewide.js"))
+      .pipe(gulp.dest('js/final/sitewide/'));
 });

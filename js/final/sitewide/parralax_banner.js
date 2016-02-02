@@ -1,0 +1,1 @@
+$(window).scroll(function(){var n=$(this).scrollTop();$(window).width()>1200&&$(".parallax-banner").css("background-position","100% "+parseInt(-n/1)+"px, 0% "+parseInt(-n/2)+"px, center center")});

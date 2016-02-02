@@ -1,0 +1,1 @@
+$(".slick-carousel .item").hover(function(){$(this).children(".img-div").addClass("hovered"),$(this).children(".whatsnew_carousel_textarea").addClass("hovered")}),$(".slick-carousel .item").mouseleave(function(){$(this).children(".img-div").removeClass("hovered"),$(this).children(".whatsnew_carousel_textarea").removeClass("hovered")});

@@ -1,0 +1,1 @@
+$(document).ready(function(){if($(window).width()<1200){var i=$(".box-center-container").height();isSafari&&$(".banner_area .mask").height(i)}}),$(window).resize(function(){if($(window).width()<1200){var i=$(".box-center-container").height();isSafari&&$(".banner_area .mask").height(i)}});

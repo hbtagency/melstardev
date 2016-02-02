@@ -9,7 +9,7 @@ hover_element2.hover(function(){
         rotate2.addClass('over');
     }
 
-});
+});  
 
 hover_element2.mouseleave(function(){
     if(!lock){
@@ -19,4 +19,4 @@ hover_element2.mouseleave(function(){
             lock = false;
         }, 19000 );
     }
-});
+}); 
