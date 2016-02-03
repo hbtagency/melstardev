@@ -81,8 +81,7 @@ $(window).scroll(function () {
         //As main body are squashed, need to hide some space
         $('#main_nav').removeClass('hidden');
         $('#main_nav').addClass('visible-lg');
-        $('#logo').removeClass('hidden');
-
+        $('#logo').removeClass('hidden'); 
     }
 });
 

@@ -1,9 +1,11 @@
-@media (min-width:1200px) and (max-width:1240px){
-	.fluid_container {
-		width: 90% !important;
-	}
-
-	.join_button{
-	    margin-right: -45px !important;
-	}
+@media (min-width:1200px) and (max-width:1360px) {
+    .subscribe {
+        .container {
+            width: 100%;
+            .subscribe_form {
+                .join_button {
+                }
+            }
+        }
+    }
 }
