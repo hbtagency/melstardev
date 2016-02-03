@@ -8,6 +8,8 @@
         &.expanded{
             #leftMenu{
                 display:block;
+                min-height: 1000px;
+                background-color: #fff;
             }
             text-align:left;
             font-family: $font-fu-book,$font-fu-l;
