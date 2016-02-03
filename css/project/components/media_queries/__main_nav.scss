@@ -6,7 +6,7 @@
         left:0;
         width:100%;
         z-index:100;
-        @include transition(all 1s ease);
+        @include transition(all 0.4s ease);
         .full-screen-container{
             padding-left:0;
             padding-right:0;

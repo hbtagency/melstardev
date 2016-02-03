@@ -225,7 +225,7 @@ $green_font_family:futura_bold;
 
         .buy_tickets{
             width:$ticket_container_width;
-            margin-right:-201px;
+            margin-right:-201.5px;
             background-color:$green;
             height:95px;
             text-align: center;
@@ -233,7 +233,7 @@ $green_font_family:futura_bold;
             @include transition(all 0.4s ease);
 
             &:hover{
-                background-color:forestgreen;
+                background-color:#92D404;
             }
             .uppercase{
                 a{

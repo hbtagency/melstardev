@@ -120,6 +120,12 @@ a{cursor: pointer;
     margin-left:200px;
     margin-right:-200px;
 }
+.transit.move-left-in-lg{
+    padding-left:200px;
+}
+.transit.move-left-in-lg .row{
+    margin-right:-200px; 
+}
 
 body
 {

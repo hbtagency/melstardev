@@ -24,14 +24,14 @@ function dynamicHeightUpdater(){
 	$(".post_list_item").each(function () {
 	    // Find highest element
 	    $this = $(this);
-	    var currentHeight = $this.height() + 30;
+	    var currentHeight = $this.height() + 35;
 	    if ( currentHeight > maxHeight ) {
 	        maxHeight=currentHeight;
 	    }
 
 	    // console.log(currentHeight + "->" + maxHeight + ":" +current_i);
 	    if(current_i % numOfEachRow == 0){
-    		//Update min-height for every 2 or 3 elements
+	        //Update min-height for every 2 or 3 elements
     		$(".post_list_item").slice(updated_i,current_i).css("min-height",maxHeight);
     		// console.log("!" + numOfEachRow + "(" + updated_i +"," + current_i + ") Max height:" + maxHeight);
     		updated_i = current_i;

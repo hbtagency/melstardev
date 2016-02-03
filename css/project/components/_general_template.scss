@@ -1,5 +1,8 @@
 .template_content{
     padding:60px 15px;
+    h1{
+        font-size:24px;
+    }
 }
 
 @import 'media_queries/__general_template.scss';

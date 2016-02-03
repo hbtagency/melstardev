@@ -9,7 +9,7 @@ window.onload = function(){
 var doit;
 window.onresize = function() {
     clearTimeout(doit);
-    doit = setTimeout(function() {		
+    doit = setTimeout(function() {		 
     	dynamicHeightUpdater();
     }, 100);
 };

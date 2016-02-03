@@ -27,7 +27,7 @@ gulp.task('default', function() {
       gulp.start('concat-js', done);
   }));
 
-  watch(['js/project/**/*.js', 'js/project/*.js'], batch(function (events, done) {
+  watch(['js/project/sitewide/*.js', 'js/project/*.js'], batch(function (events, done) {
       gulp.start('minify-js', done);
   }));
     
@@ -88,7 +88,7 @@ gulp.task('minify', function() {
 //Step 4: minify JS file and reload browser
 gulp.task('minify-js', function () {
     console.log('#=>minify js');
-    return gulp.src(['js/project/*/*.js','js/project/*.js'])
+    return gulp.src(['js/project/**/*.js','js/project/*.js'])
       .pipe(uglify())
       .pipe(gulp.dest('js/final/'))
       .pipe(browserSync.reload({ stream: true }));

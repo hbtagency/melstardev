@@ -100,9 +100,24 @@ $ticket_container_width:177px;
                         padding:0;
                         margin-right:-18%;
                         li{
+                            
                             a{
                                 height:40px;
                                 padding-top:10px;
+                                &:hover{
+                                    background-color:$head_blue !important;
+                                }
+                            }
+
+                        }
+                        li:hover{
+                            a{
+                                background-color:$head_blue !important;
+                            }
+                        }
+                        li:focus{
+                            a{
+                                background-color:$head_blue !important;
                             }
                         }
                     }
