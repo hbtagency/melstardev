@@ -13,7 +13,7 @@ window.onresize = function() {
     	dynamicHeightUpdater();
     }, 100);
 };
-
+ 
 function dynamicHeightUpdater(){
 	var width = window.innerWidth;
 	var numOfEachRow = 3;

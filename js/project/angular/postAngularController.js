@@ -11,7 +11,7 @@ mainApp.controller('postController', function ($scope, $location, postService){
     }
 
     $scope.search = {
-        categoryID: "",
+        categoryID: "", 
     };
     $scope.selectCat = function (cat) {
         $scope.search.categoryID = cat;
