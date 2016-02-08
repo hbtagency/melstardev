@@ -1,0 +1,30 @@
+// Mobile View
+@media (max-width: $screen-xs-max) {
+   .post_pagenation_nav{
+       margin-top:12px;
+   }     
+   
+   .post_related_articles {
+       .post_related_posts{
+           h4{
+               font-size:18px;
+           }
+           .post_category {
+               text-transform:uppercase;
+               margin-bottom:15px;
+           }
+       }
+   }
+}
+
+@media (max-width: $screen-xxs-max) {
+       .post_pagenation_nav{
+       &.pull-right{
+           float:left !important;
+           clear:both;
+           width:100%;
+       }
+   } 
+}
+
+

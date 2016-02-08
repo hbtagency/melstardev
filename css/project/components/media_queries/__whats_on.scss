@@ -14,7 +14,6 @@
             }
         }
     }
-                                              
 }
 
 // Tablet View
@@ -73,9 +72,14 @@
 }
 
 @media (max-width:$screen-xxs-max){
-            .container{
+        .container{
             h1{
                 font-size:24px;
             }
         }
+
+        .whats_on{
+            margin-top:60px;
+        }
+    
 }
