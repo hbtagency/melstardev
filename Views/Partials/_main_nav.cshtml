@@ -99,16 +99,18 @@
         <ul class="dropdown-menu level-2">
             @foreach (var page in pages)
             {
-                <li>
-                    <a href="@page.Url">@page.Name</a>
+                if(!page.hideInNav) { 
+                    <li>
+                        <a href="@page.Url">@page.Name</a>
 
-                    @* if the current page has any children *@
-                    @if (page.Children.Any() && (!page.hideDescendantInNav))
-                    {
-                        @* Call our helper to display the children *@
-                        @childPages(page.Children)
-                    }
-                </li>
+                        @* if the current page has any children *@
+                        @if (page.Children.Any() && (!page.hideDescendantInNav))
+                        {
+                            @* Call our helper to display the children *@
+                            @childPages(page.Children)
+                        }
+                    </li>
+                }
             }
         </ul>
     }
