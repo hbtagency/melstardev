@@ -27,9 +27,14 @@ $screen-lg-m-min:1500px;
 $screen-lg-max: ($screen-lg-m-min - 1);
 
 /* This section needs to be finished */
+/*
 $font-fu-l: "futura_lightregular"; 
 $font-fu-book: "futura_bkbook";
 $font-fu-bold: "futura_bold";
+*/
+$font-fu-l: "proxima-nova-soft"; 
+$font-fu-book: "proxima-nova-soft";
+$font-fu-bold: "proxima-nova-soft";
 
 /* Mobile box edge */
 $mobile_edge:0;
