@@ -32,9 +32,9 @@ $font-fu-l: "futura_lightregular";
 $font-fu-book: "futura_bkbook";
 $font-fu-bold: "futura_bold";
 */
-$font-fu-l: "proxima-nova-soft"; 
-$font-fu-book: "proxima-nova-soft";
-$font-fu-bold: "proxima-nova-soft";
+$font-fu-l: "proxima-nova"; 
+$font-fu-book: "proxima-nova";
+$font-fu-bold: "proxima-nova";
 
 /* Mobile box edge */
 $mobile_edge:0;
@@ -141,4 +141,7 @@ body
     @include transition(all 0.4s ease);
 }
 
+p{
+    font-weight:100;
+}
 /* End of global */
