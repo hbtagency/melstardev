@@ -14,10 +14,43 @@ $footer_bottom_font_size: 13px;
 		position: relative;
 		width: 400px;	
 		margin: 0 auto 50px auto;
-
+        padding-bottom:60px;
 		span{
-			margin-left: 20px;
-			margin-right: 20px;
+			margin-left: 15px;
+			margin-right: 15px;
+            float:left;
+            .social_links_block{
+                width:68px; 
+                height:68px;
+                display:block;
+                margin:0;
+                @include transition(all 0.3s ease);
+                &.tripAdvisorLink{
+                    background-image:url("/img/tripadvisor.png");
+                    &:hover{
+                        background-position:0 67.5px;
+                    }
+                }
+                &.facebook{
+                    background-image:url("/img/facebook.png");
+                    &:hover{
+                        background-position:0 67.5px;
+                    }
+                }
+                &.youtube{
+                    background-image:url("/img/youtube.png");
+                    &:hover{
+                        background-position:0 67.5px;
+                    }
+                }
+                &.instagram{
+                    background-image:url("/img/instagram.png");
+                    &:hover{
+                        background-position:0 67.5px;
+                    }
+                }
+            }
+            
 		}
 	}
 }

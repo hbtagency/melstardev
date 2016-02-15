@@ -15,7 +15,7 @@ $ticket_container_width:177px;
         width:100%;
         margin:0;
         z-index: 99;
-        padding-right:15px;
+        padding-right:20.5px;
         margin-left:-30px;
         border-left:30px solid #fff;
         border-right:39px solid #fff;
@@ -88,19 +88,16 @@ $ticket_container_width:177px;
                         }
                     }
                     
-
                     .dropdown-menu{
                         background-color:rgba(0, 42, 95, 0.8);
                         right:0;
                         left:auto; 
-                                                z-index:101;
-
+                        z-index:101;
                     }
+
                     .level-2{
                         padding:0;
-                        margin-right:-18%;
                         li{
-                            
                             a{
                                 height:40px;
                                 padding-top:10px;
@@ -108,7 +105,6 @@ $ticket_container_width:177px;
                                     background-color:$head_blue !important;
                                 }
                             }
-
                         }
                         li:hover{
                             a{

@@ -1,5 +1,8 @@
 .post_pagenation_nav{
 	font-family:$font-fu-book;
+    a{
+        color:$head_blue;
+    }
 
 	.post_nav_prev{
 		margin-right: 35px
@@ -8,6 +11,18 @@
 	.post_nav_next{
 		margin-right: 5px
 	}
+
+    .news_arrows{
+        width:6px;
+        margin-bottom:5px;
+    }
+
+    .arrow_l{
+        margin-right:10px;
+    }
+    .arrow_r{
+        margin-left:10px;
+    }
 }
 
 .post_content{

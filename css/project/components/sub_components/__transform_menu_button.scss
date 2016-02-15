@@ -97,7 +97,7 @@ $space : $base/4;
 
 /* ====================== lines button ==================================================*/
 
-$button-size : 2rem; 
+$button-size : 2.1rem; 
 //common to all three-liners
 .lines-button {
   padding: $button-size/2 $button-size/4;
@@ -148,6 +148,7 @@ $button-size : 2rem;
 }
 
 //common to all three-liners
+/*
 .lines-button:hover {
   .lines {
     &:before { 
@@ -157,7 +158,7 @@ $button-size : 2rem;
       top: -$button-size/3.5; 
     }
   }
-}
+}*/
 .lines-button.close {
   -webkit-transform: scale3d(.8,.8,.8);
           transform: scale3d(.8,.8,.8);
