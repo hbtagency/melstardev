@@ -1,0 +1,35 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "~/Views/Layout.cshtml";
+}
+@Html.Partial("_header")
+
+
+<div class="container contact-form clearfix transit" style="position:relative;">
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.Raw(CurrentPage.mainEditor)
+        </div>
+    </div>
+
+
+    <div class="contact-form-area clearfix">
+        <div id="contact_us_form_result" class="hidden"></div>
+
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+        
+    </div>
+</div>
+
+<script type="text/javascript" src="/js/final/classie.js"></script>
+<script type="text/javascript" src="/js/final/selectFx.js"></script>
+<script type="text/javascript" src="/js/final/enquiry.js"></script>
+
+<script>
+    //style for State dropdox list 
+    (function () {
+        [].slice.call(document.querySelectorAll('select.cs-select')).forEach(function (el) {
+            new SelectFx(el);
+        });
+    })();
+</script>
