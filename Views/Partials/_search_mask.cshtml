@@ -7,7 +7,7 @@
             <div class="search-box-input inline-block">
                 Search:
             </div>
-            <input id="search-input-box" class="search-input inline-block" type="search" ng-model="q" placeholder="How can we help?" />
+            <input id="search-input-box" class="search-input inline-block" type="search" ng-model="q" placeholder="How can we help ?" />
             <ul class="example-animate-container">
                 <li ng-animate="'animate'" class="animate-repeat" ng-if="q.length > 0" ng-repeat="page in pages | filter:q as results">
                     <!--[{{$index + 1}}]--> <a href="{{page.url}}">{{page.title}}</a>
