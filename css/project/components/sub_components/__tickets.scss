@@ -216,7 +216,6 @@ $green_font_family:futura_bold;
     }
 }
 
-
 .main_nav{
     border:none;
     padding:0;
@@ -224,7 +223,7 @@ $green_font_family:futura_bold;
         position:relative;
         .buy_tickets{
             width:$ticket_container_width;
-            margin-right:-205.5px;
+            margin-right:-203.5px;
             background-color:$green;
             height:95px;
             text-align: center;
@@ -283,6 +282,12 @@ $green_font_family:futura_bold;
                 border:none;
             }
         }
+    }
+}
+
+.main_nav.stick{
+    .buy_tickets{
+       margin-right:-205.5px;
     }
 }
 
