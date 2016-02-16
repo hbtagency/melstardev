@@ -2,9 +2,9 @@
     $(".level-2").each(function () {
         //Step 1, get parent width
         var parentWidth = $(this).parent(".dropdown").width();
-        //Step 2, introduce CenterChildNavAnimator to do the centering job.
+        /*Step 2, introduce CenterChildNavAnimator to do the centering job.
         var animator = new CenterChildNavAnimator(parentWidth);
-        animator.centerDiv($(this),"r");
+        animator.centerDiv($(this), "r");*/
     });
 });
 
