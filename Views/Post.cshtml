@@ -37,8 +37,21 @@
             <div class="post_heading">
                 <h2>@CurrentPage.pageTitle</h2>
             </div>
-            <div class="post_description" id="table-striped-inside">
-                @Html.Raw(CurrentPage.postContent)
+            <div class="post_description row" id="table-striped-inside">
+                @{
+                    if (CurrentPage.HasValue("extracolumncontent"))
+                    {
+                        <div class="col-md-6">@Html.Raw(CurrentPage.postContent)</div>
+                        <div class="col-md-6">@Html.Raw(CurrentPage.extraColumnContent)</div>
+                    }
+                    else
+                    {
+                        <div class="col-xs-12">
+                            @Html.Raw(CurrentPage.postContent)
+                        </div>
+                    }
+                }
+
             </div>
 
             @Html.Partial("_social_links")

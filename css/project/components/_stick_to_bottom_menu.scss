@@ -12,9 +12,11 @@
 
         li a{
             height:69px;
-            padding-top:23px;
+            padding-top:25px;
             span{
                 height:69px;
+                font-weight:500 !important;
+                text-shadow:none;
             }
         }
         .selected {
@@ -43,16 +45,16 @@
         }
 
         .nav_margin_right {
-            margin-right: 20px;
-            padding-right: 20px;
+            margin-right: 0;
+            padding-right: 0;
 
             i.icon {
                 width: 1px;
-                height: 40px;
+                height: 20px;
                 display: block;
                 position: absolute;
-                right: -20px;
-                top: 15px;
+                right: 0;
+                top: 25px;
                 background-color: #fff;
             }
         }
