@@ -1,3 +1,4 @@
+
 var mainApp = angular.module('mainApp',['ngAnimate']);
 mainApp.controller('postController', function ($scope, $location, postService){
     //This functions will load news items in order after ng-repeat completes
@@ -14,7 +15,32 @@ mainApp.controller('postController', function ($scope, $location, postService){
         categoryID: "", 
     };
     $scope.selectCat = function (cat) {
+
+        if(cat == ""){
+            console.log($(".three-column-container").length);
+            $(".three-column-container").hide();
+            document.querySelector(".three-column-container").style.display = 'none';
+            
+            setTimeout(function(){ 
+                $(".three-column-container").show();
+                $('.post_list_item').each(function (i) {
+                    var el = $(this);
+                    $(this).hide();
+                    setTimeout(function () { el.fadeIn(1000); }, i * 300);
+                });
+            }, 500);
+        }
+        else{
+            $(".three-column-container").show();
+            $('.post_list_item').each(function (i) {
+                var el = $(this);
+                $(this).hide();
+                setTimeout(function () { el.fadeIn(1000); }, i * 300);
+            });
+        }
+
         $scope.search.categoryID = cat;
+
         start();
         function start() {
             dynamicHeightUpdater();
@@ -61,11 +87,11 @@ mainApp.controller('postController', function ($scope, $location, postService){
                 t_elem=this;
                 maxHeight=currentHeight;
             }
-            console.log(currentHeight + "->" + maxHeight + ":" +current_i);
+            // console.log(currentHeight + "->" + maxHeight + ":" +current_i);
             if(current_i % numOfEachRow == 0){
                 //Update min-height for every 2 or 2 elements
                 $(".post_list_item").slice(updated_i,current_i).css("min-height",maxHeight);
-                console.log("!" + numOfEachRow + "(" + updated_i +"," + current_i + ") Max height:" + maxHeight);
+                // console.log("!" + numOfEachRow + "(" + updated_i +"," + current_i + ") Max height:" + maxHeight);
                 updated_i = current_i;
                 maxHeight = 0;
             } 
