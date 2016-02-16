@@ -33,7 +33,7 @@
             <div class="col-xs-12 col-lg-10 three-column-container">
                 <img id="preloader" src="/img/preloader.gif"/>
                 <div class="row">
-                    <div ng-repeat="obj in posts | filter: {categoryID:search.categoryID}" ng-repeat-end-watch="myFunction">
+                    <section ng-repeat="obj in posts | filter: {categoryID:search.categoryID}" ng-repeat-end-watch="myFunction">
                         <div class="post_list_item col-lg-4 col-sm-6 col-xs-12">
                             <a class="in-row" href="{{obj.url}}"><img ng-src="{{obj.featuredImage}}" class="img-responsive" /></a>
                             <a class="in-row" href="{{obj.url}}"><h2>{{obj.title}}</h2></a>
@@ -42,7 +42,7 @@
                                {{obj.subtitle}}
                             </p>
                         </div>
-                    </div>
+                    </section>
                 </div> 
             </div>
         </div>

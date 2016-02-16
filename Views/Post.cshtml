@@ -33,10 +33,10 @@
         </div>
         </div>
     <div class="row">
-        <div class="post_content">
-            <div class="post_heading">
+        <article class="post_content">
+            <header class="post_heading">
                 <h2>@CurrentPage.pageTitle</h2>
-            </div>
+            </header>
             <div class="post_description row" id="table-striped-inside">
                 @{
                     if (CurrentPage.HasValue("extracolumncontent"))
@@ -55,7 +55,7 @@
             </div>
 
             @Html.Partial("_social_links")
-        </div>
+        </article>
     </div>
 
 
