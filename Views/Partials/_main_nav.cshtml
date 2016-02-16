@@ -55,7 +55,7 @@
                         </li>
                         @foreach (var childPage in rootNode.Children)
                         {
-                            if (childPage.Children.Any() && (!childPage.hideDescendantInNav))
+                            if (childPage.Children.Any() && (!childPage.hideDescendantInNav) && (!childPage.hideInNav))
                             {
 
                                 <li class="root dropdown has-child @(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
