@@ -65,11 +65,11 @@ $mobile-menu-width:200px;
     }
 }
 a{cursor: pointer;
-  color:#000;
-  &:hover{
-      color:$link_hover_color;
-      text-decoration:none;
-  }
+    color:#000;
+    &:hover{
+        color:$link_hover_color;
+        text-decoration:none;
+    }
 }
 //eg.@include transition(all 0.4s ease);
 .light-gray{background-color:$silver_gray}

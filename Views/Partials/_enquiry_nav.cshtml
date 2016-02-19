@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+<div class="container contact-form clearfix transit" style="position:relative;">
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.Raw(CurrentPage.mainEditor)
+        </div>
+    </div>
+    <div class="contact-form clearfix">
+        <!-- Bootstrap Tab Section -->
+        <ul class="nav nav-tabs">
+            @{
+                var rootNode = Umbraco.Content(1228);
+            }
+            <li class="@((CurrentPage.Id == 1228)  ? "active" : null)"><a href="@rootNode.Url">Home</a></li>
+
+            @foreach (var childPage in rootNode.Children)
+            {
+                <li class="@((childPage.Id == CurrentPage.Id)  ? "active" : null)"><a href="@childPage.Url">@childPage.Name</a></li>
+            }
+        </ul>
+        <script src='https://www.google.com/recaptcha/api.js'></script>

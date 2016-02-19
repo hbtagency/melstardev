@@ -20,7 +20,9 @@
                         @{
                             foreach (var c in newsEvent.Children())
                             {
-                                <li><a href="#" ng-click="selectCat(@c.Id)">@c.pageTitle</a></li>
+                                if (c.Children.Any()) {
+                                    <li><a href="#" ng-click="selectCat(@c.Id)">@c.pageTitle</a></li>
+                                }
                             }
                         }
                     </ul>

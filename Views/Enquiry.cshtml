@@ -3,35 +3,14 @@
     Layout = "~/Views/Layout.cshtml";
 }
 @Html.Partial("_header")
+@Html.Partial("_enquiry_nav")
 
-
-<div class="container contact-form clearfix transit" style="position:relative;">
-    <div class="row">
-        <div class="col-xs-12">
-            @Html.Raw(CurrentPage.mainEditor)
-        </div>
-    </div>
-
-
-    <div class="enquiries-form-area clearfix">
-        <div id="enquiry_form_result" class="hidden"></div>
-
-
-        @Html.Partial("_header")
-
-        <script src='https://www.google.com/recaptcha/api.js'></script>
+<div class="tab-content clearfix" style="position:relative">
+    <div id="enquiry_form_result" class="hidden"></div>
+    <div id="form_area">
+        @Html.Partial("_enquiry_general")
     </div>
 </div>
+</div>
 
-<script type="text/javascript" src="/js/final/classie.js"></script>
-<script type="text/javascript" src="/js/final/selectFx.js"></script>
-<script type="text/javascript" src="/js/final/enquiry.js"></script>
-
-<script>
-    //style for State dropdox list 
-    (function () {
-        [].slice.call(document.querySelectorAll('select.cs-select')).forEach(function (el) {
-            new SelectFx(el);
-        });
-    })();
-</script>
+@Html.Partial("_enquiry_terms_conditions")

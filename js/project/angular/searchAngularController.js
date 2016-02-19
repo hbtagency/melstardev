@@ -20,7 +20,7 @@ searchModule.factory('searchService', ['$http', function ($http) {
 
     var searchService = {};
     searchService.getSearch = function () {
-        return $http.get('/umbraco/surface/search/getSearch/');
+        return $http.get('/umbraco/surface/Search/getSearch/');
     };
     return searchService;
 

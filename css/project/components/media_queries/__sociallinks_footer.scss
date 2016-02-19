@@ -1,0 +1,20 @@
+@media (max-width: $screen-xs-max){
+
+    .lets_connect{
+        margin-top:0;
+	    .social_links{
+		    width: auto;	
+            display:inline-block;
+		    margin: 0 auto 50px auto;
+            padding-bottom:15px;
+		    span{
+                display:inline-block;
+			    margin-left: 0px;
+			    margin-right: 0px;
+                .social_links_block{
+                
+                }
+		    }
+	    }
+    }
+}

@@ -9,6 +9,7 @@ using System.Net;
 using Newtonsoft.Json;
 using melbournestardev.models;
 using System.Configuration;
+using melbournestardev.helpers;
 
 namespace Melstar.Controllers
 {
@@ -30,7 +31,8 @@ namespace Melstar.Controllers
 
             string retValue = "{\"error\":\""+ errorMessages["general"] + "\"}";
 
-            if (RecaptchaWork(response))
+            //Check recaptcha
+            if (HBTUmbracoFormsHelper.RecaptchaWork(response))
             {
                 if (!ModelState.IsValid)
                 {
@@ -43,8 +45,8 @@ namespace Melstar.Controllers
                     var mail = new MailMessage();
                     try
                     {
-                        //Update your email address
-                        string email = GetEmailFromUmbraco(); 
+                        //Retrive admin email from umbraco
+                        string email = HBTUmbracoFormsHelper.GetEmailFromUmbraco(); 
                         mail.To.Add(email);
                         mail.From = new MailAddress(model.Email, model.FirstName);
                         mail.Subject = String.Format("Enquiry from customer: " + model.FirstName + " " + model.LastName + "(" + model.Email + ")");
@@ -72,37 +74,6 @@ namespace Melstar.Controllers
             }
         }
 
-        private string GetEmailFromUmbraco()
-        {
-            //Please refer to umbraco->settings->dictionary->configs
-            return umbraco.library.GetDictionaryItem("Admin Email");
-        }
-
-        private Boolean RecaptchaWork(string recaptchaResponse)
-        {
-            //var response = Request["g-recaptcha-response"];
-            var response = recaptchaResponse;
-            //secret that was generated in key value pair
-            string secret = Convert.ToString(ConfigurationManager.AppSettings["recaptchaSecret"]);
-
-            var client = new WebClient();
-            var reply =
-                client.DownloadString(
-                    string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secret, response));
-
-            var captchaResponse = JsonConvert.DeserializeObject<CaptchaResponse>(reply);
-
-            //when response is false check for the error message
-            if (!captchaResponse.Success)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-
-        }
     }
 
 

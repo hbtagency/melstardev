@@ -223,12 +223,11 @@ $green_font_family:futura_bold;
         position:relative;
         .buy_tickets{
             width:$ticket_container_width;
-            margin-right:-203.5px;
+            margin-right:-177.5px;
             background-color:$green;
             height:95px;
             text-align: center;
             position:relative;
-            @include transition(all 0.4s ease);
 
             &:hover{
                 background-color:#92D404;
@@ -285,10 +284,6 @@ $green_font_family:futura_bold;
     }
 }
 
-.main_nav.stick{
-    .buy_tickets{
-       margin-right:-206.5px;
-    }
-}
+
 
 @import "__rotate_element.scss";

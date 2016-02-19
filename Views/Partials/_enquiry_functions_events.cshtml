@@ -1,16 +1,16 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
 <div class="contact-form-area">
-    
-    <form name="general-enquiry-form" id="general-enquiry-form" method="post" class="validate">
+
+    <form name="general-enquiry-form" id="functions-events-enquiry" method="post" class="validate">
         <div class="row">
             <div class="field-group col-sm-6">
                 <label for="Title">Title</label>
                 <select name="Title" class="cs-select">
                     <option value="Please select">Please select</option>
                     <option value="Mr">Mr</option>
-                    <option value="Miss">Mrs</option>
-                    <option value="Miss">Ms</option>
+                    <option value="Mrs">Mrs</option>
+                    <option value="Ms">Ms</option>
                     <option value="Miss">Miss</option>
                     <!-- This part will loop from a title list -->
                 </select>
@@ -33,7 +33,6 @@
                 <label for="LastName">Last Name <span class="asterisk" style="top: 35px;">*</span></label>
                 <input class="long" type="text" placeholder="Enter last name..." value="" name="LastName">
                 <div class="error-msg hidden"></div>
-
             </div>
         </div>
         <div class="row">
@@ -87,6 +86,56 @@
                 <input type="text" class="long" placeholder="Enter your suburb..." value="" name="Postcode"></input>
             </div>
         </div>
+
+        <div class="row">
+            <div class="field-group col-sm-6">
+                <label for="ProposedEventDate">Proposed Event Date <span class="asterisk" style="top: 35px;">*</span></label>
+                <input id="datepicker1" type="text" class="long" placeholder="Enter your proposed date ..." value="" name="ProposedEventDate"></input>
+               
+            </div>
+            <div class="field-group col-sm-6">
+                <label for="EventType">Event Type <span class="asterisk" style="top: 35px;">*</span></label>
+                <select name="EventType" class="cs-select">
+                    <option value="Please select">Please select</option>
+                    <option value="Type1">Type1</option>
+                    <option value="Type2">Type2</option>
+                    <option value="Type3">Type3</option>
+                    <option value="Type4">Type4</option>
+                    <!-- This part will loop from a title list -->
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field-group col-sm-6">
+                <label for="AlternativeDate">Alternative Event Date</label>
+                <input id="datepicker2" type="text" class="long" placeholder="Enter your alternative date ..." value="" name="AlternativeDate"></input>
+            </div>
+            <div class="field-group col-sm-6">
+                <label for="NumOfGuests">Number of Guests <span class="asterisk" style="top: 35px;">*</span></label>
+                <input type="number" class="long" placeholder="Enter a number..." value="" name="NumOfGuests"></input>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field-group col-sm-6">
+                <label for="GuestArrivalTime ">Guest Arrival Time</label>
+                <input type="text" class="long" placeholder="Enter your arrival time ..." value="" name="GuestArrivalTime "></input>
+            </div>
+            <div class="field-group col-sm-6">
+                <label for="GuestDepartTime">Guest Depart Time</label>
+                <input type="text" class="long" placeholder="Enter your departure time ..." value="" name="GuestDepartTime"></input>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field-group col-sm-12">
+                <label for="BudgetPerPerson">Budegt per person</label>
+                <input type="text" class="long" placeholder="Enter your budget ..." value="" name="BudgetPerPerson"></input>
+            </div>
+           
+        </div>
+
         <div class="row">
             <div class="field-group col-xs-12">
                 <label for="Comments">Comments</label>
@@ -95,16 +144,15 @@
         </div>
         <div class="row">
             <div class="field-group col-xs-12">
-                <input type="checkbox" name="AcceptTerms" id="AcceptTerms" style="float:left;" value="true"/>
-                Please check this box to indicate you have read and accept the 
+                <input type="checkbox" name="AcceptTerms" id="AcceptTerms" style="float:left;" value="true" />
+                Please check this box to indicate you have read and accept the
                 <a class="show_terms_conditions">privacy policy </a>
             </div>
         </div>
-
         <div class="g-recaptcha"
              data-sitekey="@System.Configuration.ConfigurationManager.AppSettings["recaptchaSitekey"].ToString()">
         </div>
-        <br/>
+        <br />
         <div class="row">
             <div>
                 <input class="hidden" type="text" name="b_4d2c8011960ee7758b33a61a7_68ac2802a5" tabindex="-1" value="">
@@ -116,8 +164,13 @@
     </form>
 </div>
 
+
 <script>
-    [].slice.call(document.querySelectorAll('select.cs-select')).forEach(function (el) {
-        new SelectFx(el);
-    });
+                  $(function() {
+                      $("#datepicker1").datepicker({
+                          inline: true
+                      });
+                      $("#datepicker2").datepicker({
+                      });
+                  });
 </script>

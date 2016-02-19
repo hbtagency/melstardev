@@ -1,0 +1,23 @@
+.datepicker{
+    z-index:1000 !important;
+    width:300px;
+    margin-left:200px;
+    .datepicker-days{
+        table{
+            width:100%;
+            th{
+                text-align:center;
+                &:hover{
+                    background-color:gainsboro;
+                }
+            }
+            td{
+                text-align:center;
+                &:hover{
+                    background-color:gainsboro;
+                    cursor:pointer;
+                }
+            }
+        }
+    }
+}

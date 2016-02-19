@@ -15,10 +15,10 @@ $ticket_container_width:177px;
         width:100%;
         margin:0;
         z-index: 99;
-        padding-right:20.5px;
+        padding-right:0;
         margin-left:-30px;
         border-left:30px solid #fff;
-        border-right:39px solid #fff;
+        border-right:30px solid #fff;
         background-color:$nav_blue_transparent;
         .full-screen-container .mobile-menu button.navbar-toggle .icon-bar{
             background-color:#fff;
@@ -47,7 +47,6 @@ $ticket_container_width:177px;
         }
         nav.navbar{
             margin-bottom:0px;
-            margin-right:-24px;
             border:none;
             ul li.root{
                     display:inline-block;

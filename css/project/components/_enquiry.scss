@@ -1,0 +1,49 @@
+.contact-form{
+    .show_terms_conditions{
+            text-decoration:underline;
+        }
+    .terms_and_conditions{
+        padding: 30px;
+        position: fixed;
+        height: 800px;
+        width: 80%;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom:0;
+        background-color: #fff;
+        z-index: 200;
+        display: block;
+        border: 1px solid black;
+        overflow: auto;
+        
+        #accept_terms{
+            background-color:#000;
+            color:#fff;
+            font-weight:700;
+            margin-left:-5px;
+        }
+    }
+}
+
+#enquiry_form_result{
+    padding:8px 15px 10px 15px;
+    font-size:20px; 
+    display:inline-block;
+    z-index:10;
+    position:absolute;
+    margin:auto;
+    width:100%;
+    top:0;
+    text-align:left;
+    height:50px;
+    color:#fff;
+    display:block;
+    background-color:red;
+    &.green{
+        background-color:#92d400;
+    }
+}
+
+@import 'sub_components/__datepicker.scss'; 

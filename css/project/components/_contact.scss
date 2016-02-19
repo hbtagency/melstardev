@@ -1,15 +1,18 @@
 .contact-form{
     padding:40px 0 60px 0;
     position:relative;
-    .contact-form-area{
+}
+
+.contact-form-area{
         position:relative;
         padding-top:50px;
+        
         form{
             div.cs-select{
                 z-index:97;
             }
 
-            .mc-field-group{
+            .field-group{
             position:relative;
             input.long, textarea.long{
                 width:100%;
@@ -71,24 +74,25 @@
     }
 }
 
-    #contact_us_form_result{
-        padding:8px 15px 10px 15px;
-        font-size:20px; 
-        display:inline-block;
-        z-index:10;
-        position:absolute;
-        margin:10px auto;
-        width:100%;
-        top:-13px;
-        text-align:left;
-        height:50px;
-        color:#fff;
-        display:block;
-        background-color:red;
-        &.green{
-            background-color:#92d400;
-        }
+#contact_us_form_result{
+    padding:8px 15px 10px 15px;
+    font-size:20px; 
+    display:inline-block;
+    z-index:10;
+    position:absolute;
+    margin:10px auto;
+    width:100%;
+    top:-13px;
+    text-align:left;
+    height:50px;
+    color:#fff;
+    display:block;
+    background-color:red;
+    &.green{
+        background-color:#92d400;
     }
 }
+
+
 
 @import 'media_queries/__contact.scss';

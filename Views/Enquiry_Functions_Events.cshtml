@@ -1,0 +1,17 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "~/Views/Layout.cshtml";
+}
+@Html.Partial("_header")
+@Html.Partial("_enquiry_nav")
+
+    <div class="tab-content clearfix" style="position:relative">
+        <div id="enquiry_form_result" class="hidden"></div>
+        <div id="form_area">
+            @Html.Partial("_enquiry_functions_events")
+        </div>
+    </div>
+</div>
+
+@Html.Partial("_enquiry_terms_conditions")
+

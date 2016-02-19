@@ -1,9 +1,10 @@
 // Mobile View 1 story 2nd level(flexible width)
 @media (max-width: 556px) {
     .whats_new{
+        display:none;
         padding-top:15px;
         padding-bottom:15px;
-
+        background-size:cover !important;
         .whats_news_title{
             padding-top:15px;
         }
@@ -74,6 +75,7 @@
 // Mobile View 1 story 1st level
 @media (min-width: 557px) and (max-width: 811px) {
     .whats_new{
+         background-size:cover !important;
         .whats_news_image_wrapper{
             height: 250px !important;
         } 

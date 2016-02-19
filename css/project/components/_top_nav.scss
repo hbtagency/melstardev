@@ -4,17 +4,19 @@
    width:100%;
    display: block; 
    padding-top:7px;
+   .navbar{
+       min-height:0;
+       margin-bottom:0;
+   }
    .full-screen-container{
        padding:0;
        .inline-block{
-           height:34px;
            float:right;
        }
        .navbar{
            margin-right:15px;
            ul{
                li{
-                   height:34px;
                    padding:0;
                    a{
                        @include transition(all 0.4s ease);
@@ -35,6 +37,11 @@
        }
        .contact-us{
            margin-right:30px;
+           ul{
+               li{
+                   margin-left:20px;
+               }
+           }
        }
     }
 }
