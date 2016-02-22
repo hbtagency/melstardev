@@ -12,7 +12,7 @@
             @{
                 var rootNode = Umbraco.Content(1228);
             }
-            <li class="@((CurrentPage.Id == 1228)  ? "active" : null)"><a href="@rootNode.Url">Home</a></li>
+            <li class="@((CurrentPage.Id == 1228)  ? "active" : null)"><a href="@rootNode.Url">General Enquiries</a></li>
 
             @foreach (var childPage in rootNode.Children)
             {

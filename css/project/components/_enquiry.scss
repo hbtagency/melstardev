@@ -27,22 +27,27 @@
     }
 }
 
-#enquiry_form_result{
-    padding:8px 15px 10px 15px;
-    font-size:20px; 
-    display:inline-block;
-    z-index:10;
-    position:absolute;
-    margin:auto;
-    width:100%;
-    top:0;
-    text-align:left;
-    height:50px;
-    color:#fff;
-    display:block;
-    background-color:red;
-    &.green{
-        background-color:#92d400;
+.tab-content{
+    text-align:center;
+    #enquiry_form_result{
+        padding: 8px 15px 10px;
+        font-size: 20px;
+        z-index: 10;
+        margin: auto;
+        display: inline-block;
+        /* left: 0; */
+        /* right: 0; */
+        text-align: center !important;
+        top: 0;
+        bottom: 0;
+        text-align: left;
+        height: 50px;
+        position: fixed;
+        color: #fff;
+        background-color: red;
+        &.green{
+            background-color:#92d400;
+        }
     }
 }
 

@@ -6,6 +6,10 @@
         {
             @Html.Raw(CurrentPage.termsAndConditions)
         }
+        else if (CurrentPage.Parent.HasValue("termsAndConditions"))
+        {
+            @Html.Raw(CurrentPage.Parent.termsAndConditions)
+        }
     }
     <button class="button accept_terms" id="accept_terms">Accept</button>
 </div>
@@ -13,7 +17,6 @@
 
 <script type="text/javascript" src="/js/final/classie.js"></script>
 <script type="text/javascript" src="/js/final/selectFx.js"></script>
-<script type="text/javascript" src="/js/project/enquiry_general.js"></script>
 <script type="text/javascript" src="/js/project/bootstrap_calendar.js"></script>
 
 <script>
@@ -24,14 +27,8 @@
         });
     })();
 
-    $('#general_form_trigger').click(function () {
-        $.ajax({
-            type: 'POST',
-            url: '@Url.Content("/umbraco/Surface/ShowEnquiryForm/GeneralForm/")',
-            data: "",
-            success: function (data) {
-                $('#form_area').html(data);
-            }
-        });
+    $("#accept_terms").click(function () {
+        $("#terms_and_conditions").addClass("hidden");
+        $("#AcceptTerms").prop('checked', true);
     });
 </script>

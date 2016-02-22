@@ -2,7 +2,7 @@
 
 <div class="contact-form-area">
 
-    <form name="general-enquiry-form" id="functions-events-enquiry" method="post" class="validate">
+    <form name="group-enquiry" id="group-enquiry" method="post" class="validate">
         <div class="row">
             <div class="field-group col-sm-6">
                 <label for="Title">Title</label>
@@ -87,6 +87,19 @@
             </div>
         </div>
 
+
+        <div class="row">
+            <div class="field-group col-sm-6">
+                <label for="GroupName">Group Name<span class="asterisk" style="top: 35px;">*</span></label>
+                <input type="text" class="long" placeholder="Enter your group name ..." value="" name="GroupName" />
+                <div class="error-msg hidden"></div>
+            </div>
+            <div class="field-group col-sm-6">
+                <label for="Country">Country</label>
+                <input type="text" class="long" placeholder="Enter your country ..." value="" name="Country" />
+            </div>
+        </div>
+
         <div class="row">
             <div class="field-group col-sm-6">
                 <label for="ProposedEventDate">Proposed Event Date <span class="asterisk" style="top: 35px;">*</span></label>
@@ -94,13 +107,21 @@
                 <div class="error-msg hidden"></div>
             </div>
             <div class="field-group col-sm-6">
-                <label for="EventType">Event Type <span class="asterisk" style="top: 35px;">*</span></label>
-                <select id="EventType" name="EventType" class="cs-select">
+                <label for="TimeOfVisit">Time of Visit</label>
+                <select name="TimeOfVisit" class="cs-select">
                     <option value="">Please select</option>
-                    <option value="Type1">Type1</option>
-                    <option value="Type2">Type2</option>
-                    <option value="Type3">Type3</option>
-                    <option value="Type4">Type4</option>
+                    <option value="10:00am">10:00am</option>
+                    <option value="11:00am">11:00am</option>
+                    <option value="12:00am">12:00am</option>
+                    <option value="1:00pm">1:00pm</option>
+                    <option value="2:00pm">2:00pm</option>
+                    <option value="3:00pm">3:00pm</option>
+                    <option value="4:00pm">4:00pm</option>
+                    <option value="5:00pm">5:00pm</option>
+                    <option value="6:00pm">6:00pm</option>
+                    <option value="7:00pm">7:00pm</option>
+                    <option value="8:00pm">8:00pm</option>
+                    <option value="9:00pm">9:00pm</option>
                     <!-- This part will loop from a title list -->
                 </select>
                 <div class="error-msg hidden"></div>
@@ -110,34 +131,25 @@
 
         <div class="row">
             <div class="field-group col-sm-6">
-                <label for="AlternativeDate">Alternative Event Date</label>
-                <input id="datepicker2" type="text" class="long" placeholder="Enter your alternative date ..." value="" name="AlternativeDate"/>
-            </div>
-            <div class="field-group col-sm-6">
-                <label for="NumOfGuests">Number of Guests <span class="asterisk" style="top: 35px;">*</span></label>
-                <input type="number" class="long" placeholder="Enter a number..." value="" name="NumOfGuests"/>
+                <label for="NumOfAdults">Number of Adults</label>
+                <input type="number" class="long" placeholder="Enter a number..." value="" name="NumOfAdults" />
                 <div class="error-msg hidden"></div>
             </div>
-        </div>
-
-        <div class="row">
             <div class="field-group col-sm-6">
-                <label for="GuestArrivalTime ">Guest Arrival Time</label>
-                <input type="text" class="long" placeholder="Enter your arrival time ..." value="" name="GuestArrivalTime "/>
-            </div>
-            <div class="field-group col-sm-6">
-                <label for="GuestDepartTime">Guest Depart Time</label>
-                <input type="text" class="long" placeholder="Enter your departure time ..." value="" name="GuestDepartTime"/>
+                <label for="NumOfConcessionAdults">Number of concession Adults</label>
+                <input type="number" class="long" placeholder="Enter a number..." value="" name="NumOfConcessionAdults"/>
+                <div class="error-msg hidden"></div>
             </div>
         </div>
 
         <div class="row">
             <div class="field-group col-sm-12">
-                <label for="BudgetPerPerson">Budegt per person<span class="asterisk" style="top: 35px;">*</span></label>
-                <input type="text" class="long" placeholder="Enter your budget ..." value="" name="BudgetPerPerson"/>
+                <label for="NumOfChildren">Number of Children</label>
+                <input type="number" class="long" placeholder="Enter a number..." value="" name="NumOfChildren" />
                 <div class="error-msg hidden"></div>
             </div>
         </div>
+
 
         <div class="row">
             <div class="field-group col-xs-12">
@@ -178,4 +190,4 @@
     });
 </script>
 
-<script type="text/javascript" src="/js/project/enquiry_functions_events.js"></script>
+<script type="text/javascript" src="/js/project/enquiry_group.js"></script>

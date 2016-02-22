@@ -1,13 +1,13 @@
-﻿$("form#functions-events-enquiry").submit(function (event) {
+﻿$("form#group-enquiry").submit(function (event) {
     event.preventDefault();
     /* init result box */
     if ($("#enquiry_form_result").hasClass("green")) {
         $("#enquiry_form_result").removeClass("green");
     }
 
-    var form = "functions-events-enquiry";
-    var form_element = $("#functions-events-enquiry");
-    var field_list = ["FirstName", "LastName", "Phone", "Email", "EventType", "ProposedEventDate", "NumOfGuests", "BudgetPerPerson"];
+    var form = "group-enquiry";
+    var form_element = $("#group-enquiry");
+    var field_list = ["FirstName", "LastName", "Phone", "Email", "GroupName", "ProposedEventDate"];
     var error_msg = "";
     var error_message_list = { required: "This field is required!", email: "Please enter a valid email!", systemError: "You've encountered a system error!" };
     var errorFields = {};
@@ -116,7 +116,7 @@
     }
 });
 
-$("#functions-events-enquiry").click(function () {
+$("#group-enquiry").click(function () {
     if (!$("#enquiry_form_result").hasClass("hidden")) {
         $("#enquiry_form_result").addClass("hidden");
     }
