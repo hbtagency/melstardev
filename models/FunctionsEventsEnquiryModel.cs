@@ -15,5 +15,6 @@ namespace melbournestardev.models
         public string GuestDepartTime { get; set; }
         [Required]
         public string BudgetPerPerson { get; set; }
+
     }
 }

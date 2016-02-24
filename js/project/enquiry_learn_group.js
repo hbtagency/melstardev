@@ -1,20 +1,20 @@
-﻿$("form#group-enquiry").submit(function (event) {
+﻿$("form#learn-group-enquiry").submit(function (event) {
     event.preventDefault();
     /* init result box */
     if ($("#enquiry_form_result").hasClass("green")) {
         $("#enquiry_form_result").removeClass("green");
     }
 
-    var form = "group-enquiry";
-    var form_element = $("#group-enquiry");
-    var field_list = ["FirstName", "LastName", "Phone", "Email", "GroupName", "ProposedEventDate"];
+    var form = "learn-group-enquiry";
+    var form_element = $("#learn-group-enquiry");
+    var field_list = ["FirstName", "LastName", "Phone", "Email", "SchoolName", "SchoolAddress", "BookingDate", "NumOfAdults", "NumOfTeachers", "NumOfStudents"];
     var error_msg = "";
     var error_message_list = { required: "This field is required!", email: "Please enter a valid email!", systemError: "You've encountered a system error!" };
     var errorFields = {};
 
     if (validForm(form, field_list)) {
         //Ajax call
-        var action = "/umbraco/Surface/GroupEnquiry/submitForm/";
+        var action = "/umbraco/Surface/LearnGroupEnquiry/submitForm/";
 
         /* This part of code is to avoid double submit */
         if (!$(this).hasClass("submited")) {
@@ -59,7 +59,7 @@
             }
         });
 
-        grecaptcha.reset()
+        grecaptcha.reset();
     }
 
     function validForm(form, field_list) {
@@ -116,7 +116,7 @@
     }
 });
 
-$("#group-enquiry").click(function () {
+$("#learn-group-enquiry").click(function () {
     if (!$("#enquiry_form_result").hasClass("hidden")) {
         $("#enquiry_form_result").addClass("hidden");
     }

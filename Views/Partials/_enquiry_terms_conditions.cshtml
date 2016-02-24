@@ -6,10 +6,14 @@
         {
             @Html.Raw(CurrentPage.termsAndConditions)
         }
-        else if (CurrentPage.Parent.HasValue("termsAndConditions"))
+        else
         {
-            @Html.Raw(CurrentPage.Parent.termsAndConditions)
+            if (CurrentPage.Parent != null)
+            {
+                @Html.Raw(CurrentPage.Parent.termsAndConditions)
+            }
         }
+
     }
     <button class="button accept_terms" id="accept_terms">Accept</button>
 </div>

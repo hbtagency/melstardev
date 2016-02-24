@@ -28,20 +28,20 @@
 }
 
 .tab-content{
-    text-align:center;
     #enquiry_form_result{
         padding: 8px 15px 10px;
         font-size: 20px;
-        z-index: 10;
+        z-index: 10000;
         margin: auto;
         display: inline-block;
-        /* left: 0; */
-        /* right: 0; */
+        width:30%;
+        left: 0;
+        right: 0;
         text-align: center !important;
-        top: 0;
-        bottom: 0;
+        top: 45%;
         text-align: left;
-        height: 50px;
+        height: auto;
+        max-height:100px;
         position: fixed;
         color: #fff;
         background-color: red;
