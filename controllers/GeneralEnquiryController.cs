@@ -2,10 +2,9 @@
 using melbournestardev.models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Mail;
-using System.Web;
-using System.Web.Mvc;
+using System.Collections.Specialized;
+using System.Configuration;
 
 namespace melbournestardev.controllers
 {
@@ -14,17 +13,18 @@ namespace melbournestardev.controllers
         // GET: GeneralEnquiry
         public String submitForm(GeneralEnquiryModel model)
         {
+            NameValueCollection section =
+                (NameValueCollection)ConfigurationManager.GetSection("FormErrorMessage");
             string response = model.Response;
             List<string> resultList = new List<string>();
 
-            //If required, could remove error message to config or umbraco.
             Dictionary<string, string> errorMessages = new Dictionary<string, string>()
             {
-                {"general","Form validation error!"},
-                {"success","Your Request was submitted successfully. We will contact you shortly."},
-                {"recaptcha","Please complete recaptcha field!"},
-                {"accept_term","Please accept term before we submit your enquiries!"},
-                {"system","There was an error submitting the form, could possibly due to invalid email format, please try again later."}
+                 {"general",section["general"]},
+                 {"success",section["success"]},
+                 {"recaptcha",section["recaptcha"]},
+                 {"accept_term",section["accept_term"]},
+                 {"system",section["system"]}
             };
 
             string retValue = "{\"error\":\"" + errorMessages["general"] + "\"}";
