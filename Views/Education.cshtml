@@ -1,0 +1,23 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "~/Views/Layout.cshtml";
+}
+
+@Html.Partial("_header")
+
+
+
+<div class="container transit template_content">
+
+    @Html.Partial("_education_menu")
+    <div class="row">
+        <div class="col-lg-1 visible-lg">
+        </div>
+        <div class="col-lg-10 col-xs-12" id="table-striped-inside">
+            @Html.Raw(CurrentPage.mainEditor)
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="/js/final/striped_table.js"></script>

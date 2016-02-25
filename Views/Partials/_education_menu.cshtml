@@ -1,0 +1,50 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    var rootNode = Umbraco.Content(1250);
+}
+
+<div class="row">
+    <div class="col-lg-1 visible-lg">
+    </div>
+    <div class="col-lg-10 col-xs-12">
+        @if (rootNode.Children.Any())
+            {
+            <ul class="nav nav-tabs education-nav">
+                @foreach (var childPage in rootNode.Children)
+                {
+                    if (childPage.Children.Any())
+                    {
+                        <li class='dropdown @(childPage.IsAncestorOrSelf(CurrentPage) ? "active" : null)'>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                @childPage.Name
+                                <span class="caret"></span>
+                            </a>
+                            @childPages(childPage.Children)
+                        </li>
+                    }
+                    else
+                    {
+                        <li class=""><a href="#">@childPage.Name</a></li>
+                    }
+                }
+            </ul>
+        }
+    </div>
+</div>
+<br /><br />
+
+
+@helper childPages(dynamic pages)
+{
+if (pages.Any())
+{
+        <ul class="dropdown-menu">
+            @foreach (var page in pages)
+            {
+                <li>
+                    <a href="@page.Url">@page.Name</a>
+                </li>
+            }
+        </ul>
+}
+}
