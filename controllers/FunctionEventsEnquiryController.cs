@@ -6,7 +6,6 @@ using System.Collections.Specialized;
 using System.Configuration;
 using System.Net.Mail;
 
-
 namespace melbournestardev.controllers
 {
     public class FunctionEventsEnquiryController : Umbraco.Web.Mvc.SurfaceController
