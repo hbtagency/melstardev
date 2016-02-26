@@ -15,6 +15,18 @@
             @Html.Raw(CurrentPage.mainEditor)
         </div>
     </div>
+
+    @if (CurrentPage.Children.Any())
+    {
+        <div class="row">
+            <div class="col-lg-1 visible-lg">
+            </div>
+            <div class="col-lg-10 col-xs-12" id="table-striped-inside">
+                <h1 style="margin-bottom:-50px">FAQ</h1>
+                @Html.Partial("_FAQ")
+            </div>
+        </div>
+    }
 </div>
 
 <script type="text/javascript" src="/js/final/striped_table.js"></script>

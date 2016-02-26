@@ -12,20 +12,7 @@
             <ul class="nav nav-tabs education-nav">
                 @foreach (var childPage in rootNode.Children)
                 {
-                    if (childPage.Children.Any())
-                    {
-                        <li class='dropdown @(childPage.IsAncestorOrSelf(CurrentPage) ? "active" : null)'>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                @childPage.Name
-                                <span class="caret"></span>
-                            </a>
-                            @childPages(childPage.Children)
-                        </li>
-                    }
-                    else
-                    {
-                        <li class=""><a href="#">@childPage.Name</a></li>
-                    }
+                    <li class='@(childPage.IsAncestorOrSelf(CurrentPage) ? "active" : null)'><a href="@childPage.Url">@childPage.Name</a></li>
                 }
             </ul>
         }
@@ -34,17 +21,3 @@
 <br /><br />
 
 
-@helper childPages(dynamic pages)
-{
-if (pages.Any())
-{
-        <ul class="dropdown-menu">
-            @foreach (var page in pages)
-            {
-                <li>
-                    <a href="@page.Url">@page.Name</a>
-                </li>
-            }
-        </ul>
-}
-}

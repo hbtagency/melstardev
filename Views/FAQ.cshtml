@@ -9,79 +9,15 @@
 
 <!-- template content area -->
 <div class="container text-center transit clearfix">
-
-      <div class="faq_container clearfix">
-          <div class="row">
-              <div class="col-xs-12">
-                  @if (CurrentPage.Parent.Parent.Id == 1250)
-                  {
-                      if (root.Children.Any())
-                      {
-                          <ul class="nav nav-tabs">
-                              @foreach (var childPage in root.Children)
-                    {
-                        if (childPage.Children.Any())
-                        {
-                                      <li class='dropdown @(childPage.IsAncestorOrSelf(CurrentPage) ? "active" : null)'>
-                                          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                              @childPage.Name
-                                              <span class="caret"></span>
-                                          </a>
-                                          @childPages(childPage.Children)
-                                      </li>
-                                  }
-                                  else
-                                  {
-                                      <li class=""><a href="#">@childPage.Name</a></li>
-                                  }
-                              }
-                          </ul>
-                      }
-                  }
-                  <br />
-              </div>
-          </div>
-        
-
-
-        <div class="accordion">
-            @if (CurrentPage.Children.Any())
-            {
-                foreach (var childPage in CurrentPage.Children)
-                {
-                    <div class="accordion-group">
-                        <div class="accordion-heading collapsed_item">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#faq_sec2">
-                                <span class="icon-list-alt">+</span> @childPage.title
-                            </a>
-                        </div>
-                        <div id="faq_sec2" class="accordion-body collapse" style="height: 0px;">
-                            <div class="accordion-inner">
-                                @Html.Raw(childPage.description)
-                            </div>
-                        </div>
-                    </div>         
-                }
-            }
-        </div>
-    </div>
-
-    <script type="text/javascript" src="/js/final/faq.js"></script>
+      <!-- Also used in education sub pages -->   
+        <div class="row">
+            <div class="col-lg-1 visible-lg">
+            </div>
+            <div class="col-lg-10 col-xs-12" id="table-striped-inside">
+                @Html.Partial("_FAQ")
+            </div>
+        </div>  
 
 </div>
 <!-- end of template content -->
 
-@helper childPages(dynamic pages)
-{
-if (pages.Any())
-{
-        <ul class="dropdown-menu">
-            @foreach (var page in pages)
-            {
-                <li>
-                    <a href="@page.Url">@page.Name</a>
-                </li>
-            }
-        </ul>
-}
-}

@@ -1,0 +1,39 @@
+﻿
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+<div class="accordion faq_container">
+        @if (CurrentPage.Children.Any())
+            {
+                foreach (var childPage in CurrentPage.Children)
+                {
+                <div class="accordion-group">
+                    <div class="accordion-heading collapsed_item">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#faq_sec2">
+                            <span class="icon-list-alt">+</span> @childPage.title
+                        </a>
+                    </div>
+                    <div id="faq_sec2" class="accordion-body collapse" style="height: 0px;">
+                        <div class="accordion-inner">
+                            @Html.Raw(childPage.description)
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+</div>
+<script type="text/javascript" src="/js/final/faq.js"></script>
+
+@helper childPages(dynamic pages)
+{
+if (pages.Any())
+{
+        <ul class="dropdown-menu">
+            @foreach (var page in pages)
+            {
+                <li>
+                    <a href="@page.Url">@page.Name</a>
+                </li>
+            }
+        </ul>
+}
+}
