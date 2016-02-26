@@ -1,0 +1,4 @@
+﻿User-agent: *
+Disallow: /
+Disallow: /en/visitor-info/
+Disallow: /en/functions-events/

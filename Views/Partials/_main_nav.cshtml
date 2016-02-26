@@ -59,7 +59,7 @@
                             {
 
                                 <li class="root dropdown has-child @(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <a href="@childPage.Url" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                         <span class="menu--link-text current-parent">@childPage.Name</span>
                                         <span class="arrow_down"></span>
                                     </a>
@@ -71,7 +71,7 @@
                                 if (!childPage.hideInNav) {
                                 <li class="root @(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
                                     <!-- Link tag only if link is present in backend -->
-                                    <a class="dropdown-toggle menu--link" href="@childPage.Url">
+                                    <a class="dropdown-toggle menu--link" title="@childPage.Name" href="@childPage.Url">
                                         <!-- END IF -->
                                         <span class="menu--link-text current-parent">@childPage.Name</span>
                                         <!-- Control to use: -->
@@ -101,7 +101,7 @@
             {
                 if(!page.hideInNav) { 
                     <li>
-                        <a href="@page.Url">@page.Name</a>
+                        <a href="@page.Url" title="@page.Name">@page.Name</a>
 
                         @* if the current page has any children *@
                         @if (page.Children.Any() && (!page.hideDescendantInNav))

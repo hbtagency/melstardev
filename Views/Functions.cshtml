@@ -28,7 +28,7 @@
                         <p>
                             @Umbraco.Truncate(item.mainEditor,350,true)
                         </p>
-                        <a class="button button-black read_more" href="@item.Url">
+                        <a class="button button-black read_more" title="@item.Name" href="@item.Url">
                             read more
                         </a>
                     </div>
@@ -52,7 +52,7 @@
         </div>
         <div class="col-xs-12 col-lg-10">
             <div class="heading"></div>
-            <h1>VENUES</h1>
+            <h2 class="large">VENUES</h2>
         </div>
     </div>
     <div class="row">

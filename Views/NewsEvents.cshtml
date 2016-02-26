@@ -21,7 +21,7 @@
                             foreach (var c in newsEvent.Children())
                             {
                                 if (c.Children.Any()) {
-                                    <li><a href="#" ng-click="selectCat(@c.Id)">@c.pageTitle</a></li>
+                                    <li><a href="#" ng-click="selectCat(@c.Id)" title="@c.pageTitle">@c.pageTitle</a></li>
                                 }
                             }
                         }
@@ -37,9 +37,9 @@
                 <div class="row">
                     <section ng-repeat="obj in posts | filter: {categoryID:search.categoryID}" ng-repeat-end-watch="myFunction">
                         <div class="post_list_item col-lg-4 col-sm-6 col-xs-12">
-                            <a class="in-row" href="{{obj.url}}"><img ng-src="{{obj.featuredImage}}" class="img-responsive" /></a>
-                            <a class="in-row" href="{{obj.url}}"><h2>{{obj.title}}</h2></a>
-                            <a class="in-row whats_on_newsevents" href="/en/newsevents/#/{{obj.categoryName}}">{{obj.categoryName}}</a>
+                            <a class="in-row" title="{{obj.title}}" href="{{obj.url}}"><img ng-src="{{obj.featuredImage}}" class="img-responsive" /></a>
+                            <a class="in-row" title="{{obj.title}}"  href="{{obj.url}}"><h2>{{obj.title}}</h2></a>
+                            <a class="in-row whats_on_newsevents" title="{{obj.title}}" href="/en/newsevents/#/{{obj.categoryName}}">{{obj.categoryName}}</a>
                             <p class="in-row">
                                {{obj.subtitle}}
                             </p>
