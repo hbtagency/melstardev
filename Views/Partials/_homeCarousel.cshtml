@@ -1,0 +1,59 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{ 
+    var bg_img_url = "";
+}
+@if (CurrentPage.HasValue("homeBannerImg"))
+{
+    var dynamicMediaItem = Umbraco.Media(CurrentPage.homeBannerImg);
+    bg_img_url = dynamicMediaItem.umbracoFile;
+}
+<!-- Bootstrap #Components Carousel -->
+<div class="carousel slide" id="myCarousel">
+    <!-- carousel indicator -->
+    <ol class="carousel-indicators">
+        <li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+        <li data-slide-to="1" data-target="#myCarousel"></li>
+        <li data-slide-to="2" data-target="#myCarousel"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <!-- carousel inner -->
+    <div class="carousel-inner">
+        <div class="item active" id="slide1" style="background: url('@bg_img_url') top center no-repeat;background-size:cover;">
+            <div class="carousel-caption">
+                <h1>$caption</h1>
+                <a class="button" href="#">$button context</a>
+            </div>
+        </div>
+        <div class="item" id="slide2" style="background: url('@bg_img_url') top center no-repeat;background-size:cover;">
+            <div class="carousel-caption">
+                <h1>$caption</h1>
+                <a class="button" href="#">$button context</a>
+            </div>
+        </div>
+        <div class="item" id="slide3" style="background: url('@bg_img_url') top center no-repeat;background-size:cover;">
+            <div class="carousel-caption">
+                <h1>$caption</h1>
+                <a class="button" href="#">$button context</a>
+            </div>
+        </div>
+    </div>
+    <!-- end of carousel inner -->
+    <div class="carousel-control-bottom container clearfix">
+        <a class="left carousel-control" data-slide="prev" href="#myCarousel">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" data-slide="next" href="#myCarousel">
+            <span class="icon-next"></span>
+        </a>
+    </div>
+</div>
+<!-- End of #Components Carousel -->
+
+<script>
+    $(function () {
+        //$('.carousel').each(function(){ $(this).carousel({ interval: 3000 }); }); 
+        $('#myCarousel').carousel({ interval: 3000 });
+    });
+
+</script>

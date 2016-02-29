@@ -4,34 +4,43 @@
     var bg_img_url = "";
 }
 
-@if(CurrentPage.HasValue("homeBannerImg")){
+@if (CurrentPage.HasValue("homeBannerImg"))
+{
     var dynamicMediaItem = Umbraco.Media(CurrentPage.homeBannerImg);
     bg_img_url = dynamicMediaItem.umbracoFile;
 }
 <script type="text/javascript" src="/js/project/parallax_featured_scroll.js"></script>
 
-    <div class="box-center-container clearfix right-side horrizontal-parallax-banner" id="parralax-hero" style="background:url('@bg_img_url') no-repeat;background-size:110% auto;">
 
+        <div class="box-center-container clearfix right-side horrizontal-parallax-banner" id="parralax-hero" style='@((CurrentPage.showcarousel) ? "":"background:url("+@bg_img_url+") no-repeat;background-size:110% auto;")'>
             <!-- Top Nav -->
             @Html.Partial("_top_nav")
             <!-- End of Top Nav -->
             @Html.Partial("_main_nav")
 
 
+
             <!-- Featured home area -->
-            <div id="featured_area" class="featured-home">
-                <div class="banner-text clearfix">
-                    <h1>
-                        @Umbraco.Field("sloganTitle")
-                    </h1>
-                    <a href='#' class="button button-white">
-                        @Umbraco.Field("bannerButtonTitle")
-                    </a>
+            @if(!CurrentPage.showcarousel) { 
+                <div id="featured_area" class="featured-home">
+                    <div class="banner-text clearfix">
+                        <h1>
+                            @Umbraco.Field("sloganTitle")
+                        </h1>
+                        <a href='#' class="button button-white">
+                            @Umbraco.Field("bannerButtonTitle")
+                        </a>
+                    </div>
+                    <div class="floating-star">
+                        <img class="img-responsive" src='/img/star.png' />
+                    </div>
                 </div>
-                <div class="floating-star">
-                    <img class="img-responsive" src='/img/star.png' />
-                </div>
-            </div>
+            }
+            else
+            {
+                @Html.Partial("_homeCarousel")
+            }
+
             <!-- End of Featured-home -->
             <div class="featured_home_info clearfix" id="featured_home_info">
                 <div class="full-screen-container">
@@ -69,33 +78,33 @@
             </div>
             <!-- End of Featured_home_info -->
         </div>
-    <div class="right-bar box-sidebar pull-right"></div>
-</div>
+        <div class="right-bar box-sidebar pull-right"></div>
+    </div>
     </header>
 
-@Html.Partial("_whats_on")
+    @Html.Partial("_whats_on")
 
-@Html.Partial("_whats_new")
+    @Html.Partial("_whats_new")
 
-<!-- Instagram-->
-<div class="instagram container">
-    <div class="row">
-        <h1>@Umbraco.Field("instagramTitle")</h1>
-        <div class="instagram_subtitle">
-            &#64;MELBOURNESTAR | &#35;MELBOURNESTAR
+    <!-- Instagram-->
+    <div class="instagram container">
+        <div class="row">
+            <h1>@Umbraco.Field("instagramTitle")</h1>
+            <div class="instagram_subtitle">
+                &#64;MELBOURNESTAR | &#35;MELBOURNESTAR
+            </div>
+        </div>
+        <div class="row ">
+            <div id="instafeed" class="instagram"></div>
         </div>
     </div>
-    <div class="row ">
-        <div id="instafeed" class="instagram"></div>
-    </div>
-</div>
 
-<!-- End of instagram-->
+    <!-- End of instagram-->
 
-<!-- Js used only in home page -->
-<script type="text/javascript" src="plugins/instafeed/instafeed.min.js"></script>
-<script type="text/javascript" src="js/final/instagram.js"></script>
-<script type="text/javascript" src="/plugins/slick/slick.min.js"></script>
-<script type="text/javascript" src="/js/final/carousel.js"></script>
-<script type="text/javascript" src="/js/final/hoverEffect.js"></script>
-<script type="text/javascript" src="/js/final/scroll_to_whatson.js"></script>
+    <!-- Js used only in home page -->
+    <script type="text/javascript" src="plugins/instafeed/instafeed.min.js"></script>
+    <script type="text/javascript" src="js/final/instagram.js"></script>
+    <script type="text/javascript" src="/plugins/slick/slick.min.js"></script>
+    <script type="text/javascript" src="/js/final/carousel.js"></script>
+    <script type="text/javascript" src="/js/final/hoverEffect.js"></script>
+    <script type="text/javascript" src="/js/final/scroll_to_whatson.js"></script>
