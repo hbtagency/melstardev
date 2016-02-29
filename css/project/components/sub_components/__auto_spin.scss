@@ -1,0 +1,24 @@
+.auto-spin
+{
+width:200px;
+height:200px;
+background:url(http://i.stack.imgur.com/5Iri7.png?s=128&g=1);
+background-size: 100%;
+-webkit-background-size: 100%;
+    
+-webkit-animation-name: x-spin;
+-webkit-animation-duration: 7s;
+-webkit-animation-iteration-count: infinite;
+-webkit-animation-timing-function: linear;
+}
+
+@keyframes x-spin {
+0%    {transform: rotateY(10deg); }
+50%   {transform: rotateY(20deg); }
+100%  {transform: rotateY(10deg); }
+}
+@-webkit-keyframes x-spin {
+0%    { -webkit-transform: rotateY(10deg); }
+50%   { -webkit-transform: rotateY(20deg); }
+100%  { -webkit-transform: rotateY(10deg); }
+}
