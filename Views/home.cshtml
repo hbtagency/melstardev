@@ -38,7 +38,26 @@
             }
             else
             {
-                @Html.Partial("_homeCarousel")
+                var carousel = Umbraco.Content(1264);
+                if (carousel.Children.Any()) {
+                    @Html.Partial("_homeCarousel")
+                }
+                else
+                {
+                    <div id="featured_area" class="featured-home">
+                        <div class="banner-text clearfix">
+                            <h1>
+                                @Umbraco.Field("sloganTitle")
+                            </h1>
+                            <a href='#' class="button button-white">
+                                @Umbraco.Field("bannerButtonTitle")
+                            </a>
+                        </div>
+                        <div class="floating-star">
+                            <img class="img-responsive" src='/img/star.png' />
+                        </div>
+                    </div>
+                }
             }
 
             <!-- End of Featured-home -->
