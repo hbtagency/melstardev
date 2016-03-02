@@ -2,7 +2,7 @@
     .carousel{
         .carousel-inner{
             .item{
-                height:600px;
+                height:900px; 
                 .carousel-caption{
                     .banner-text{
                         display:block; 
@@ -23,6 +23,18 @@
         }
     }
 }
+@media (min-width:$screen-lg-min) and (max-width:$screen-lg-max){
+    .box-container{
+    .carousel{
+        .carousel-inner{
+            .item{
+                height:600px; 
+            }
+        }
+    }
+}
+}
+
 @media (min-width:$screen-lg-min){
     .box-container{
     .carousel{
