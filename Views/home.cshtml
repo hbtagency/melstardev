@@ -2,6 +2,7 @@
 @{
     Layout = "Layout.cshtml";
     var bg_img_url = "";
+    var carouselNode = Umbraco.Content(1264);
 }
 
 @if (CurrentPage.HasValue("homeBannerImg"))
@@ -12,7 +13,7 @@
 <script type="text/javascript" src="/js/project/parallax_featured_scroll.js"></script>
 
 
-        <div class="box-center-container clearfix right-side horrizontal-parallax-banner" id="parralax-hero" style='@((CurrentPage.showcarousel) ? "":"background:url("+@bg_img_url+") no-repeat;background-size:110% auto;")'>
+        <div class="box-center-container clearfix right-side horrizontal-parallax-banner" id="parralax-hero" style='@((CurrentPage.showcarousel && (carouselNode.Children.Any())) ? "":"background:url("+@bg_img_url+") no-repeat;background-size:110% auto;")'>
             <!-- Top Nav -->
             @Html.Partial("_top_nav")
             <!-- End of Top Nav -->
@@ -21,7 +22,7 @@
 
 
             <!-- Featured home area -->
-            @if(!CurrentPage.showcarousel) { 
+            @if(!CurrentPage.showcarousel || (!carouselNode.Children.Any())) { 
                 <div id="featured_area" class="featured-home">
                     <div class="banner-text clearfix">
                         <h1>
