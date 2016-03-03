@@ -1,1 +1,1 @@
-var nav_height=$("#main_navigation").height();$("#bouncing_arrow").click(function(){$("html, body").animate({scrollTop:$("#featured_home_info").position().top-nav_height},1e3)});
+var nav_height=$("#main_navigation").height();$("#bouncing_arrow").click(function(i){i.preventDefault(),$("html, body").animate({scrollTop:$("#featured_home_info").position().top-nav_height},1e3)});
