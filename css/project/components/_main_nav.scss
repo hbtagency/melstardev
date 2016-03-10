@@ -136,12 +136,14 @@ $ticket_container_width:177px;
         }
         .dropdown-menu li a:hover{
             background: black !important;
-        }
+        } 
         
 }
+
 
 
 @import "sub_components/__rotate_logo.scss";
 @import "sub_components/__tickets.scss";
 @import "sub_components/__box_container.scss"; 
 @import "media_queries/__main_nav.scss";
+@import "media_queries/__tickets_mobile.scss";

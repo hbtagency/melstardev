@@ -18,7 +18,7 @@
 
         @foreach (var childPage in rootNode.Children)
         {
-            if (childPage.Children.Any() && (!childPage.hideDescendantInNav))
+            if (childPage.Children.Any() && (!childPage.hideDescendantInNav) && (!childPage.hideInNav))
             {
                 <div class="accordion-group hidden-lg">
                     <div class="accordion-heading collapsed_item">
@@ -63,7 +63,7 @@ var naviLevel = pages.First().Level;
                 @foreach (var page in pages)
                 {
                     <li>
-                        <a href="@page.Url">@page.Name</a>
+                            <a href="@page.Url">@page.Name</a>
                     </li>
                 }
             </ul>
