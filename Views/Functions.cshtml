@@ -21,7 +21,7 @@
         @foreach (var item in functionRootNode.Children){
             if(item.DocumentTypeAlias == "Function_page"){
                 if(loopCounter < 2 ){
-                <div class="col-sm-6 col-lg-5 col-xs-12">
+                <section class="col-sm-6 col-lg-5 col-xs-12">
                     <div class="function_list_item">
                         <img src="@Umbraco.Media(item.featuredImage).UmbracoFile" class="img-responsive" />
                         <h1>@item.pageTitle</h1>
@@ -32,7 +32,7 @@
                             read more
                         </a>
                     </div>
-                </div>
+                </section>
                 }
                 loopCounter++;
             }
@@ -61,7 +61,7 @@
         <div class="col-xs-12 col-lg-10 three-column-container">
             @foreach (var item in venueNode.Children){
                 if(item.DocumentTypeAlias == "Functions_venues_page"){
-                    <div class="post_list_item col-lg-4 col-sm-6 col-xs-12">
+                    <section class="post_list_item col-lg-4 col-sm-6 col-xs-12">
                         <img src="@Umbraco.Media(item.featuredImage).UmbracoFile" class="img-responsive venues-img" />
                         <h2>@item.pageTitle</h2>
                         <p>
@@ -71,19 +71,21 @@
                         </p>
                         <p>
                             @{
+                                /*
                                 string content = Umbraco.Truncate(item.description, 350, true).ToString();
                                 string pattern = @"<[^>]*>";
                                 string replacement = "";
                                 Regex rgx = new Regex(pattern);
                                 string processedContent = rgx.Replace(content, replacement);
                                 var htmlContent = HttpUtility.HtmlDecode(processedContent);
+                                */
                             }
                             @item.exerpt
                         </p>
                         <a class="learn_more" href="@item.Url">
                             learn more
                         </a>
-                    </div>
+                    </section>
                     
                     venueLoopCounter++;
             }

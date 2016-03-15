@@ -18,9 +18,9 @@
     <div class="row">
         <div class="col-lg-1 visible-lg">
         </div>
-        <div class="col-lg-10 col-xs-12" id="table-striped-inside">
+        <article class="col-lg-10 col-xs-12" id="table-striped-inside">
             @Html.Raw(CurrentPage.description)
-        </div>
+        </article>
     </div>
 
     <div class="row divider">
@@ -47,7 +47,7 @@
 
 
                 if (item.DocumentTypeAlias == "Functions_venues_page" && item.Id != CurrentPage.Id) {
-                <div class="post_list_item col-lg-4 col-sm-6 col-xs-12">
+                <section class="post_list_item col-lg-4 col-sm-6 col-xs-12">
                     <img src="@Umbraco.Media(item.featuredImage).UmbracoFile" class="img-responsive venues-img" />
                     <h2>@item.pageTitle</h2>
                     <p>
@@ -57,19 +57,20 @@
                     </p>
                     <p>
                         @{
+                            /*
                             string content = Umbraco.Truncate(item.description, 350, true).ToString();
                             string pattern = @"<[^>]*>";
                             string replacement = "";
                             Regex rgx = new Regex(pattern);
                             string processedContent = rgx.Replace(content, replacement);
-                            var htmlContent = HttpUtility.HtmlDecode(processedContent);
+                            var htmlContent = HttpUtility.HtmlDecode(processedContent);*/
                         }
                         @item.exerpt
                     </p>
                     <a class="learn_more" href="@item.Url">
                         learn more
                     </a>
-                </div>
+                </section>
                     venueLoopCounter++;
                 }
                 
