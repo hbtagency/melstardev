@@ -64,7 +64,7 @@
                             string processedContent = rgx.Replace(content, replacement);
                             var htmlContent = HttpUtility.HtmlDecode(processedContent);
                         }
-                        @htmlContent
+                        @item.exerpt
                     </p>
                     <a class="learn_more" href="@item.Url">
                         learn more
