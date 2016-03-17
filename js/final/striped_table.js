@@ -1,1 +1,1 @@
-$(document).ready(function(){var t=$("#table-striped-inside table tr"),e=0;t.each(function(){e%2===0&&$(this).addClass("striped"),e++})});
+$(document).ready(function(){var t=$("#table-striped-inside table tr"),e=new TableStripTool(t);e.stripeTable("striped")});var TableStripTool=function(t){this.table=t};TableStripTool.prototype.stripeTable=function(t){var e=0;this.table.each(function(){e%2===0&&$(this).addClass(t),e++})};

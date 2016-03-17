@@ -1,23 +1,25 @@
-﻿
-@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{ 
+    var counter = 1;
+}
 <main class="accordion faq_container">
         @if (CurrentPage.Children.Any())
+        {
+            foreach (var childPage in CurrentPage.Children)
             {
-                foreach (var childPage in CurrentPage.Children)
-                {
                 <section class="accordion-group">
                     <div class="accordion-heading collapsed_item">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#faq_sec2">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#faq_sec@{@counter}">
                             <span class="icon-list-alt">+</span> @childPage.title
                         </a>
                     </div>
-                    <article id="faq_sec2" class="accordion-body collapse" style="height: 0px;">
+                    <article id="faq_sec@{@counter}" class="accordion-body collapse" style="height: 0px;">
                         <div class="accordion-inner">
                             @Html.Raw(childPage.description)
                         </div>
                     </article>
                 </section>
+                counter++;
             }
         }
 </main>

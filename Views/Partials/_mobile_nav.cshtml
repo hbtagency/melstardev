@@ -62,9 +62,12 @@ var naviLevel = pages.First().Level;
             <ul>
                 @foreach (var page in pages)
                 {
+                    if (!page.hideInNav)
+                    {
                     <li>
                             <a href="@page.Url">@page.Name</a>
                     </li>
+                    }
                 }
             </ul>
         </div>
