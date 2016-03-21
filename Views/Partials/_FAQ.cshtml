@@ -3,6 +3,10 @@
     var counter = 1;
 }
 <main class="accordion faq_container">
+        <div class="faq_content">
+			@Umbraco.Field("content")
+		</div>
+		
         @if (CurrentPage.Children.Any())
         {
             foreach (var childPage in CurrentPage.Children)
