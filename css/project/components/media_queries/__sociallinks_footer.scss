@@ -1,10 +1,10 @@
-@media (max-width: $screen-xs-max){
+@media (max-width: $screen-xxs-max){
 
     .lets_connect{
         margin-top:0;
 	    .social_links{
-		    width: auto;	
-            display:inline-block;
+		    width: 70px;	
+            display:block;
 		    margin: 0 auto 50px auto;
             padding-bottom:15px;
 		    span{

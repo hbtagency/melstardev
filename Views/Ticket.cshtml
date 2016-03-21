@@ -3,9 +3,10 @@
     Layout = "Layout.cshtml";
     var loopCounter = 0;
 }
-@Html.Partial("_header")
+@Html.Partial("_header_bottom_nav")
 
         <!-- template content area -->
+<br /><br />
 <div class="container two_column transit template_content" id="table-striped-inside">
     <div class="row">
         <div class="col-md-1"></div>
@@ -31,7 +32,8 @@
         <div class="col-md-1"></div>
         <div class="col-xs-12 col-md-10" style="margin:0 auto;">
             @foreach (var item in CurrentPage.Children){
-                if(item.DocumentTypeAlias == "Ticket_subpage"){
+                if (item.DocumentTypeAlias == "Ticket_subpage")
+                {
                     <div class="post_list_item col-lg-4 col-sm-6 col-xs-12">
                             <a href="@item.Url">
                             <img src="@Umbraco.Media(item.featuredImage).UmbracoFile" class="img-responsive" />
@@ -43,7 +45,7 @@
                                 </b>
                             </p>
                             <p>
-                                @Umbraco.Truncate(item.mainEditor,350,true)
+                               @(item.HasValue("exerpt") ? item.exerpt : Umbraco.Truncate(item.mainEditor, 350, true)) 
                             </p>
                             <a class="learn_more" href="@item.Url">
                                 learn more

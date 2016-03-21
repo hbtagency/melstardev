@@ -17,6 +17,10 @@
     }
 
     var functionRootNode = Umbraco.Content(1174);
+    if (CurrentPage.DocumentTypeAlias == "Ticket") {
+        functionRootNode = Umbraco.Content(1209); ;
+    }
+    
 }
 <div class="box-center-container clearfix right-side parallax-banner" style="background:url('@banner_img') no-repeat;background-size:cover;">
     @Html.Partial("_top_nav")
@@ -40,7 +44,7 @@
                     <ul class="nav navbar-nav inline-block level-1" id="sticky_nav">
                         @foreach (var childPage in functionRootNode.Children)
                         {
-                            if (childPage.DocumentTypeAlias == "Function_page")
+                            if (childPage.DocumentTypeAlias == "Function_page" || childPage.DocumentTypeAlias == "Ticket_subpage")
                             {
                             <li class="root nav_margin_right @(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
                                 <!-- Link tag only if link is present in backend -->
@@ -72,3 +76,7 @@
 <div class="right-bar box-sidebar pull-right"></div>
     </div>
 </header>
+
+<script type="text/javascript" src="/js/final/stickyMenu2.js"></script>
+<script type="text/javascript" src="/js/final/banner_mask_height_init.js"></script>
+<script type="text/javascript" src="/js/final/function_menu_remove_last_class.js"></script>
