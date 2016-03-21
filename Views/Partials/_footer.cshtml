@@ -77,7 +77,21 @@
                 </div>
                 <div class="pull-right inline-block visible-lg">
                     <ul class="footer_bottom_links">
-                        <li class="root inline-block">
+                        @{
+                            foreach (var childPage in homeNode.Descendants())
+                            {
+                                if (childPage.showInFooterLinks)
+                                {
+                                    <li class="root inline-block">
+                                        <a href="@childPage.Url" class="inline-block ">
+                                            @childPage.pageTitle
+                                        </a>
+                                    </li>
+                                }
+                            }                
+                        }
+
+                        @*<li class="root inline-block">
                             <a href="#" class="inline-block ">
                                 Terms &amp; Conditions
                             </a>
@@ -106,7 +120,7 @@
                             <a href="#" class="inline-block ">
                                 contact
                             </a>
-                        </li>
+                        </li>*@
                     </ul>
                 </div>
             </div>
