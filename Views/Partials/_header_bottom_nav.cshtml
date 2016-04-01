@@ -20,7 +20,12 @@
     if (CurrentPage.DocumentTypeAlias == "Ticket") {
         functionRootNode = Umbraco.Content(1209); ;
     }
-    
+
+    if (CurrentPage.Parent.DocumentTypeAlias == "Education")
+    {
+        functionRootNode = Umbraco.Content(1250);
+    }
+
 }
 <div class="box-center-container clearfix right-side parallax-banner" style="background:url('@banner_img') no-repeat;background-size:cover;">
     @Html.Partial("_top_nav")
@@ -44,7 +49,7 @@
                     <ul class="nav navbar-nav inline-block level-1" id="sticky_nav">
                         @foreach (var childPage in functionRootNode.Children)
                         {
-                            if (childPage.DocumentTypeAlias == "Function_page" || childPage.DocumentTypeAlias == "Ticket_subpage")
+                            if (childPage.DocumentTypeAlias == "Function_page" || childPage.DocumentTypeAlias == "Ticket_subpage" || childPage.DocumentTypeAlias == "Education_subcategory_general_pageitem")
                             {
                             <li class="root nav_margin_right @(childPage.IsAncestorOrSelf(CurrentPage) ? "selected" : null)">
                                 <!-- Link tag only if link is present in backend -->

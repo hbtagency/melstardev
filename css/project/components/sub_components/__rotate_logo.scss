@@ -1,7 +1,6 @@
 $rotation_time:19000ms;
 
 .rotating_logo_div{
-    width:265px !important;
     .rotate_logo{
         &:hover{
             text-decoration: none;
@@ -36,6 +35,11 @@ $rotation_time:19000ms;
 
 .main_nav .full-screen-container .logo.rotating_logo_div{
     margin-left:30px !important;
+    img.logo-text{
+        float:right;
+        margin:15px 0 0 10px;
+        
+    }
 }
 
 

@@ -29,18 +29,18 @@
                 var dynamicMediaItem = Umbraco.Media(c.carouselItem);
                 bg_img_url = dynamicMediaItem.umbracoFile;
             }
-            <div class="item @((counter == 1) ? "active":"")" id='"slide"+ @counter' style="background: url('@bg_img_url') top center no-repeat;background-size:cover;">
+            <a href='@c.Url'  class="item @((counter == 1) ? "active":"")" id='"slide"+ @counter' style="background: url('@bg_img_url') top center no-repeat;background-size:cover;">
                 <div class="auto-spin carousel-caption @((umbraco.library.GetPreValueAsString(c.captionPosition) == "Left Bottom") ? "left":"") @((umbraco.library.GetPreValueAsString(c.captionPosition) == "Right Top") ? "right":"") clearfix">
                     <div class="banner-text clearfix">
                         <h1>
                             @c.pageTitle
                         </h1>
-                        <a href='@c.Url' class="button button-white">
+                        <span class="button button-white">
                             View More
-                        </a>
+                        </span>
                     </div>
                 </div>
-            </div>
+            </a>
             counter++;
         }
         <!--
@@ -98,7 +98,7 @@
 <script>
     $(function () {
         //$('.carousel').each(function(){ $(this).carousel({ interval: 3000 }); }); 
-        $('#myCarousel').carousel({ interval: 10000 });
+        $('#myCarousel').carousel({ interval: 4000 });
     });
 
 </script>

@@ -21,9 +21,10 @@ namespace melstardev.controllers
             foreach (var obj in contentNode.Descendants().Where("NodeTypeAlias == \"newsevents_post\"")) {
                 var post = new Dictionary<string, string>();
                 post.Add("title", obj.pageTitle);
-                string raw_content = obj.postContent.ToString();
+                /*string raw_content = obj.postContent.ToString();
                 string content_text = HBTUmbracoHelper.TrimHtml(raw_content);
-                string exerpt_text = HBTUmbracoHelper.TruncateString(content_text, 150);
+                string exerpt_text = HBTUmbracoHelper.TruncateString(content_text, 150);*/
+                string exerpt_text = obj.exerpt;
                 post.Add("subtitle", exerpt_text);
                 post.Add("url", obj.Url);
                 post.Add("featuredImage", Umbraco.Media(obj.featuredImage).umbracoFile);

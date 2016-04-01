@@ -64,13 +64,15 @@
             }   
             
             .logo.rotating_logo_div{
-                width:230px !important;
                 margin-left:15px !important;
                 .logo_text{
                     padding-top:13px;
                     span{
                         font-size:20px;
                     }
+                }
+                .logo-text{
+                    float:right; 
                 }
             }   
         }
