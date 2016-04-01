@@ -1,4 +1,5 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Newtonsoft.Json.Linq
 @{ 
     var bg_img_url = "";
     var carousel = Umbraco.Content(1323);
@@ -37,7 +38,14 @@
 
             if (c.HasValue("internalLink"))
             {
-                <a href='@c.internalLink' class="item @((counter == 1) ? "active":"")" id='"slide"+ @counter' style="background: url('@bg_img_url') top center no-repeat;background-size:cover;">
+                var linkUrl = "";
+
+                foreach (var item in c.GetPropertyValue<JArray>("internalLink"))
+                {
+                    linkUrl = (item.Value<bool>("isInternal")) ? Umbraco.NiceUrl(item.Value<int>("internal")) : item.Value<string>("link");
+                }
+
+                <a href='@linkUrl' class="item @((counter == 1) ? "active":"")" id='"slide"+ @counter' style="background: url('@bg_img_url') top center no-repeat;background-size:cover;">
                     <div class="auto-spin carousel-caption @((umbraco.library.GetPreValueAsString(c.captionPosition) == "Left Bottom") ? "left":"") @((umbraco.library.GetPreValueAsString(c.captionPosition) == "Right Top") ? "right":"") clearfix">
                         <div class="banner-text clearfix">
                             <h1>
