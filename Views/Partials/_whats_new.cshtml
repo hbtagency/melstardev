@@ -1,5 +1,16 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
+<!-- Video / Generic Modal -->
+<div class="modal fade" id="mediaModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <!-- content dynamically inserted -->
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <div class="whats_new horrizontal-parallax-banner" style="background:url('img/whatsnew_bg_fullscreen.jpg') no-repeat;background-size:108% auto;">
     <div class="container">
@@ -31,7 +42,7 @@
                                 @c.subTitle
                             </div>
                             <div class="whatsnew_play_button">
-                                <a href="@c.Url"><img class="center" style="margin-bottom:15px" src="img/play_icon.png" />WATCH</a>
+                                <a href="@c.youtubeVideoUrl"><img class="center" style="margin-bottom:15px" src="img/play_icon.png" />WATCH</a>
                             </div>
                         </div>
                     </div>

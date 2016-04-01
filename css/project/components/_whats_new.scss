@@ -99,4 +99,8 @@
     top: 40% !important;
 }
 
+.modal.in .modal-dialog {
+    position: relative;
+    top: 275px;
+}
 @import "media_queries/__whats_new.scss";
