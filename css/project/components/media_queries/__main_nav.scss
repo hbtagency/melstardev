@@ -130,3 +130,17 @@
         }
     }
 }
+
+@media (max-width: 1199px) {  
+    .carousel-inner {
+        top: 0px !important;
+    }
+
+    .carousel-control {
+        bottom: 0px !important;
+    }
+
+    #myCarousel {
+        margin-bottom: 0px !important;
+    }
+}
