@@ -1,6 +1,8 @@
 .box-container{
     .carousel{
         .carousel-inner{
+            top: -95px;
+
             .item{
                 height:900px; 
                 .carousel-caption{
@@ -23,6 +25,11 @@
         }
     }
 }
+
+#myCarousel {
+    margin-bottom: -85px;
+}
+
 @media (min-width:$screen-lg-min) and (max-width:$screen-lg-max){
     .box-container{
     .carousel{
@@ -123,6 +130,7 @@
         .carousel{
             .carousel-control{
                     display:none;
+                    bottom: 95px;
                 }
             .carousel-indicators{
                 display:none;

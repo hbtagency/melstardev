@@ -4,6 +4,8 @@ $ticket_container_width:177px;
     height:95px;
     background-color:$nav_blue_transparent;
     text-transform:uppercase;
+    z-index: 99;
+
     &.home_nav{
         background-color:$nav_blue;
     }
