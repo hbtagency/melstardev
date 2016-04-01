@@ -26,6 +26,10 @@
     }
 }
 
+.carousel-control{
+    bottom: 95px !important;
+}
+
 #myCarousel {
     margin-bottom: -85px;
 }
@@ -130,7 +134,6 @@
         .carousel{
             .carousel-control{
                     display:none;
-                    bottom: 95px !important;
                 }
             .carousel-indicators{
                 display:none;
