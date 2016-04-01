@@ -29,18 +29,44 @@
                 var dynamicMediaItem = Umbraco.Media(c.carouselItem);
                 bg_img_url = dynamicMediaItem.umbracoFile;
             }
-            <a href='@c.Url'  class="item @((counter == 1) ? "active":"")" id='"slide"+ @counter' style="background: url('@bg_img_url') top center no-repeat;background-size:cover;">
-                <div class="auto-spin carousel-caption @((umbraco.library.GetPreValueAsString(c.captionPosition) == "Left Bottom") ? "left":"") @((umbraco.library.GetPreValueAsString(c.captionPosition) == "Right Top") ? "right":"") clearfix">
-                    <div class="banner-text clearfix">
-                        <h1>
-                            @c.pageTitle
-                        </h1>
-                        <span class="button button-white">
-                            View More
-                        </span>
+
+
+
+
+
+
+            if (c.HasValue("internalLink"))
+            {
+                <a href='@c.internalLink' class="item @((counter == 1) ? "active":"")" id='"slide"+ @counter' style="background: url('@bg_img_url') top center no-repeat;background-size:cover;">
+                    <div class="auto-spin carousel-caption @((umbraco.library.GetPreValueAsString(c.captionPosition) == "Left Bottom") ? "left":"") @((umbraco.library.GetPreValueAsString(c.captionPosition) == "Right Top") ? "right":"") clearfix">
+                        <div class="banner-text clearfix">
+                            <h1>
+                                @c.pageTitle
+                            </h1>
+                            <span class="button button-white">
+                                View More
+                            </span>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            }
+            else
+            {
+                <a href='#' class="item @((counter == 1) ? "active":"")" id='"slide"+ @counter' style="background: url('@bg_img_url') top center no-repeat;background-size:cover;">
+                    <div class="auto-spin carousel-caption @((umbraco.library.GetPreValueAsString(c.captionPosition) == "Left Bottom") ? "left":"") @((umbraco.library.GetPreValueAsString(c.captionPosition) == "Right Top") ? "right":"") clearfix">
+                        <div class="banner-text clearfix">
+                            <h1>
+                                @c.pageTitle
+                            </h1>
+                            <span class="button button-white">
+                                View More
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            }
+
+
             counter++;
         }
         <!--
