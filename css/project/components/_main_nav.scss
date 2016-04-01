@@ -143,7 +143,9 @@ $ticket_container_width:177px;
         
 }
 
-
+.dropdown-menu li {
+    background-color: rgba(0,0,0,0.22);
+}
 
 @import "sub_components/__rotate_logo.scss";
 @import "sub_components/__tickets.scss";
