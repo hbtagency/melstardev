@@ -49,7 +49,7 @@
                     <div class="auto-spin carousel-caption @((umbraco.library.GetPreValueAsString(c.captionPosition) == "Left Bottom") ? "left":"") @((umbraco.library.GetPreValueAsString(c.captionPosition) == "Right Top") ? "right":"") clearfix">
                         <div class="banner-text clearfix">
                             <h1>
-                                @c.pageTitle
+                                @c.internalLink ||| @c.pageTitle
                             </h1>
                             <span class="button button-white">
                                 View More
