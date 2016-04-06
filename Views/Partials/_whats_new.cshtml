@@ -42,6 +42,9 @@
                                 @c.subTitle
                             </div>
                             @{
+                                var viewButtonUrl = c.Url;
+                                var newWindow = "";
+
                                 if (c.HasValue("youtubeVideoUrl"))
                                 {
                                     <div class="whatsnew_play_button">
@@ -50,8 +53,13 @@
                                 }
                                 else
                                 {
+                                    if (c.HasValue("externalLink"))
+                                    {
+                                        viewButtonUrl = c.externalLink;
+                                        newWindow = "target='_blank'";
+                                    }
                                     <div class="whatsnew_view_button">
-                                        <a href="@c.Url">VIEW</a>
+                                        <a href="@viewButtonUrl" @newWindow>VIEW</a>
                                     </div>
                                 }
                             }
