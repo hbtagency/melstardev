@@ -91,11 +91,12 @@
     }
 }
 
-.whatson_view_button{
-    display: none;
+.whatsnew_view_button{
+    display: block;
+    margin-top: 25px;
 }
 
-.whatson_view_button a{
+.whatsnew_view_button a{
     color: white;
     text-decoration: none;
     border: 2px solid;
@@ -109,7 +110,7 @@
     }
 }
 
-        
+
 .slick-next-white{
     top: 40% !important;
 }
