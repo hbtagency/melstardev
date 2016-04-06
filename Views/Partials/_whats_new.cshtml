@@ -22,7 +22,7 @@
             @{
                 var whatson = Umbraco.Content(1072);
 
-                foreach(var c in whatson.Children().Where("NodeTypeAlias == \"newsevents_post\""))
+                foreach (var c in whatson.Children().Where("NodeTypeAlias == \"newsevents_post\""))
                 {
                     var feature_img_url = "";
                     var content = c.pageTitle;
@@ -41,9 +41,21 @@
                             <div class="whatsnew_carousel_content">
                                 @c.subTitle
                             </div>
-                            <div class="whatsnew_play_button">
-                                <a href="@c.youtubeVideoUrl"><img class="center" style="margin-bottom:15px" src="img/play_icon.png" />WATCH</a>
-                            </div>
+                            @{
+                                if (c.HasValue("youtubeVideoUrl"))
+                                {
+                                    <div class="whatsnew_play_button">
+                                        <a href="@c.youtubeVideoUrl"><img class="center" style="margin-bottom:15px" src="img/play_icon.png" />WATCH</a>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="whatson_view_button">
+                                        <a href="@c.Url">VIEW</a>
+                                    </div>
+                                }
+                            }
+                            
                         </div>
                     </div>
                     <!-- End of Template -->
