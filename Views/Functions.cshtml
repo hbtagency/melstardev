@@ -23,15 +23,17 @@
                 if(loopCounter < 2 ){
                 <section class="col-sm-6 col-lg-5 col-xs-12">
                     <div class="function_list_item">
-                        <img src="@Umbraco.Media(item.featuredImage).UmbracoFile" class="img-responsive" />
-                        <h1>@item.pageTitle</h1>
-                        <p>
-                            @Umbraco.Truncate(item.mainEditor,350,true)
-                        </p>
-                        <a class="button button-black read_more" title="@item.Name" href="@item.Url">
-                            read more
-                        </a>
-                    </div>
+                        <a href="@item.Url">
+                            <img src="@Umbraco.Media(item.featuredImage).UmbracoFile" class="img-responsive" />
+                            </a>
+                            <h1><a href="@item.Url">@item.pageTitle</a></h1>
+                            <p>
+                                @Umbraco.Truncate(item.mainEditor, 350, true)
+                            </p>
+                            <a class="button button-black read_more" title="@item.Name" href="@item.Url">
+                                read more
+                            </a>
+</div>
                 </section>
                 }
                 loopCounter++;
@@ -62,30 +64,32 @@
             @foreach (var item in venueNode.Children){
                 if(item.DocumentTypeAlias == "Functions_venues_page"){
                     <section class="post_list_item col-lg-4 col-sm-6 col-xs-12">
-                        <img src="@Umbraco.Media(item.featuredImage).UmbracoFile" class="img-responsive venues-img" />
-                        <h2>@item.pageTitle</h2>
-                        <p>
-                            <b>
-                                @item.subTitle
-                            </b>
-                        </p>
-                        <p>
-                            @{
-                                /*
-                                string content = Umbraco.Truncate(item.description, 350, true).ToString();
-                                string pattern = @"<[^>]*>";
-                                string replacement = "";
-                                Regex rgx = new Regex(pattern);
-                                string processedContent = rgx.Replace(content, replacement);
-                                var htmlContent = HttpUtility.HtmlDecode(processedContent);
-                                */
-                            }
-                            @item.exerpt
-                        </p>
-                        <a class="learn_more" href="@item.Url">
-                            learn more
-                        </a>
-                    </section>
+                        <a href="@item.Url">
+                            <img src="@Umbraco.Media(item.featuredImage).UmbracoFile" class="img-responsive venues-img" />
+                            </a>
+                            <h2><a href="@item.Url">@item.pageTitle</a></h2>
+                            <p>
+                                <b>
+                                    @item.subTitle
+                                </b>
+                            </p>
+                            <p>
+                                @{
+/*
+string content = Umbraco.Truncate(item.description, 350, true).ToString();
+string pattern = @"<[^>]*>";
+string replacement = "";
+Regex rgx = new Regex(pattern);
+string processedContent = rgx.Replace(content, replacement);
+var htmlContent = HttpUtility.HtmlDecode(processedContent);
+*/
+                                }
+                                @item.exerpt
+                            </p>
+                            <a class="learn_more" href="@item.Url">
+                                learn more
+                            </a>
+</section>
                     
                     venueLoopCounter++;
             }

@@ -48,8 +48,10 @@
 
                 if (item.DocumentTypeAlias == "Functions_venues_page" && item.Id != CurrentPage.Id) {
                 <section class="post_list_item col-lg-4 col-sm-6 col-xs-12">
-                    <img src="@Umbraco.Media(item.featuredImage).UmbracoFile" class="img-responsive venues-img" />
-                    <h2>@item.pageTitle</h2>
+                    <a href="@item.Url">
+                        <img src="@Umbraco.Media(item.featuredImage).UmbracoFile" class="img-responsive venues-img" />
+                    </a>
+                    <h2><a href="@item.Url">@item.pageTitle</a></h2>
                     <p>
                         <b>
                             @item.subTitle
