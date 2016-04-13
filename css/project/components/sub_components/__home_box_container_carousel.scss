@@ -8,7 +8,7 @@
                 .carousel-caption{
                     .banner-text{
                         display:block; 
-                        padding-bottom:20px;
+                        padding-bottom:30px;
                     }
                     padding:20px;
                     display:block;
@@ -72,38 +72,14 @@
     }
 }
 }
-@media (min-width:$screen-sm-min) and (max-width:$screen-md-max){
-.box-container{
-    .carousel{
-        .carousel-inner{
-            .item{
-                height:400px;
-                .carousel-caption{
-                    .banner-text{
 
-                    }
-                    bottom:25%;  
-                    h1{
-                        font-size:25px;
-                    }
-                    &.left{
-                        bottom:25%;  
-                        margin:0 auto;
-                    }
-                }
-            }
-        }
-    }
-}
-    
-}
 @media (min-width:$screen-sm-min) and (max-width:$screen-md-max){
     .box-container{
         .carousel{
             .carousel-inner{
                 .item{
                     text-align:center;
-                    height:300px;
+                    height:450px;
                     .carousel-caption{
                         padding:10px;
                         margin:0 auto;
@@ -111,7 +87,7 @@
 
                         }
                         width:300px;
-                        bottom:20%;  
+                        bottom:30%;  
                         h1{
                             font-size:20px;
                         }
@@ -139,7 +115,6 @@
                 display:none;
             }
             .carousel-inner{
-                
                 .item{
                     text-align:center;
                     height:300px;

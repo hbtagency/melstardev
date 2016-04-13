@@ -138,6 +138,13 @@ body
     padding: 0 30px !important;
 }
 
+@media(max-width:$screen-md-max){
+    body
+    { 
+        padding: 0 !important;
+    }
+}
+
 p{
     font-weight:100;
 }
