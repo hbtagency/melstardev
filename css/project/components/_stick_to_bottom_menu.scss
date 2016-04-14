@@ -41,10 +41,13 @@
         }
 
         .dropdown-toggle:active{
+            background-color: #87c902; 
+        }
+        .dropdown-toggle:visited{
             background-color: #87c902;
         }
         .dropdown-toggle:focus {
-            background-color: #000;
+            background-color: #87c902;
         }
 
         .nav_margin_right {
