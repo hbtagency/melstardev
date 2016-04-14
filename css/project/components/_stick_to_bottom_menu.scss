@@ -1,7 +1,7 @@
 .sticky_menu_2 {
     position: absolute;
     height: 70px;
-    background-color: #92d400;
+    background-color: #000;
     width: 100%;
     bottom: -70px;
 
@@ -21,7 +21,7 @@
         }
         .selected {
             .dropdown-toggle {
-                background-color: #87c902;
+                background-color: #333;
             }
         }
 
@@ -37,17 +37,17 @@
         }
 
         .dropdown-toggle:hover {
-            background-color: #87c902;
+            background-color: #222;
         }
 
         .dropdown-toggle:active{
-            background-color: #87c902; 
+            background-color: #222; 
         }
         .dropdown-toggle:visited{
-            background-color: #87c902;
+            background-color: #222;
         }
         .dropdown-toggle:focus {
-            background-color: #87c902;
+            background-color: #222;
         }
 
         .nav_margin_right {
