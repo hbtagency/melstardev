@@ -52,7 +52,6 @@ namespace Melstar.Controllers
                         mail.Body = "<p>" + model.Message + "<p>" + "<br>" + "Phone: " + model.Phone + "<br>" + "PostCode: " + model.PostCode + "<br>" + "State: " + model.State;
                         mail.IsBodyHtml = true;
                         client.Send(mail);
-
                         retValue = "{\"success\":\""+ errorMessages["success"] + "\"}";
                     }
 
