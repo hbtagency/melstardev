@@ -1,0 +1,119 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+<div class="contact-form-area">
+    
+    <form name="general-enquiry-form" id="general-enquiry-form" method="post" class="validate">
+        <div class="row">
+            <div class="field-group col-sm-6">
+                <label for="Title">Title</label>
+                <select name="Title" class="cs-select">
+                    <option value="Please select">Please select</option>
+                    <option value="Mr">Mr</option>
+                    <option value="Miss">Mrs</option>
+                    <option value="Miss">Ms</option>
+                    <option value="Miss">Miss</option>
+                    <!-- This part will loop from a title list -->
+                </select>
+            </div>
+
+            <div class="field-group col-sm-6">
+                <label for="Email">Email Address <span class="asterisk" style="top: 35px;">*</span></label>
+                <input placeholder="Enter email address..." value="" name="Email" class="required_email long"
+                       id="contact-EMAIL">
+                <div class="error-msg hidden"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="field-group col-sm-6">
+                <label for="FirstName">First Name <span class="asterisk" style="top: 35px;">*</span></label>
+                <input class="long" type="text" placeholder="Enter first name..." value="" name="FirstName">
+                <div class="error-msg hidden"></div>
+            </div>
+            <div class="field-group col-sm-6">
+                <label for="LastName">Last Name <span class="asterisk" style="top: 35px;">*</span></label>
+                <input class="long" type="text" placeholder="Enter last name..." value="" name="LastName">
+                <div class="error-msg hidden"></div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="field-group col-sm-6">
+                <label for="Position">Position</label>
+                <input class="long" type="text" placeholder="Enter your position..." value="" name="Position">
+            </div>
+            <div class="field-group col-sm-6">
+                <label for="Company">Company</label>
+                <input class="long" type="text" placeholder="Enter your company..." value="" name="Company">
+            </div>
+        </div>
+        <div class="row">
+            <div class="field-group col-sm-6">
+                <label for="Phone">Phone <span class="asterisk" style="top: 35px;">*</span></label>
+                <input type="text" class="long" placeholder="Enter your phone number..." value="" name="Phone"></input>
+                <div class="error-msg hidden"></div>
+            </div>
+            <div class="field-group col-sm-6">
+                <label for="Mobile">Mobile</label>
+                <input type="text" class="long" placeholder="Enter your mobile number..." value="" name="Mobile"></input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="field-group col-sm-6">
+                <label for="Street">Street</label>
+                <input type="text" class="long" placeholder="Enter your street..." value="" name="Street"></input>
+            </div>
+            <div class="field-group col-sm-6">
+                <label for="Suburb">Suburb</label>
+                <input type="text" class="long" placeholder="Enter your suburb..." value="" name="Suburb"></input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="field-group col-sm-6">
+                <label for="State">State</label>
+                <select name="State" id="mce-MMERGE" class="cs-select">
+                    <option value="Please select">Please select</option>
+                    <option value="ACT">ACT</option>
+                    <option value="NSW">NSW</option>
+                    <option value="NT">NT</option>
+                    <option value="QLD">QLD</option>
+                    <option value="SA">SA</option>
+                    <option value="TAS">TAS</option>
+                    <option value="VIC">VIC</option>
+                    <option value="WA">WA</option>
+                </select>
+            </div>
+            <div class="field-group col-sm-6">
+                <label for="Suburb">Postcode</label>
+                <input type="text" class="long" placeholder="Enter your suburb..." value="" name="Postcode"></input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="field-group col-xs-12">
+                <label for="Comments">Comments</label>
+                <textarea type="text" class="long" placeholder="Enter your comments..." value="" name="Comments"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="field-group col-xs-12">
+                <input type="checkbox" name="AcceptTerms" id="AcceptTerms" style="float:left;" value="true"/>
+                Please check this box to indicate you have read and accept the 
+                <a class="show_terms_conditions">privacy policy </a>
+            </div>
+        </div>
+
+        <div class="g-recaptcha"
+             data-sitekey="@System.Configuration.ConfigurationManager.AppSettings["recaptchaSitekey"].ToString()">
+        </div>
+        <br/>
+        <div class="row">
+            <div>
+                <input class="hidden" type="text" name="b_4d2c8011960ee7758b33a61a7_68ac2802a5" tabindex="-1" value="">
+            </div>
+            <div class="clear col-xs-12">
+                <input type="submit" value="SEND" name="subscribe" id="mc-embedded-subscribe" class="button" style="">
+            </div>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript" src="/js/project/enquiry_general.js"></script>
