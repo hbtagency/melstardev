@@ -47,7 +47,7 @@ namespace melbournestardev.controllers
                         if (model.AcceptTerms)
                         {
                             //Retrive admin email from umbraco
-                            string email = HBTUmbracoFormsHelper.GetEmailFromUmbraco();
+                            string email = HBTUmbracoFormsHelper.GetEmailFromUmbraco("Group enquires Email");
                             mail.To.Add(email);
                             mail.From = new MailAddress(model.Email, model.FirstName);
                             mail.Subject = String.Format("Enquiry from customer: " + model.FirstName + " " + model.LastName + "(" + model.Email + ")");

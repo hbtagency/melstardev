@@ -9,10 +9,10 @@ namespace melbournestardev.helpers
     public class HBTUmbracoFormsHelper
     {
         //This method will return Admin Email by pull corresponding field from Umbraco.
-        public static string GetEmailFromUmbraco()
+        public static string GetEmailFromUmbraco(string mailName)
         {
             //Please refer to umbraco->settings->dictionary->configs
-            return umbraco.library.GetDictionaryItem("Admin Email");
+            return umbraco.library.GetDictionaryItem(mailName);
         }
 
         //This method will return Check if recaptcha works. 
