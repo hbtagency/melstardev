@@ -25,58 +25,53 @@
         
         @foreach (var c in carousel.Children)
         {
+            
             if (c.HasValue("carouselItem"))
             {
                 var dynamicMediaItem = Umbraco.Media(c.carouselItem);
                 bg_img_url = dynamicMediaItem.umbracoFile;
-            }
 
-
-
-
-
-
-            if (c.HasValue("internalLink"))
-            {
-                var linkUrl = "test";
-
-                foreach (var item in c.GetPropertyValue<JArray>("internalLink"))
+                if (c.HasValue("internalLink"))
                 {
-                    linkUrl = (item.Value<bool>("isInternal")) ? Umbraco.NiceUrl(item.Value<int>("internal")) : item.Value<string>("link");
+                    var linkUrl = "test";
+
+                    foreach (var item in c.GetPropertyValue<JArray>("internalLink"))
+                    {
+                        linkUrl = (item.Value<bool>("isInternal")) ? Umbraco.NiceUrl(item.Value<int>("internal")) : item.Value<string>("link");
+                    }
+
+                    <a href='@linkUrl' class="item @((counter == 1) ? "active":"")" id='"slide"+ @counter' style="background: url('@bg_img_url') top center no-repeat;background-size:cover;">
+                        <div class="auto-spin carousel-caption @((umbraco.library.GetPreValueAsString(c.captionPosition) == "Left Bottom") ? "left":"") @((umbraco.library.GetPreValueAsString(c.captionPosition) == "Right Top") ? "right":"") clearfix">
+                            <div class="banner-text clearfix">
+                                <h1>
+                                    @c.pageTitle
+                                </h1>
+                                <span class="button button-white">
+                                    View More
+                                </span>
+                            </div>
+                        </div>
+                    </a>
                 }
-
-                <a href='@linkUrl' class="item @((counter == 1) ? "active":"")" id='"slide"+ @counter' style="background: url('@bg_img_url') top center no-repeat;background-size:cover;">
-                    <div class="auto-spin carousel-caption @((umbraco.library.GetPreValueAsString(c.captionPosition) == "Left Bottom") ? "left":"") @((umbraco.library.GetPreValueAsString(c.captionPosition) == "Right Top") ? "right":"") clearfix">
-                        <div class="banner-text clearfix">
-                            <h1>
-                                @c.pageTitle
-                            </h1>
-                            <span class="button button-white">
-                                View More
-                            </span>
+                else
+                {
+                    <a href='#' class="item @((counter == 1) ? "active":"")" id='"slide"+ @counter' style="background: url('@bg_img_url') top center no-repeat;background-size:cover;">
+                        <div class="auto-spin carousel-caption @((umbraco.library.GetPreValueAsString(c.captionPosition) == "Left Bottom") ? "left":"") @((umbraco.library.GetPreValueAsString(c.captionPosition) == "Right Top") ? "right":"") clearfix">
+                            <div class="banner-text clearfix">
+                                <h1>
+                                    @c.pageTitle
+                                </h1>
+                                <span class="button button-white">
+                                    View More
+                                </span>
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                }
             }
-            else
-            {
-                <a href='#' class="item @((counter == 1) ? "active":"")" id='"slide"+ @counter' style="background: url('@bg_img_url') top center no-repeat;background-size:cover;">
-                    <div class="auto-spin carousel-caption @((umbraco.library.GetPreValueAsString(c.captionPosition) == "Left Bottom") ? "left":"") @((umbraco.library.GetPreValueAsString(c.captionPosition) == "Right Top") ? "right":"") clearfix">
-                        <div class="banner-text clearfix">
-                            <h1>
-                                @c.pageTitle
-                            </h1>
-                            <span class="button button-white">
-                                View More
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            }
-
 
             counter++;
-        }
+       }
         <!--
         <div class="item active" id="slide1" style="background: url('@bg_img_url') top center no-repeat;background-size:cover;">
             <div class="carousel-caption left clearfix">
