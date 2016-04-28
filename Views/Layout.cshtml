@@ -17,17 +17,17 @@
     <meta property="og:description" content="@Umbraco.GetDictionaryValue("Description")" />
     <meta property="og:url" content="https://www.facebook.com/melbournestarobservationwheel/" />
     <meta property="og:site_name" content="Melbourne Star" />
-    
+
     <title> @Umbraco.Field("pageTitle") </title>
     <link rel="stylesheet" href="/css/final/style.css" />
-    <link rel="shortcut icon" href="~/img/favicon.png"/>
+    <link rel="shortcut icon" href="~/img/favicon.png" />
     <!-- JS init -->
     <script type="text/javascript" src="/js/jquery/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap/bootstrap.min.js"></script>
 
     <!-- Type kit -->
     <script src="https://use.typekit.net/ety7fje.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>try { Typekit.load({ async: true }); } catch (e) { }</script>
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular-animate.js"></script>
@@ -35,50 +35,61 @@
 </head>
 <body class="tk-proxima-nova">
     <header>
-    <div id="body-mask" class="body-mask">
-    </div>
-    @Html.Partial("_search_mask")
+        <div id="body-mask" class="body-mask">
+        </div>
+        @Html.Partial("_search_mask")
 
 
-    <!-- Load mobile nav which should only be displayed in Mobile and Tab view-->
-    @Html.Partial("_mobile_nav")   
-    <!-- Load extra nav which hides in left side of box container. -->
-    @Html.Partial("_extra_nav")
-         
-    @RenderBody()
-    
-    @Html.Partial("_footer")
-     
-    <!-- instafeed -->
-    <script type="text/javascript" src="/plugins/instafeed/instafeed2.min.js"></script>
-    <script type="text/javascript" src="/js/project/instagram2.js"></script>
+        <!-- Load mobile nav which should only be displayed in Mobile and Tab view-->
+        @Html.Partial("_mobile_nav")
+        <!-- Load extra nav which hides in left side of box container. -->
+        @Html.Partial("_extra_nav")
+
+        @RenderBody()
+
+        @Html.Partial("_footer")
+
+        <!-- instafeed -->
+        <script type="text/javascript" src="/plugins/instafeed/instafeed2.min.js"></script>
+        <script type="text/javascript" src="/js/project/instagram2.js"></script>
 
 
-    <!-- The following js files has been used site widely -->
-    <script type="text/javascript" src="/js/final/sitewide.js"></script>
+        <!-- The following js files has been used site widely -->
+        <script type="text/javascript" src="/js/final/sitewide.js"></script>
 
-    <!--
-    <script type="text/javascript" src="/js/project/sitewide/transform_view_button.js"></script>
-    <script type="text/javascript" src="/js/project/sitewide/full_height_menu.js"></script>
-    <script type="text/javascript" src="/js/project/sitewide/body_mask.js"></script>
-    <script type="text/javascript" src="/js/project/sitewide/rotate.js"></script>
-    <script type="text/javascript" src="/js/project/sitewide/ticket.js"></script>
-    <script type="text/javascript" src="/js/project/sitewide/sticky_nav.js"></script>
-    <script type="text/javascript" src="/js/project/sitewide/rotate_logo.js"></script>
-    <script type="text/javascript" src="/js/project/sitewide/parralax_banner.js"></script>
-    <script type="text/javascript" src="/js/project/sitewide/search.js"></script>
-    <script type="text/javascript" src="/js/project/sitewide/signup.js"></script>
-        -->
+
         <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-22849125-1', 'auto');
-  ga('send', 'pageview');
-
+            ga('create', 'UA-22849125-1', 'auto');
+            ga('send', 'pageview');
         </script>
 
+        <!--SmartPixel -->
+        <script type="text/javascript">
+            adroll_adv_id = "QPF7TKCCTRCGDPZDVULTP4";
+            adroll_pix_id = "DAJBJYHMSNFH5BES6GAJVJ";
+            (function () {
+                var _onload = function () {
+                    if (document.readyState && !/loaded|complete/.test(document.readyState)) { setTimeout(_onload, 10); return }
+                    if (!window.__adroll_loaded) { __adroll_loaded = true; setTimeout(_onload, 50); return }
+                    var scr = document.createElement("script");
+                    var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+                    scr.setAttribute('async', 'true');
+                    scr.type = "text/javascript";
+                    scr.src = host + "/j/roundtrip.js";
+                    ((document.getElementsByTagName('head') || [null])[0] ||
+                        document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+
+                };
+                if (window.addEventListener) { window.addEventListener('load', _onload, false); }
+                else { window.attachEvent('onload', _onload) }
+            }());
+        </script>
 </body>
 </html>
