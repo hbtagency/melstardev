@@ -59,11 +59,10 @@ var doit;
 window.onresize = function() {
     clearTimeout(doit);
     doit = setTimeout(function() {
-
-    	console.log("onsize");
         auto_adjust_overlay();
     }, 100);
 };
+
 
 // $(window).resize(function(){
 	
@@ -74,7 +73,6 @@ function auto_adjust_overlay(){
 		var width = window.innerWidth;
 
 		if(width <= 556){
-			console.log("did");
 			var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
 			var img_height = $('.whatsnew_carousel_img').height();
 			var img_width = $('.whatsnew_carousel_img').width();
