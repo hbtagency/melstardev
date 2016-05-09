@@ -14,7 +14,7 @@
 
     if (validForm(form, field_list)) {
         //Ajax call
-        var action = "/umbraco/Surface/GeneralEnquiry/submitForm/";
+        var action = "/umbraco/Surface/FilmEnquiry/submitForm/";
 
         /* This part of code is to avoid double submit */
         if (!$(this).hasClass("submited")) {
