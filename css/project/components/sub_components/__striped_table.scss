@@ -40,3 +40,19 @@ $blue_text: #394758;
     }
 }
 
+@media (max-width:$screen-xxxs-max){
+   .table-striped, #table-striped-inside table{
+       tr{
+           td{
+               font-size:12px;
+               span{
+                   font-size:12px;
+                   strong{
+                       font-size:12px;
+                   }
+               }
+           }
+       }
+   } 
+}
+
