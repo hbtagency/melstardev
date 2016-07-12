@@ -7,6 +7,7 @@ var batch = require('gulp-batch');
 var browserSync = require('browser-sync');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
+var sourcemaps = require('gulp-sourcemaps');
 
 
 gulp.task('default', function() {
@@ -55,11 +56,12 @@ gulp.task('default', function() {
 
 });
 
-
 //Step 1: compile sass
 gulp.task('sass', function () {
-  gulp.src('css/project/style.scss')
+    gulp.src('css/project/style.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
+    .pipe(sourcemaps.write('../../final'))
     .pipe(gulp.dest('css/cache/sassOutput'));
     console.log('#=>sass');
 });

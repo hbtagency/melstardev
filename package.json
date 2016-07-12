@@ -2,16 +2,17 @@
   "name": "hbt-framework",
   "version": "1.0.0",
   "dependencies": {
-    "gulp": "*",
-    "gulp-sass": "*",
-    "gulp-minify-css": "*",
-    "gulp-concat-css": "*",
-    "gulp-watch": "*",
-    "gulp-batch": "*",
-    "browser-sync": "*",
     "balanced-match": "*",
+    "browser-sync": "*",
     "concat-map": "*",
-    "gulp-concat":"*"
+    "gulp": "*",
+    "gulp-batch": "*",
+    "gulp-concat": "*",
+    "gulp-concat-css": "*",
+    "gulp-minify-css": "*",
+    "gulp-sass": "*",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-watch": "*"
   },
   "devDependencies": {
     "gulp-uglify": "^1.5.1"
