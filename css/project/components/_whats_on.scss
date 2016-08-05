@@ -35,6 +35,7 @@
 
 			.whatson_carousel_content{
 				color: #fff;
+                padding:15px;
 			}
 		}
 
@@ -75,10 +76,12 @@
 			font-size: 13px;
 		    letter-spacing: -0.3px;
 			color: $content_gray;
+            
 		}	
 
 		.whatson_view_button{
 			display: none;
+            margin-top:-10px;
 		}
 
 		.whatson_view_button a{
