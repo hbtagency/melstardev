@@ -1,4 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Newtonsoft.Json.Linq
+
+
 @{
     var logo_img_url = "";
     var rootNode = CurrentPage.AncestorsOrSelf(1).First();
@@ -43,7 +46,15 @@
 
                 <!-- ticket -->
                 <div class="buy_tickets inline-block right visible-lg">
-                    <span class="uppercase"><a href="http://www.melbournestar.com/en/visitor-info/buy-tickets-difficulties/">@rootNode.ticketButtonTitle</a></span>
+                    @if (rootNode.HasValue("ticketLink"))
+                    {
+                        var linkUrl = "#";
+                        foreach (var item in rootNode.GetPropertyValue<JArray>("ticketLink"))
+                        {
+                            linkUrl = (item.Value<bool>("isInternal")) ? Umbraco.NiceUrl(item.Value<int>("internal")) : item.Value<string>("link");
+                        }
+                    <span class="uppercase"><a href="@linkUrl">@rootNode.ticketButtonTitle</a></span>
+                    }
                 </div>
 
 
