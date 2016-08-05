@@ -39,7 +39,9 @@
                 if(loopCounter < 2 ){
                 <section class="col-sm-6 col-lg-5 col-xs-12">
                     <div class="function_list_item">
+                        @if(item.HasValue("featuredImage")){
                         <a href="@item.Url"><img src="@Umbraco.Media(item.featuredImage).UmbracoFile" class="img-responsive" /></a>
+                        }
                         <h1><a href="@item.Url">@item.pageTitle</a></h1>
                         <p>
                             @{
